@@ -20,10 +20,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="3fl-Fd-uPa" appends="YES" id="HXB-bm-Fg9"/>
-                                    <outletCollection property="gestureRecognizers" destination="1g3-V9-BIa" appends="YES" id="Xmb-xv-a0W"/>
-                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -35,14 +31,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="leftGestureRecognizer" destination="3fl-Fd-uPa" id="YrV-Vg-6JX"/>
                         <outlet property="page" destination="dGF-85-ifB" id="osZ-PP-ZBb"/>
-                        <outlet property="rightGestureRecognizer" destination="1g3-V9-BIa" id="spO-ob-tMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="3fl-Fd-uPa"/>
-                <swipeGestureRecognizer direction="right" id="1g3-V9-BIa"/>
             </objects>
         </scene>
     </scenes>

@@ -9,78 +9,63 @@
 import UIKit
 
 class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureRecognizerDelegate {
-
+    
+    
+    //MARK: Properties
+    
     @IBOutlet weak var page: UIWebView!
-    @IBOutlet var rightGestureRecognizer: UISwipeGestureRecognizer?
-    @IBOutlet var leftGestureRecognizer: UISwipeGestureRecognizer?
+
     
-    var epubController: KFEpubController
-    var contentModel: KFEpubContentModel
-    
+    var epubController: KFEpubController?
+    var contentModel: KFEpubContentModel?
+
     var spineIndex: Int = 0
-    
 
     
     //MARK: Initialization
-    
-    init() {
-        
-        self.rightGestureRecognizer = UISwipeGestureRecognizer(target: self.page, action: Selector("didSwipeRight:"))
-        self.rightGestureRecognizer?.direction = .Right
-        
-        self.leftGestureRecognizer  = UISwipeGestureRecognizer(target: self.page, action: Selector("didSwipeLeft:"))
-        self.leftGestureRecognizer?.direction = .Left
-    }
-    
-    required convenience init(coder aDecoder: NSCoder) {
-        self.init()
-    }
 
-    
     //MARK: View Lifecycle
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        let epubURL = NSBundle.mainBundle().URLForResource("tolstoy-war-and-peace", withExtension: "epub") as NSURL!
-        
+        println("view did appear")
+        let bundle = NSBundle.mainBundle() as NSBundle
+        let pathForEPUB = bundle.pathForResource("tolstoy-war-and-peace", ofType: "epub") as String?
+        let wapURL = NSURL(fileURLWithPath: pathForEPUB!)
         let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let documentURL = paths[0] as! NSURL
+        epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
+        self.epubController!.delegate = self;
+        self.epubController!.openAsynchronous(true)
         
-        self.epubController = KFEpubController(epubURL: epubURL, andDestinationFolder: documentURL)
-        self.epubController.openAsynchronous(true)
+        let rightGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("didSwipeRight:"))
+        rightGestureRecognizer.direction = .Right
         
-
+        page.addGestureRecognizer(rightGestureRecognizer)
+        
+        let leftGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("didSwipeLeft:"))
+        leftGestureRecognizer.direction = .Left
+        self.page.addGestureRecognizer(rightGestureRecognizer)
+        
+        
         
     }
-
-    override func didReceiveMemoryWarning() {
+    
+    override func viewWillAppear(animated: Bool) {
         
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        println("view will appear")
     }
     
-    //MARK: KFEpubControllerDelegate methods
-    
-    func epubController(controller: KFEpubController!, didFailWithError error: NSError!) {
+    override func viewDidAppear(animated: Bool) {
         
-        println(error)
+        println("view did appear")
     }
-    
-    func epubController(controller: KFEpubController!, willOpenEpub epubURL: NSURL!) {
-        <#code#>
-    }
-    
-    func epubController(controller: KFEpubController!, didOpenEpub contentModel: KFEpubContentModel!) {
-        println("will open!")
-    }
-    
     
     //MARK: Handle Swipes and GestureRecognizerDelegate
     
-    func didSwipeRight()
-    {
+    func didSwipeRight() {
+        
         if (self.spineIndex > 1) {
             self.spineIndex--
             self.updateContentForSpineIndex(self.spineIndex)
@@ -88,7 +73,8 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     }
     
     func didSwipeLeft() {
-        if (self.spineIndex < self.contentModel.spine.count) {
+        
+        if (self.spineIndex < self.contentModel!.spine.count) {
             self.spineIndex++;
             self.updateContentForSpineIndex(self.spineIndex)
         }
@@ -98,20 +84,40 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         return true
     }
     
-    //MARK: Update Swipe Index
-    func updateContentForSpineIndex(currentSpineIndex: Int)
-    {
-        contentFile = self.contentModel.manifest(self.contentModel.spine[currentSpineIndex])
-        
-        
-        NSString *contentFile = self.contentModel.manifest[self.contentModel.spine[currentSpineIndex]][@"href"];
-        NSURL *contentURL = [self.epubController.epubContentBaseURL URLByAppendingPathComponent:contentFile];
-        NSLog(@"content URL :%@", contentURL);
+    //MARK: EPUB contents
     
-        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:contentURL];
-        [self.webView loadRequest:request];
+    func updateContentForSpineIndex(currentSpineIndex: Int) {
         
-        contentFile = self.c
+        let contentFile = self.contentModel!.manifest[self.contentModel!.spine[currentSpineIndex] as! String]!["href"] as! String
+        var contentURL = self.epubController!.epubContentBaseURL.URLByAppendingPathComponent(contentFile) as NSURL
+        println("content URL: \(contentURL)")
+        var request = NSURLRequest(URL: contentURL)
+        self.page.loadRequest(request)
+    }
+  
+    //MARK: KFEpubControllerDelegate methods
+    
+    func epubController(controller: KFEpubController!, willOpenEpub epubURL: NSURL!) {
+        
+        println("will open EPUB")
     }
     
+    func epubController(controller: KFEpubController!, didOpenEpub contentModel: KFEpubContentModel!) {
+        let title = "title"
+        println("Opened: \(contentModel!.metaData[title])")
+        self.contentModel = contentModel
+        self.spineIndex = 4
+        self.updateContentForSpineIndex(self.spineIndex)
+        println("will open!")
+    }
+    
+    func epubController(controller: KFEpubController!, didFailWithError error: NSError!) {
+        
+        println("epubcontroller:didFailWithError: \(error.description)")
+    }
+    
+    
+
+    
+
 }

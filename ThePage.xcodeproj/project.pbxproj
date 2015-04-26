@@ -12,24 +12,10 @@
 		B326AC321AE7467900121308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B326AC301AE7467900121308 /* Main.storyboard */; };
 		B326AC341AE7467900121308 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B326AC331AE7467900121308 /* Images.xcassets */; };
 		B326AC371AE7467900121308 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B326AC351AE7467900121308 /* LaunchScreen.xib */; };
-		B326AC431AE7467A00121308 /* ThePageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B326AC421AE7467A00121308 /* ThePageTests.swift */; };
 		B3F59CFB1AE74751001AB26C /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFA1AE74751001AB26C /* TestClass.m */; };
-		B3F59CFC1AE74751001AB26C /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFA1AE74751001AB26C /* TestClass.m */; };
 		B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFD1AE74809001AB26C /* PageViewController.swift */; };
-		B3F59CFF1AE74809001AB26C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFD1AE74809001AB26C /* PageViewController.swift */; };
 		B3F59D011AE74885001AB26C /* tolstoy-war-and-peace.epub in Resources */ = {isa = PBXBuildFile; fileRef = B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */; };
-		B3F59D021AE74885001AB26C /* tolstoy-war-and-peace.epub in Resources */ = {isa = PBXBuildFile; fileRef = B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B326AC3D1AE7467A00121308 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B326AC1F1AE7467900121308 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B326AC261AE7467900121308;
-			remoteInfo = ThePage;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1529866C1E11E01395B1FCBD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -41,7 +27,6 @@
 		B326AC311AE7467900121308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B326AC331AE7467900121308 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B326AC361AE7467900121308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B326AC3C1AE7467A00121308 /* ThePageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThePageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B326AC411AE7467A00121308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B326AC421AE7467A00121308 /* ThePageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThePageTests.swift; sourceTree = "<group>"; };
 		B3F59CF71AE74750001AB26C /* ThePage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePage-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -58,13 +43,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A51B6F13A8E716E59CB33D3 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B326AC391AE7467A00121308 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				B326AC271AE7467900121308 /* ThePage.app */,
-				B326AC3C1AE7467A00121308 /* ThePageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,7 +94,6 @@
 				B326AC301AE7467900121308 /* Main.storyboard */,
 				B326AC331AE7467900121308 /* Images.xcassets */,
 				B326AC351AE7467900121308 /* LaunchScreen.xib */,
-				B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */,
 				B3F59CFD1AE74809001AB26C /* PageViewController.swift */,
 				B326AC2A1AE7467900121308 /* Supporting Files */,
 				B3F59CF71AE74750001AB26C /* ThePage-Bridging-Header.h */,
@@ -129,6 +105,7 @@
 		B326AC2A1AE7467900121308 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B3E94E3A1AEC73C400E87743 /* Resources */,
 				B326AC2B1AE7467900121308 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -149,6 +126,14 @@
 				B326AC411AE7467A00121308 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3E94E3A1AEC73C400E87743 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,24 +158,6 @@
 			productReference = B326AC271AE7467900121308 /* ThePage.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B326AC3B1AE7467A00121308 /* ThePageTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B326AC491AE7467A00121308 /* Build configuration list for PBXNativeTarget "ThePageTests" */;
-			buildPhases = (
-				B326AC381AE7467A00121308 /* Sources */,
-				B326AC391AE7467A00121308 /* Frameworks */,
-				B326AC3A1AE7467A00121308 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B326AC3E1AE7467A00121308 /* PBXTargetDependency */,
-			);
-			name = ThePageTests;
-			productName = ThePageTests;
-			productReference = B326AC3C1AE7467A00121308 /* ThePageTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,10 +169,6 @@
 				TargetAttributes = {
 					B326AC261AE7467900121308 = {
 						CreatedOnToolsVersion = 6.3;
-					};
-					B326AC3B1AE7467A00121308 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = B326AC261AE7467900121308;
 					};
 				};
 			};
@@ -223,7 +186,6 @@
 			projectRoot = "";
 			targets = (
 				B326AC261AE7467900121308 /* ThePage */,
-				B326AC3B1AE7467A00121308 /* ThePageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,14 +199,6 @@
 				B326AC321AE7467900121308 /* Main.storyboard in Resources */,
 				B326AC371AE7467900121308 /* LaunchScreen.xib in Resources */,
 				B326AC341AE7467900121308 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B326AC3A1AE7467A00121308 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3F59D021AE74885001AB26C /* tolstoy-war-and-peace.epub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,25 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B326AC381AE7467A00121308 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3F59CFF1AE74809001AB26C /* PageViewController.swift in Sources */,
-				B3F59CFC1AE74751001AB26C /* TestClass.m in Sources */,
-				B326AC431AE7467A00121308 /* ThePageTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B326AC3E1AE7467A00121308 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B326AC261AE7467900121308 /* ThePage */;
-			targetProxy = B326AC3D1AE7467A00121308 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B326AC301AE7467900121308 /* Main.storyboard */ = {
@@ -444,45 +380,6 @@
 			};
 			name = Release;
 		};
-		B326AC4A1AE7467A00121308 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ThePageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ThePage/ThePageTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThePage.app/ThePage";
-			};
-			name = Debug;
-		};
-		B326AC4B1AE7467A00121308 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ThePageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ThePage/ThePageTests-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThePage.app/ThePage";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,15 +397,6 @@
 			buildConfigurations = (
 				B326AC471AE7467A00121308 /* Debug */,
 				B326AC481AE7467A00121308 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B326AC491AE7467A00121308 /* Build configuration list for PBXNativeTarget "ThePageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B326AC4A1AE7467A00121308 /* Debug */,
-				B326AC4B1AE7467A00121308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
