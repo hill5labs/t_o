@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Page View Controller-->
@@ -20,6 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CeE-Cd-gIo" appends="YES" id="RqH-7I-lXK"/>
+                                    <outletCollection property="gestureRecognizers" destination="ry9-py-qLk" appends="YES" id="cO3-Dy-9Qg"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -31,10 +35,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="leftSwipeRecognizer" destination="ry9-py-qLk" id="EmJ-W9-dj4"/>
                         <outlet property="page" destination="dGF-85-ifB" id="osZ-PP-ZBb"/>
+                        <outlet property="rightSwipeRecognizer" destination="CeE-Cd-gIo" id="3L0-fP-RYS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="CeE-Cd-gIo"/>
+                <swipeGestureRecognizer direction="right" id="ry9-py-qLk"/>
             </objects>
         </scene>
     </scenes>

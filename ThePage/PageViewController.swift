@@ -14,85 +14,68 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     //MARK: Properties
     
     @IBOutlet weak var page: UIWebView!
-
+    @IBOutlet var rightSwipeRecognizer: UISwipeGestureRecognizer!
+    @IBOutlet var leftSwipeRecognizer: UISwipeGestureRecognizer!
     
     var epubController: KFEpubController?
     var contentModel: KFEpubContentModel?
 
     var spineIndex: Int = 0
 
-    
-    //MARK: Initialization
-
     //MARK: View Lifecycle
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        println("view did appear")
+
         let bundle = NSBundle.mainBundle() as NSBundle
-        let pathForEPUB = bundle.pathForResource("tolstoy-war-and-peace", ofType: "epub") as String?
+        let pathForEPUB = bundle.pathForResource("nicomachean", ofType: "epub") as String?
         let wapURL = NSURL(fileURLWithPath: pathForEPUB!)
+        
         let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let documentURL = paths[0] as! NSURL
+        
         epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
-        self.epubController!.delegate = self;
-        self.epubController!.openAsynchronous(true)
+        epubController!.delegate = self;
+        epubController!.openAsynchronous(true)
         
-        let rightGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("didSwipeRight:"))
-        rightGestureRecognizer.direction = .Right
+        let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipe:"))
+        rightSwipeRecognizer.direction = .Right
+        page.addGestureRecognizer(rightSwipeRecognizer)
         
-        page.addGestureRecognizer(rightGestureRecognizer)
-        
-        let leftGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("didSwipeLeft:"))
-        leftGestureRecognizer.direction = .Left
-        self.page.addGestureRecognizer(rightGestureRecognizer)
-        
-        
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        println("view will appear")
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        println("view did appear")
+        let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipe:"))
+        rightSwipeRecognizer.direction = .Left
+        page.addGestureRecognizer(leftSwipeRecognizer)
     }
     
     //MARK: Handle Swipes and GestureRecognizerDelegate
     
-    func didSwipeRight() {
+    func respondToSwipe(gestureRecognizer: UISwipeGestureRecognizer) {
         
-        if (self.spineIndex > 1) {
-            self.spineIndex--
-            self.updateContentForSpineIndex(self.spineIndex)
-        }
-    }
-    
-    func didSwipeLeft() {
-        
-        if (self.spineIndex < self.contentModel!.spine.count) {
-            self.spineIndex++;
-            self.updateContentForSpineIndex(self.spineIndex)
+        if gestureRecognizer.direction == .Right && spineIndex > 1 {
+
+            spineIndex--
+            updateContentForSpineIndex(spineIndex)
+        } else if gestureRecognizer.direction == .Left && spineIndex < contentModel?.spine.count {
+            
+            spineIndex++
+            updateContentForSpineIndex(spineIndex)
         }
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
+        return false
     }
     
     //MARK: EPUB contents
     
     func updateContentForSpineIndex(currentSpineIndex: Int) {
         
-        let contentFile = self.contentModel!.manifest[self.contentModel!.spine[currentSpineIndex] as! String]!["href"] as! String
-        var contentURL = self.epubController!.epubContentBaseURL.URLByAppendingPathComponent(contentFile) as NSURL
+        let contentFile = contentModel!.manifest[contentModel!.spine[currentSpineIndex] as! String]!["href"] as! String
+        var contentURL = epubController!.epubContentBaseURL.URLByAppendingPathComponent(contentFile) as NSURL
         println("content URL: \(contentURL)")
         var request = NSURLRequest(URL: contentURL)
-        self.page.loadRequest(request)
+        page.loadRequest(request)
     }
   
     //MARK: KFEpubControllerDelegate methods
@@ -106,8 +89,8 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let title = "title"
         println("Opened: \(contentModel!.metaData[title])")
         self.contentModel = contentModel
-        self.spineIndex = 4
-        self.updateContentForSpineIndex(self.spineIndex)
+        spineIndex = 1
+        updateContentForSpineIndex(spineIndex)
         println("will open!")
     }
     
