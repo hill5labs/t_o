@@ -35,6 +35,17 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let documentURL = paths[0] as! NSURL
         
+        page.scrollView.pagingEnabled = true
+        page.scrollView.bounces = false
+        page.paginationMode = .LeftToRight
+        page.paginationBreakingMode = .Page
+        page.gapBetweenPages = 0
+        page.scrollView.bouncesZoom = false
+        page.scrollView.maximumZoomScale = 1.0
+        page.scrollView.minimumZoomScale = 1.0
+        page.scalesPageToFit = false
+
+
         epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
         epubController!.delegate = self;
         epubController!.openAsynchronous(true)
@@ -89,7 +100,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let title = "title"
         println("Opened: \(contentModel!.metaData[title])")
         self.contentModel = contentModel
-        spineIndex = 1
+        spineIndex = 4
         updateContentForSpineIndex(spineIndex)
         println("will open!")
     }
@@ -98,9 +109,6 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         
         println("epubcontroller:didFailWithError: \(error.description)")
     }
-    
-    
-
     
 
 }
