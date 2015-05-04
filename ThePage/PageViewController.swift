@@ -14,6 +14,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     //MARK: Properties
     
     @IBOutlet weak var page: UIWebView!
+    @IBOutlet weak var pageContainer: UIView!
     @IBOutlet var rightSwipeRecognizer: UISwipeGestureRecognizer!
     @IBOutlet var leftSwipeRecognizer: UISwipeGestureRecognizer!
     
@@ -44,38 +45,47 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         page.scrollView.maximumZoomScale = 1.0
         page.scrollView.minimumZoomScale = 1.0
         page.scalesPageToFit = false
-
+        page.scrollView.bounces = false
 
         epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
         epubController!.delegate = self;
         epubController!.openAsynchronous(true)
+        self.page.scrollView.acce
         
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipe:"))
         rightSwipeRecognizer.direction = .Right
-        page.addGestureRecognizer(rightSwipeRecognizer)
-        
+        rightSwipeRecognizer.cancelsTouchesInView = false
+        rightSwipeRecognizer.delegate = self
+        //rightSwipeRecognizer.requireGestureRecognizerToFail(page.scrollView.panGestureRecognizer )
+        self.page.addGestureRecognizer(rightSwipeRecognizer)
+
         let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipe:"))
-        rightSwipeRecognizer.direction = .Left
-        page.addGestureRecognizer(leftSwipeRecognizer)
+        leftSwipeRecognizer.direction = .Left
+        leftSwipeRecognizer.cancelsTouchesInView = false
+        leftSwipeRecognizer.delegate = self
+        //leftSwipeRecognizer.requireGestureRecognizerToFail(page.scrollView.panGestureRecognizer)
+        self.page.addGestureRecognizer(leftSwipeRecognizer)
     }
     
     //MARK: Handle Swipes and GestureRecognizerDelegate
     
     func respondToSwipe(gestureRecognizer: UISwipeGestureRecognizer) {
+        var cPage = getCurrentPage() + 1
+        var count = page.pageCount
+        if gestureRecognizer.direction == .Right && spineIndex > 1 && cPage == 1 {
         
-        if gestureRecognizer.direction == .Right && spineIndex > 1 {
-
             spineIndex--
             updateContentForSpineIndex(spineIndex)
-        } else if gestureRecognizer.direction == .Left && spineIndex < contentModel?.spine.count {
-            
-            spineIndex++
-            updateContentForSpineIndex(spineIndex)
+        } else if gestureRecognizer.direction == .Left && spineIndex < contentModel?.spine.count  {
+            if (cPage == self.page.pageCount - 1) && veloc {
+                spineIndex++
+                updateContentForSpineIndex(spineIndex)
+            }
         }
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
+        return true
     }
     
     //MARK: EPUB contents
@@ -110,5 +120,8 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         println("epubcontroller:didFailWithError: \(error.description)")
     }
     
-
+    func getCurrentPage() -> Int {
+        let currentPage = Int(page.scrollView.contentOffset.x / page.scrollView.frame.size.width)
+        return currentPage
+    }
 }

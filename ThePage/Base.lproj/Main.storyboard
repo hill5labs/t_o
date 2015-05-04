@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" paginationMode="leftToRight" pageLength="25" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-85-ifB">
-                                <rect key="frame" x="-5" y="-8" width="600" height="600"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" paginationMode="leftToRight" pageLength="25" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-85-ifB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -37,6 +37,7 @@
                     <connections>
                         <outlet property="leftSwipeRecognizer" destination="ry9-py-qLk" id="EmJ-W9-dj4"/>
                         <outlet property="page" destination="dGF-85-ifB" id="osZ-PP-ZBb"/>
+                        <outlet property="pageContainer" destination="8bC-Xf-vdC" id="wir-Zn-9B7"/>
                         <outlet property="rightSwipeRecognizer" destination="CeE-Cd-gIo" id="3L0-fP-RYS"/>
                     </connections>
                 </viewController>

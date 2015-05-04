@@ -13,7 +13,6 @@
 		B326AC341AE7467900121308 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B326AC331AE7467900121308 /* Images.xcassets */; };
 		B326AC371AE7467900121308 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B326AC351AE7467900121308 /* LaunchScreen.xib */; };
 		B39000A61AECAE3700EAA65F /* nicomachean.epub in Resources */ = {isa = PBXBuildFile; fileRef = B39000A51AECAE3700EAA65F /* nicomachean.epub */; };
-		B3F59CFB1AE74751001AB26C /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFA1AE74751001AB26C /* TestClass.m */; };
 		B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFD1AE74809001AB26C /* PageViewController.swift */; };
 		B3F59D011AE74885001AB26C /* tolstoy-war-and-peace.epub in Resources */ = {isa = PBXBuildFile; fileRef = B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */; };
 /* End PBXBuildFile section */
@@ -33,8 +32,6 @@
 		B39000A51AECAE3700EAA65F /* nicomachean.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = nicomachean.epub; sourceTree = "<group>"; };
 		B3F59CF71AE74750001AB26C /* ThePage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePage-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3F59CF81AE74750001AB26C /* ThePageTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePageTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		B3F59CF91AE74751001AB26C /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
-		B3F59CFA1AE74751001AB26C /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
 		B3F59CFD1AE74809001AB26C /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tolstoy-war-and-peace.epub"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,8 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				B326AC2C1AE7467900121308 /* AppDelegate.swift */,
-				B3F59CF91AE74751001AB26C /* TestClass.h */,
-				B3F59CFA1AE74751001AB26C /* TestClass.m */,
 				B326AC301AE7467900121308 /* Main.storyboard */,
 				B326AC331AE7467900121308 /* Images.xcassets */,
 				B326AC351AE7467900121308 /* LaunchScreen.xib */,
@@ -247,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */,
-				B3F59CFB1AE74751001AB26C /* TestClass.m in Sources */,
 				B326AC2D1AE7467900121308 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
