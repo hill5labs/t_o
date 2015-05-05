@@ -58,7 +58,7 @@ class DefinitionViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
+        return 150
     }
 
 }

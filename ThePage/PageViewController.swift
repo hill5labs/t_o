@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureRecognizerDelegate {
+class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureRecognizerDelegate, UIWebViewDelegate {
     
     
     //MARK: Properties
@@ -22,6 +22,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     var contentModel: KFEpubContentModel?
 
     var spineIndex: Int = 0
+    var toLastPage = false
 
     //MARK: View Lifecycle
     
@@ -36,6 +37,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let documentURL = paths[0] as! NSURL
         
+        page.delegate = self
         page.scrollView.pagingEnabled = true
         page.scrollView.bounces = false
         page.paginationMode = .LeftToRight
@@ -83,7 +85,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
                 spineIndex--
                 updateContentForSpineIndex(spineIndex)
                 //We also need to go to the last page of the previous spine, so:
-                //page.scrollView.setContentOffset(CGPointMake(page.scrollView.frame.size.width*CGFloat(count), 0.0), animated: true)
+                toLastPage = true
                 page.scrollView.panGestureRecognizer.enabled = true
             }
         } else if gestureRecognizer.direction == .Left && spineIndex < contentModel?.spine.count  {
@@ -105,6 +107,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     func updateContentForSpineIndex(currentSpineIndex: Int) {
         
         let contentFile = contentModel!.manifest[contentModel!.spine[currentSpineIndex] as! String]!["href"] as! String
+       //	 spineIndex = contentModel!.spine[currentSpineIndex] as! Int
         var contentURL = epubController!.epubContentBaseURL.URLByAppendingPathComponent(contentFile) as NSURL
         println("content URL: \(contentURL)")
         var request = NSURLRequest(URL: contentURL)
@@ -136,6 +139,27 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let width: CGFloat = page.scrollView.frame.size.width
         let currentPage: NSInteger = NSInteger((page.scrollView.contentOffset.x + (0.5 * width)) / width)
         return currentPage
+    }
+    
+    //MARK: Navigation functions
+    
+    func scrollToPage(targetPage: Int, animated: Bool) {
+        var frame: CGRect = page.scrollView.frame
+        frame.origin.x = frame.size.width * CGFloat(targetPage)
+        frame.origin.y = 0
+        page.scrollView.scrollRectToVisible(frame, animated:animated)
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        println("Started Loading")
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        println("Loading complete")
+        if toLastPage {
+            scrollToPage(page.pageCount-1, animated: false)
+            toLastPage = false
+        }
     }
 
 }

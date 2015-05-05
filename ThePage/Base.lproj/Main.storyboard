@@ -94,12 +94,12 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLE-yi-WbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="CKH-oV-p8c" customClass="DefinitionViewController" customModule="ThePage" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vAk-Fs-VNK">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="148" sectionHeaderHeight="22" sectionFooterHeight="22" id="vAk-Fs-VNK">
                         <rect key="frame" x="0.0" y="0.0" width="175" height="520"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="definitionCell" rowHeight="116" id="JSO-Jx-V6I" customClass="DefintionCell" customModule="ThePage">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="definitionCell" rowHeight="148" id="JSO-Jx-V6I" customClass="DefintionCell" customModule="ThePage">
                                 <rect key="frame" x="0.0" y="0.0" width="185" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JSO-Jx-V6I" id="hKG-iE-69h">
@@ -111,34 +111,28 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-qq-jgf">
-                                            <rect key="frame" x="8" y="37" width="159" height="71"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufd-Xw-QYU">
+                                            <rect key="frame" x="63" y="109" width="51" height="31"/>
+                                        </switch>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-qq-jgf">
+                                            <rect key="frame" x="8" y="37" width="159" height="64"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufd-Xw-QYU">
-                                            <rect key="frame" x="118" y="3" width="51" height="31"/>
-                                        </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="bottom" secondItem="hKG-iE-69h" secondAttribute="bottomMargin" id="21R-3C-Kvu"/>
-                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="leading" secondItem="hKG-iE-69h" secondAttribute="leadingMargin" id="SPv-oo-Y24"/>
-                                        <constraint firstItem="ufd-Xw-QYU" firstAttribute="top" secondItem="hKG-iE-69h" secondAttribute="topMargin" constant="-5" id="Y6b-8v-Ftj"/>
-                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="top" secondItem="UHC-hH-Q8s" secondAttribute="bottom" constant="8" symbolic="YES" id="cA4-oN-dSk"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ufd-Xw-QYU" secondAttribute="trailing" id="cnh-x0-nyG"/>
-                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="leading" secondItem="hKG-iE-69h" secondAttribute="leadingMargin" id="dka-7J-XYS"/>
-                                        <constraint firstItem="ufd-Xw-QYU" firstAttribute="trailing" secondItem="UHC-hH-Q8s" secondAttribute="trailing" id="f4U-rv-VgQ"/>
-                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="centerY" secondItem="ufd-Xw-QYU" secondAttribute="centerY" id="gaA-aC-sHE"/>
-                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="top" secondItem="hKG-iE-69h" secondAttribute="topMargin" id="lzR-PK-MPJ"/>
-                                        <constraint firstItem="ufd-Xw-QYU" firstAttribute="trailing" secondItem="QUs-qq-jgf" secondAttribute="trailing" id="z87-d7-pru"/>
+                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="top" secondItem="UHC-hH-Q8s" secondAttribute="bottom" constant="8" symbolic="YES" id="7Ho-og-G4g"/>
+                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="leading" secondItem="hKG-iE-69h" secondAttribute="leadingMargin" id="Hgg-Ha-qZC"/>
+                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="leading" secondItem="hKG-iE-69h" secondAttribute="leadingMargin" id="eZX-Oj-zNy"/>
+                                        <constraint firstAttribute="centerX" secondItem="ufd-Xw-QYU" secondAttribute="centerX" id="gq3-MC-kBz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ufd-Xw-QYU" secondAttribute="bottom" id="h40-aC-Zu3"/>
+                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="trailing" secondItem="hKG-iE-69h" secondAttribute="trailingMargin" id="hmF-WG-9Dz"/>
+                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="top" secondItem="hKG-iE-69h" secondAttribute="topMargin" id="jZm-w9-Bm2"/>
+                                        <constraint firstItem="ufd-Xw-QYU" firstAttribute="top" secondItem="QUs-qq-jgf" secondAttribute="bottom" constant="8" symbolic="YES" id="sgq-qf-46c"/>
+                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="trailing" secondItem="hKG-iE-69h" secondAttribute="trailingMargin" id="yd7-Yz-ndP"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="gaA-aC-sHE"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="definition" destination="QUs-qq-jgf" id="u3n-Bl-Quq"/>
@@ -151,7 +145,7 @@
                     <toolbarItems/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2762" y="132"/>
+            <point key="canvasLocation" x="2761.5" y="132"/>
         </scene>
     </scenes>
 </document>
