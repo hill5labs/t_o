@@ -105,9 +105,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     //MARK: EPUB contents
     
     func updateContentForSpineIndex(currentSpineIndex: Int) {
-        
         let contentFile = contentModel!.manifest[contentModel!.spine[currentSpineIndex] as! String]!["href"] as! String
-       //	 spineIndex = contentModel!.spine[currentSpineIndex] as! Int
         var contentURL = epubController!.epubContentBaseURL.URLByAppendingPathComponent(contentFile) as NSURL
         println("content URL: \(contentURL)")
         var request = NSURLRequest(URL: contentURL)
@@ -141,7 +139,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         return currentPage
     }
     
-    //MARK: Navigation functions
+    //MARK: Utility and navigation functions
     
     func scrollToPage(targetPage: Int, animated: Bool) {
         var frame: CGRect = page.scrollView.frame
@@ -155,11 +153,16 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        var latestPage = self.page.request!.URL!.absoluteString?.lastPathComponent
+        var currentSection = latestPage!.stringByDeletingPathExtension
+        var swiftArray = contentModel!.spine as! [String]
+        spineIndex = find(swiftArray, currentSection)!
         println("Loading complete")
         if toLastPage {
             scrollToPage(page.pageCount-1, animated: false)
             toLastPage = false
         }
     }
+    
 
 }
