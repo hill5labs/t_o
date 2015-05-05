@@ -50,7 +50,6 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
         epubController!.delegate = self;
         epubController!.openAsynchronous(true)
-        self.page.scrollView.acce
         
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipe:"))
         rightSwipeRecognizer.direction = .Right
@@ -70,16 +69,29 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     //MARK: Handle Swipes and GestureRecognizerDelegate
     
     func respondToSwipe(gestureRecognizer: UISwipeGestureRecognizer) {
+        //When flicking forward to a page, the current page equals the leaving page
+        //When flicking backward to a page, the current page equals the upcoming page
+        //So we just add 1 to current page when flicking to the next page
         var cPage = getCurrentPage() + 1
         var count = page.pageCount
-        if gestureRecognizer.direction == .Right && spineIndex > 1 && cPage == 1 {
+        println("Current Page = \(cPage)")
+        println("Total Pages = \(count)")
         
-            spineIndex--
-            updateContentForSpineIndex(spineIndex)
+        if gestureRecognizer.direction == .Right && spineIndex > 1 {
+            if cPage == 1 {
+                page.scrollView.panGestureRecognizer.enabled = false
+                spineIndex--
+                updateContentForSpineIndex(spineIndex)
+                //We also need to go to the last page of the previous spine, so:
+                //page.scrollView.setContentOffset(CGPointMake(page.scrollView.frame.size.width*CGFloat(count), 0.0), animated: true)
+                page.scrollView.panGestureRecognizer.enabled = true
+            }
         } else if gestureRecognizer.direction == .Left && spineIndex < contentModel?.spine.count  {
-            if (cPage == self.page.pageCount - 1) && veloc {
+            if (cPage == self.page.pageCount) {
+                page.scrollView.panGestureRecognizer.enabled = false
                 spineIndex++
                 updateContentForSpineIndex(spineIndex)
+                page.scrollView.panGestureRecognizer.enabled = true
             }
         }
     }
@@ -121,7 +133,9 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     }
     
     func getCurrentPage() -> Int {
-        let currentPage = Int(page.scrollView.contentOffset.x / page.scrollView.frame.size.width)
+        let width: CGFloat = page.scrollView.frame.size.width
+        let currentPage: NSInteger = NSInteger((page.scrollView.contentOffset.x + (0.5 * width)) / width)
         return currentPage
     }
+
 }
