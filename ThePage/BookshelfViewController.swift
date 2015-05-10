@@ -118,8 +118,12 @@ extension BookshelfViewController : UICollectionViewDataSource {
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("segueToPage", sender: self)
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if(BFToggle.title == "Books") {
+            performSegueWithIdentifier("ToFlashCards", sender: self)
+        } else {
+            performSegueWithIdentifier("ToPages", sender: self)
+        }
 
     }
 }

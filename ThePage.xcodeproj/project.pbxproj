@@ -15,6 +15,8 @@
 		B340082E1AF85A690095BA63 /* DefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340082D1AF85A690095BA63 /* DefinitionViewController.swift */; };
 		B34008301AF85E400095BA63 /* DefintionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B340082F1AF85E400095BA63 /* DefintionCell.swift */; };
 		B39000A61AECAE3700EAA65F /* nicomachean.epub in Resources */ = {isa = PBXBuildFile; fileRef = B39000A51AECAE3700EAA65F /* nicomachean.epub */; };
+		B39F3C951B0015A200F4AC25 /* FlashcardListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F3C931B0015A200F4AC25 /* FlashcardListTableViewController.swift */; };
+		B39F3C961B0015A200F4AC25 /* SingleCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F3C941B0015A200F4AC25 /* SingleCardViewController.swift */; };
 		B3A9B8651B00069300E954B2 /* BookshelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9B8641B00069300E954B2 /* BookshelfViewController.swift */; };
 		B3A9B8671B0006A500E954B2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9B8661B0006A500E954B2 /* BookCell.swift */; };
 		B3A9B8691B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3A9B8681B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg */; };
@@ -37,6 +39,8 @@
 		B340082D1AF85A690095BA63 /* DefinitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefinitionViewController.swift; path = ../DefinitionViewController.swift; sourceTree = "<group>"; };
 		B340082F1AF85E400095BA63 /* DefintionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefintionCell.swift; path = ../DefintionCell.swift; sourceTree = "<group>"; };
 		B39000A51AECAE3700EAA65F /* nicomachean.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = nicomachean.epub; sourceTree = "<group>"; };
+		B39F3C931B0015A200F4AC25 /* FlashcardListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcardListTableViewController.swift; sourceTree = "<group>"; };
+		B39F3C941B0015A200F4AC25 /* SingleCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleCardViewController.swift; sourceTree = "<group>"; };
 		B3A9B8641B00069300E954B2 /* BookshelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookshelfViewController.swift; sourceTree = "<group>"; };
 		B3A9B8661B0006A500E954B2 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		B3A9B8681B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "@public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg"; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				B3A9B8641B00069300E954B2 /* BookshelfViewController.swift */,
 				B3A9B8661B0006A500E954B2 /* BookCell.swift */,
 				B340082D1AF85A690095BA63 /* DefinitionViewController.swift */,
+				B39F3C931B0015A200F4AC25 /* FlashcardListTableViewController.swift */,
+				B39F3C941B0015A200F4AC25 /* SingleCardViewController.swift */,
 				B340082F1AF85E400095BA63 /* DefintionCell.swift */,
 				B326AC301AE7467900121308 /* Main.storyboard */,
 				B3F59CFD1AE74809001AB26C /* PageViewController.swift */,
@@ -257,9 +263,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B39F3C951B0015A200F4AC25 /* FlashcardListTableViewController.swift in Sources */,
 				B3A9B8671B0006A500E954B2 /* BookCell.swift in Sources */,
 				B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */,
 				B3A9B8651B00069300E954B2 /* BookshelfViewController.swift in Sources */,
+				B39F3C961B0015A200F4AC25 /* SingleCardViewController.swift in Sources */,
 				B340082E1AF85A690095BA63 /* DefinitionViewController.swift in Sources */,
 				B34008301AF85E400095BA63 /* DefintionCell.swift in Sources */,
 				B326AC2D1AE7467900121308 /* AppDelegate.swift in Sources */,
