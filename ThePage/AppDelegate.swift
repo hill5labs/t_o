@@ -13,9 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let resourcePath = NSBundle.mainBundle().resourcePath
+        
+        var error = NSErrorPointer()
+        var directoryContents = NSFileManager.defaultManager().contentsOfDirectoryAtPath(resourcePath!, error: error)
+        
+        if let resourceStrings = directoryContents as? [String] {
+            
+            for resource in resourceStrings {
+                if resource.rangeOfString("epub") != nil {
+                    println(resource)
+                    allBooks.append(Book(recName: resource))
+                }
+            }
+        }
+        
         return true
     }
 

@@ -28,8 +28,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
 
     var debug: NSURL?
     //MARK: View Lifecycle
-    
-    
+        
     private let js01 = "var p = document.getElementsByTagName('p');"
     private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\b(\\w+?)\\b/g, function(word){return \"<span onclick='window.location.href=\\\"alert://\" + word + \"\\\"'>\" + word + \"</span>\";});}"
     private let js03 = "document.body.innerHTML"
@@ -38,7 +37,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         super.viewDidLoad()
 
         let bundle = NSBundle.mainBundle() as NSBundle
-        let pathForEPUB = bundle.pathForResource("wp", ofType: "epub") as String?
+        let pathForEPUB = bundle.pathForResource("nicomachean", ofType: "epub") as String?
         let wapURL = NSURL(fileURLWithPath: pathForEPUB!)
         
         let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
@@ -57,7 +56,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         page.scrollView.bounces = false
 
         epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
-        epubController!.delegate = self;
+        epubController!.delegate = self
         epubController!.openAsynchronous(true)
         
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipe:"))
@@ -131,7 +130,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let title = "title"
         println("Opened: \(contentModel!.metaData[title])")
         self.contentModel = contentModel
-        spineIndex = 4
+        spineIndex = 1
         updateContentForSpineIndex(spineIndex)
         println("will open!")
     }

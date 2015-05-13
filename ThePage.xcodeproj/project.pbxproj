@@ -12,6 +12,7 @@
 		B31C03C71B02D2F3000DD02A /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C03C61B02D2F3000DD02A /* Word.swift */; };
 		B31C03C91B02D9DD000DD02A /* WordCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C03C81B02D9DD000DD02A /* WordCategory.swift */; };
 		B31C03CB1B02DD7D000DD02A /* CompleteWordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C03CA1B02DD7D000DD02A /* CompleteWordList.swift */; };
+		B31C03CE1B031B09000DD02A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C03CD1B031B09000DD02A /* Book.swift */; };
 		B326AC2D1AE7467900121308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B326AC2C1AE7467900121308 /* AppDelegate.swift */; };
 		B326AC321AE7467900121308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B326AC301AE7467900121308 /* Main.storyboard */; };
 		B326AC341AE7467900121308 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B326AC331AE7467900121308 /* Images.xcassets */; };
@@ -24,6 +25,7 @@
 		B3A9B8651B00069300E954B2 /* BookshelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9B8641B00069300E954B2 /* BookshelfViewController.swift */; };
 		B3A9B8671B0006A500E954B2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9B8661B0006A500E954B2 /* BookCell.swift */; };
 		B3A9B8691B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3A9B8681B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg */; };
+		B3D68D391B03BED100D5E820 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D68D381B03BED100D5E820 /* BookList.swift */; };
 		B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFD1AE74809001AB26C /* PageViewController.swift */; };
 		B3F59D011AE74885001AB26C /* wp.epub in Resources */ = {isa = PBXBuildFile; fileRef = B3F59D001AE74885001AB26C /* wp.epub */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,7 @@
 		B31C03C61B02D2F3000DD02A /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		B31C03C81B02D9DD000DD02A /* WordCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCategory.swift; sourceTree = "<group>"; };
 		B31C03CA1B02DD7D000DD02A /* CompleteWordList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteWordList.swift; sourceTree = "<group>"; };
+		B31C03CD1B031B09000DD02A /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B326AC271AE7467900121308 /* ThePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThePage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B326AC2B1AE7467900121308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B326AC2C1AE7467900121308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		B3A9B8641B00069300E954B2 /* BookshelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookshelfViewController.swift; sourceTree = "<group>"; };
 		B3A9B8661B0006A500E954B2 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		B3A9B8681B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "@public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg"; sourceTree = "<group>"; };
+		B3D68D381B03BED100D5E820 /* BookList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 		B3F59CF71AE74750001AB26C /* ThePage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePage-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3F59CF81AE74750001AB26C /* ThePageTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePageTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3F59CFD1AE74809001AB26C /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -121,14 +125,10 @@
 		B326AC291AE7467900121308 /* ThePage */ = {
 			isa = PBXGroup;
 			children = (
+				B326AC2C1AE7467900121308 /* AppDelegate.swift */,
+				B3D68D361B03BE4C00D5E820 /* Models */,
 				B31C03CC1B02DDC7000DD02A /* Controllers */,
-				B31C03C41B02D241000DD02A /* LexicalData.swift */,
-				B3A9B8661B0006A500E954B2 /* BookCell.swift */,
-				B31C03CA1B02DD7D000DD02A /* CompleteWordList.swift */,
-				B31C03C81B02D9DD000DD02A /* WordCategory.swift */,
-				B31C03C61B02D2F3000DD02A /* Word.swift */,
-				B340082F1AF85E400095BA63 /* DefintionCell.swift */,
-				B326AC301AE7467900121308 /* Main.storyboard */,
+				B3D68D371B03BE8900D5E820 /* Views */,
 				B326AC2A1AE7467900121308 /* Supporting Files */,
 			);
 			path = ThePage;
@@ -138,13 +138,12 @@
 			isa = PBXGroup;
 			children = (
 				B3A9B8681B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg */,
-				B326AC2C1AE7467900121308 /* AppDelegate.swift */,
 				B326AC331AE7467900121308 /* Images.xcassets */,
 				B3F59CF71AE74750001AB26C /* ThePage-Bridging-Header.h */,
 				B3F59CF81AE74750001AB26C /* ThePageTests-Bridging-Header.h */,
 				B326AC351AE7467900121308 /* LaunchScreen.xib */,
-				B3E94E3A1AEC73C400E87743 /* Resources */,
 				B326AC2B1AE7467900121308 /* Info.plist */,
+				B3E94E3A1AEC73C400E87743 /* Resources */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -164,6 +163,29 @@
 				B326AC411AE7467A00121308 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3D68D361B03BE4C00D5E820 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B31C03C41B02D241000DD02A /* LexicalData.swift */,
+				B31C03C61B02D2F3000DD02A /* Word.swift */,
+				B31C03CA1B02DD7D000DD02A /* CompleteWordList.swift */,
+				B31C03C81B02D9DD000DD02A /* WordCategory.swift */,
+				B31C03CD1B031B09000DD02A /* Book.swift */,
+				B3D68D381B03BED100D5E820 /* BookList.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B3D68D371B03BE8900D5E820 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3A9B8661B0006A500E954B2 /* BookCell.swift */,
+				B340082F1AF85E400095BA63 /* DefintionCell.swift */,
+				B326AC301AE7467900121308 /* Main.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B3E94E3A1AEC73C400E87743 /* Resources */ = {
@@ -287,6 +309,7 @@
 				B39F3C951B0015A200F4AC25 /* FlashcardListTableViewController.swift in Sources */,
 				B31C03CB1B02DD7D000DD02A /* CompleteWordList.swift in Sources */,
 				B3A9B8671B0006A500E954B2 /* BookCell.swift in Sources */,
+				B3D68D391B03BED100D5E820 /* BookList.swift in Sources */,
 				B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */,
 				B3A9B8651B00069300E954B2 /* BookshelfViewController.swift in Sources */,
 				B31C03C51B02D241000DD02A /* LexicalData.swift in Sources */,
@@ -294,6 +317,7 @@
 				B340082E1AF85A690095BA63 /* DefinitionViewController.swift in Sources */,
 				B31C03C71B02D2F3000DD02A /* Word.swift in Sources */,
 				B34008301AF85E400095BA63 /* DefintionCell.swift in Sources */,
+				B31C03CE1B031B09000DD02A /* Book.swift in Sources */,
 				B326AC2D1AE7467900121308 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

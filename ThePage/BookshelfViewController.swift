@@ -13,9 +13,10 @@ import UIKit
 struct Bookshelf {
     let bookshelfName : String
     let books: [Book]
+    let flashcards: [
 }
 
-class Book : Equatable {
+class BookFlash : Equatable {
     var title: String
     var bookCover: UIImage
     
@@ -26,13 +27,13 @@ class Book : Equatable {
     
 }
 
-func == (lhs: Book, rhs: Book) -> Bool {
+func == (lhs: BookFlash, rhs: BookFlash) -> Bool {
     return lhs.title == rhs.title
 }
 
 
-let BookList = Array(map(1..<2) {"B\($0)"})
-let FlashcardList = Array(map(1..<100) {"F\($0)"})
+
+let FlashcardList = Array(map(1..<2) {"F\($0)"})
 let image: UIImage = UIImage(named:"@public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg")!
 let atitle: String = "Across the Reef"
 
@@ -47,18 +48,18 @@ class BookshelfViewController: UICollectionViewController {
     
     private var searches = [Bookshelf]()
     
-    static func convertToShelf(itemNameList: [String], titleName: String) -> Bookshelf {
-        let newBooks : [Book] = itemNameList.map {
+    static func convertToShelf(itemNameList: [Book], titleName: String) -> Bookshelf {
+        let newBooks : [BookFlash] = itemNameList.map {
             item in
             
             
-            let book = Book(title: atitle, image: image)
+            let book = BookFlash(title: atitle, image: image)
             return book
         }
             return Bookshelf(bookshelfName: titleName, books: newBooks)
     }
     
-    private let myBooks = BookshelfViewController.convertToShelf(BookList, titleName: "myBooks")
+    private let myBooks = BookshelfViewController.convertToShelf(allBooks, titleName: "myBooks")
     
     private let myFlashcards = BookshelfViewController.convertToShelf(FlashcardList, titleName: "myFlashcards")
     
@@ -68,13 +69,13 @@ class BookshelfViewController: UICollectionViewController {
         self.collectionView?.reloadData()
     }
     
-    func bookForIndexPath(indexPath: NSIndexPath) -> Book {
+    func bookForIndexPath(indexPath: NSIndexPath) -> BookFlash {
         return searches[indexPath.section].books[indexPath.row]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(BookList)
+        println(allBooks.list)
         drawCellObjects(self.myBooks)
     }
     
@@ -104,12 +105,31 @@ extension BookshelfViewController : UICollectionViewDataSource {
         return searches[section].books.count
     }
     
-    override func  collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+     override func  collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BookCell
         let book = bookForIndexPath(indexPath)
         cell.backgroundColor = UIColor.whiteColor()
         cell.bookCover.image = book.bookCover
         cell.bookTitle.text = book.title
+        let bookCategory = WordCategory(categoryTitle: book.title)
+        if BFToggle.title! == "Books" {
+            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
+            visualEffectView.frame = cell.bookCover.bounds
+            visualEffectView.tag = 1
+           
+            var numOfFlashcards = UILabel(frame: cell.bookCover.frame)
+            numOfFlashcards.textAlignment = NSTextAlignment.Center
+            numOfFlashcards.text = String(bookCategory.wordCount)
+    
+            visualEffectView.addSubview(numOfFlashcards)
+            cell.bookCover.addSubview(visualEffectView)
+            
+        } else {
+            if let viewWithTag = cell.bookCover.viewWithTag(1) {
+                viewWithTag.removeFromSuperview()
+            }
+
+        }
         return cell
     }
     
