@@ -18,7 +18,7 @@ class Word: NSObject {
         categoryArray = categories
     }
     
-    func removeFromCategory(targetCategory: String!){
+    func removeFromCategory(targetCategory: String){
         if let index = find(categoryArray, targetCategory){
             categoryArray.removeAtIndex(index)
             //TODO: write to file to permanently remove

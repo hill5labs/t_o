@@ -31,7 +31,7 @@ func == (lhs: Book, rhs: Book) -> Bool {
 }
 
 
-let BookList = Array(map(1..<50) {"B\($0)"})
+let BookList = Array(map(1..<2) {"B\($0)"})
 let FlashcardList = Array(map(1..<100) {"F\($0)"})
 let image: UIImage = UIImage(named:"@public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg")!
 let atitle: String = "Across the Reef"
@@ -62,8 +62,6 @@ class BookshelfViewController: UICollectionViewController {
     
     private let myFlashcards = BookshelfViewController.convertToShelf(FlashcardList, titleName: "myFlashcards")
     
-    
-    
     func drawCellObjects(currentShelf: Bookshelf) {
         self.searches.removeAll(keepCapacity: true)
         self.searches.insert(currentShelf, atIndex: 0)
@@ -92,10 +90,7 @@ class BookshelfViewController: UICollectionViewController {
         
         drawCellObjects(nextShelf)
         
-        
     }
-
-
 }
 
 
@@ -139,37 +134,3 @@ extension BookshelfViewController : UICollectionViewDelegateFlowLayout {
         return sectionInsets
     }
 }
-
-//MARK: segue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

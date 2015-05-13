@@ -38,7 +38,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         super.viewDidLoad()
 
         let bundle = NSBundle.mainBundle() as NSBundle
-        let pathForEPUB = bundle.pathForResource("nicomachean", ofType: "epub") as String?
+        let pathForEPUB = bundle.pathForResource("wp", ofType: "epub") as String?
         let wapURL = NSURL(fileURLWithPath: pathForEPUB!)
         
         let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)

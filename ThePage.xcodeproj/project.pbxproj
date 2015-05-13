@@ -25,7 +25,7 @@
 		B3A9B8671B0006A500E954B2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9B8661B0006A500E954B2 /* BookCell.swift */; };
 		B3A9B8691B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3A9B8681B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg */; };
 		B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFD1AE74809001AB26C /* PageViewController.swift */; };
-		B3F59D011AE74885001AB26C /* tolstoy-war-and-peace.epub in Resources */ = {isa = PBXBuildFile; fileRef = B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */; };
+		B3F59D011AE74885001AB26C /* wp.epub in Resources */ = {isa = PBXBuildFile; fileRef = B3F59D001AE74885001AB26C /* wp.epub */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,7 @@
 		B3F59CF71AE74750001AB26C /* ThePage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePage-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3F59CF81AE74750001AB26C /* ThePageTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePageTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3F59CFD1AE74809001AB26C /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tolstoy-war-and-peace.epub"; sourceTree = "<group>"; };
+		B3F59D001AE74885001AB26C /* wp.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = wp.epub; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				B39000A51AECAE3700EAA65F /* nicomachean.epub */,
-				B3F59D001AE74885001AB26C /* tolstoy-war-and-peace.epub */,
+				B3F59D001AE74885001AB26C /* wp.epub */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39000A61AECAE3700EAA65F /* nicomachean.epub in Resources */,
-				B3F59D011AE74885001AB26C /* tolstoy-war-and-peace.epub in Resources */,
+				B3F59D011AE74885001AB26C /* wp.epub in Resources */,
 				B326AC321AE7467900121308 /* Main.storyboard in Resources */,
 				B326AC371AE7467900121308 /* LaunchScreen.xib in Resources */,
 				B3A9B8691B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg in Resources */,

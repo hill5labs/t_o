@@ -102,7 +102,7 @@ class FlashcardListTableViewController: UITableViewController {
     @IBAction func deleteSelectedRows(sender: UIBarButtonItem) {
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows(){
             for path in selectedIndexPaths {
-                currentCategory.wordArray[path.row].removeFromCategory(currentCategory.title)
+                currentCategory.wordArray[path.row].removeFromCategory(currentCategory.title!)
             }
             currentCategory.getWords()
             showTableView()
