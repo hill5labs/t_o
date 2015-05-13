@@ -10,6 +10,15 @@ import UIKit
 
 class DefinitionViewController: UITableViewController {
     
+    var currentCategory = WordCategory(categoryTitle: "Nicomachean Ethics")
+    
+    override func viewWillAppear(animated: Bool) {
+        currentCategory.getWords()
+    }
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return 1
@@ -17,43 +26,16 @@ class DefinitionViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 7
+        return currentCategory.wordCount
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("definitionCell", forIndexPath: indexPath) as! DefintionCell
-        switch indexPath.row {
-        case 0:
-            cell.word.text = "ha·bit·u·ate"
-            cell.definition.text = "verb\nmake or become accustomed or used to something."
-            cell.isFlashcardSwitch.on = true
-        case 1:
-            cell.word.text = "i·ras·ci·ble"
-            cell.definition.text = "adjective\nhaving or showing a tendency to be easily angered."
-            cell.isFlashcardSwitch.on = false
-        case 2:
-            cell.word.text = "vir·tue"
-            cell.definition.text = "noun\nbehavior showing high moral standards."
-            cell.isFlashcardSwitch.on = true
-        case 3:
-            cell.word.text = "fix·i·ty"
-            cell.definition.text = "noun\nthe state of being unchanging or permanent."
-            cell.isFlashcardSwitch.on = false
-        case 4:
-            cell.word.text = "im·per·cep·ti·ble"
-            cell.definition.text = "adjective\nimpossible to perceive."
-            cell.isFlashcardSwitch.on = true
-        case 5:
-            cell.word.text = "health"
-            cell.definition.text = "noun\nthe state of being free from illness or injury."
-            cell.isFlashcardSwitch.on = false
-        case 6:
-            cell.word.text = "art"
-            cell.definition.text = "noun\nthe various branches of creative activity, such as painting, music, literature, and dance."
-            cell.isFlashcardSwitch.on = true
-        default:
-            break
-        }
+        let curWord = currentCategory.wordArray[currentCategory.wordCount - indexPath.row - 1] //Display newer words (near end of array) at top of table
+        cell.word.text = curWord.word
+        cell.definition.text = curWord.information.definition
+        cell.isFlashcardSwitch.on = true
+
         return cell
     }
     

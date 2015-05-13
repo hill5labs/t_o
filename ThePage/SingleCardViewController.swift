@@ -12,8 +12,8 @@ class SingleCardViewController: UIViewController {
     
     //MARK - Variable declarations
     
-    var currentFlashcard: flashcard?    //The current flashcard displayed on the view
-    var currentCategory: flashcardCategory? //The current category of which the current flashcard is a part
+    var currentFlashcard: Word?    //The current flashcard displayed on the view
+    var currentCategory: WordCategory? //The current category of which the current flashcard is a part
     var currentFlashcardNumber: Int = 0     //The index number of the current flashcard in the current category's flashcard array
     @IBOutlet weak var deleteUIBarButtonItem: UIBarButtonItem!
     
@@ -61,14 +61,14 @@ class SingleCardViewController: UIViewController {
     }
     
     func showCard() {
-        if currentFlashcardNumber >= currentCategory!.flashcardCount {  //Exception when furthest card is deleted
-            currentFlashcardNumber = currentCategory!.flashcardCount-1
+        if currentFlashcardNumber >= currentCategory!.wordCount {  //Exception when furthest card is deleted
+            currentFlashcardNumber = currentCategory!.wordCount-1
         }
         println("Current flashcard number: \(currentFlashcardNumber)")
-        println("Current array size: \(currentCategory!.flashcardsArray.count)")
+        println("Current array size: \(currentCategory!.wordArray.count)")
         
-        if currentCategory!.flashcardCount != 0 {
-            self.currentFlashcard = currentCategory!.flashcardsArray[currentFlashcardNumber]
+        if currentCategory!.wordCount != 0 {
+            self.currentFlashcard = currentCategory!.wordArray[currentFlashcardNumber]
         } else {        //Exception occurs when final card is deleted
             currentFlashcard = nil
         }
@@ -76,7 +76,7 @@ class SingleCardViewController: UIViewController {
         if currentFlashcard != nil {
             flashcardWordLabel.text=currentFlashcard!.word
             flashcardWordLabel.sizeToFit()
-            flashcardDefinitionLabel.text=currentFlashcard!.definition
+            flashcardDefinitionLabel.text=currentFlashcard!.information.definition
             flashcardDefinitionLabel.sizeToFit()
         } else {                                    //Can occur with flashcard deletion
             flashcardWordLabel.text = "No flashcards in this category"
@@ -162,7 +162,7 @@ class SingleCardViewController: UIViewController {
                             }
                         }
                         if flashcardX < 0 {                 //Offscreen to the left, to next card
-                            if self.currentFlashcardNumber < self.currentCategory!.flashcardCount - 1 {
+                            if self.currentFlashcardNumber < self.currentCategory!.wordCount - 1 {
                                 self.currentFlashcardNumber += 1
                                 self.showCard()
                                 self.flashcardView.frame.origin.x = -flashcardX
@@ -198,7 +198,7 @@ class SingleCardViewController: UIViewController {
     @IBAction func deleteCurrentCard(sender: UIBarButtonItem) {
         if (currentFlashcard != nil){
             currentFlashcard!.removeFromCategory(currentCategory!.title)
-            currentCategory!.getCards()
+            currentCategory!.getWords()
             showCard()
         }
     }

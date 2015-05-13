@@ -10,82 +10,13 @@ import UIKit
 
 //MARK: Bogus classes
 
-class flashcardCategory
-{
-    var title: String
-    var flashcardCount: Int = 0
-    var flashcardsArray = [flashcard]()
-    
-    var flashcardList = cardList()
-    
-    init(categoryTitle: String){
-        title=categoryTitle
-        getCards()
-    }
-    
-    func getCards(){
-        flashcardsArray.removeAll(keepCapacity: false)
-        for card in flashcardList.allFlashcards {
-            if let index = find(card.categoryArray, title) {
-                flashcardsArray.append(card)
-            }
-        }
-        flashcardCount=flashcardsArray.count
-    }
-}
 
-class flashcard {
-    var word: String
-    var definition: String
-    var categoryArray = [String]()
-    
-    init(cardWord: String, cardDefinition: String, cardCategories: [String]){
-        word = cardWord
-        definition = cardDefinition
-        categoryArray = cardCategories
-    }
-    
-    func removeFromCategory(targetCategory: String!){
-        if let index = find(categoryArray, targetCategory){
-            categoryArray.removeAtIndex(index)
-            //write to file to permanently remove
-        }
-    }
-}
-
-class cardList {
-    //Will eventually read in from a local file, forming a full, comprehensive list of cards
-    var allFlashcards = [flashcard]()
-    init(){
-        /*Until EOF
-            parse through card in file
-                var word = stuff
-                var definition = stuff
-                var categories = [String]()
-                parse through categories
-                    categories.append(stuff)
-                var card = flashcard(cardWord: word, cardDefinition: definition, cardCategories: categories)
-                allFlashcards.append(card)*/
-        
-        //For now, we'll just generate some cards with the same category
-        var category = [String]()
-        category.append("Nicomachean Ethics")
-        var fucksCard = flashcard(cardWord: "Zero", cardDefinition: "The amount of fucks I give right now", cardCategories: category)
-        var irascible = flashcard(cardWord: "irascible", cardDefinition: "adjective\nhaving or showing a tendency to be easily angered.", cardCategories: category)
-        allFlashcards.append(irascible)
-        allFlashcards.append(fucksCard)
-        for i in 0...24{
-            var card = flashcard(cardWord: "Word \(i)", cardDefinition: "Definition number \(i)", cardCategories: category)
-            allFlashcards.append(card)
-        }
-    }
-}
 
 //MARK: Controller start
 
 class FlashcardListTableViewController: UITableViewController {
 
-    var currentCategory = flashcardCategory(categoryTitle: "Nicomachean Ethics")
+    var currentCategory = WordCategory(categoryTitle: "Nicomachean Ethics")
     
     @IBOutlet weak var selectUIBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var deleteUIBarButtonItem: UIBarButtonItem!
@@ -94,7 +25,7 @@ class FlashcardListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = currentCategory.title
-        currentCategory.getCards()
+        currentCategory.getWords()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -113,7 +44,7 @@ class FlashcardListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentCategory.flashcardCount
+        return currentCategory.wordCount
     }
 
     private struct Storyboard {
@@ -125,10 +56,10 @@ class FlashcardListTableViewController: UITableViewController {
 
         // Configure the cell...
         println("\(indexPath.row)")
-        println("\(currentCategory.flashcardCount)")
-        let flashcard = currentCategory.flashcardsArray[indexPath.row]
-        cell.textLabel?.text = flashcard.word
-        cell.detailTextLabel?.text = flashcard.definition
+        println("\(currentCategory.wordCount)")
+        let curWord = currentCategory.wordArray[indexPath.row]
+        cell.textLabel?.text = curWord.word
+        cell.detailTextLabel?.text = curWord.information.definition
 
         return cell
     }
@@ -171,9 +102,9 @@ class FlashcardListTableViewController: UITableViewController {
     @IBAction func deleteSelectedRows(sender: UIBarButtonItem) {
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows(){
             for path in selectedIndexPaths {
-                currentCategory.flashcardsArray[path.row].removeFromCategory(currentCategory.title)
+                currentCategory.wordArray[path.row].removeFromCategory(currentCategory.title)
             }
-            currentCategory.getCards()
+            currentCategory.getWords()
             showTableView()
             toggleEdit()
         }

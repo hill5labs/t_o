@@ -18,6 +18,8 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     @IBOutlet var rightSwipeRecognizer: UISwipeGestureRecognizer!
     @IBOutlet var leftSwipeRecognizer: UISwipeGestureRecognizer!
     
+    var dvc: DefinitionViewController?
+    
     var epubController: KFEpubController?
     var contentModel: KFEpubContentModel?
 
@@ -29,7 +31,6 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     
     
     private let js01 = "var p = document.getElementsByTagName('p');"
-    //private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\S+/g, function(word){return \"<span onclick='alert(\\\"\"+word+\"\\\")'>\" + word + \"</span>\";});}"
     private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\b(\\w+?)\\b/g, function(word){return \"<span onclick='window.location.href=\\\"alert://\" + word + \"\\\"'>\" + word + \"</span>\";});}"
     private let js03 = "document.body.innerHTML"
     override func viewDidLoad() {
@@ -163,9 +164,6 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let try01 = page.stringByEvaluatingJavaScriptFromString(js01)
         let try02 = page.stringByEvaluatingJavaScriptFromString(js02)
         let try03 = page.stringByEvaluatingJavaScriptFromString(js03)
-//        println(try01)
-//        println(try02)
-//        println(try03)
 
         var latestPage = self.page.request!.URL!.absoluteString?.lastPathComponent
         var currentSection = latestPage!.stringByDeletingPathExtension
@@ -178,6 +176,13 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let segueName = segue.identifier
+        if segueName == "embedDefinitionController" {
+            dvc = segue.destinationViewController as? DefinitionViewController
+        }
+    }
+    
 //    MARK: Javascript alert intercept
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
@@ -186,6 +191,10 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
             if request.URL?.scheme == "alert" {
                 let message = request.URL?.host
                 println("Word clicked: \(message)")
+                let defineWord = message!.lowercaseString
+                wordList.addWord(defineWord, newCategory: "Nicomachean Ethics")
+                dvc?.currentCategory.getWords()
+                dvc?.tableView.reloadData()
                 return false
             }
             return true
