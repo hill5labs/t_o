@@ -11,27 +11,9 @@ import UIKit
 //Mark: auxillary data structures
 
 struct Bookshelf {
-    let bookshelfName : String
-    let books: [Book]
-    let flashcards: [
+    let containsBooks : Bool
+    let items : [AnyObject]
 }
-
-class BookFlash : Equatable {
-    var title: String
-    var bookCover: UIImage
-    
-    init (title: String, image: UIImage) {
-        self.title = title
-        self.bookCover = image
-    }
-    
-}
-
-func == (lhs: BookFlash, rhs: BookFlash) -> Bool {
-    return lhs.title == rhs.title
-}
-
-
 
 let FlashcardList = Array(map(1..<2) {"F\($0)"})
 let image: UIImage = UIImage(named:"@public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg")!
@@ -48,20 +30,13 @@ class BookshelfViewController: UICollectionViewController {
     
     private var searches = [Bookshelf]()
     
-    static func convertToShelf(itemNameList: [Book], titleName: String) -> Bookshelf {
-        let newBooks : [BookFlash] = itemNameList.map {
-            item in
-            
-            
-            let book = BookFlash(title: atitle, image: image)
-            return book
-        }
-            return Bookshelf(bookshelfName: titleName, books: newBooks)
+    static func convertToShelf(itemList: [AnyObject], isBooks: Bool) -> Bookshelf {
+        return Bookshelf(containsBooks: isBooks, items: itemList)
     }
     
-    private let myBooks = BookshelfViewController.convertToShelf(allBooks, titleName: "myBooks")
+    private let myBooks = BookshelfViewController.convertToShelf(allBooks.list, isBooks: true)
+    private let myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
     
-    private let myFlashcards = BookshelfViewController.convertToShelf(FlashcardList, titleName: "myFlashcards")
     
     func drawCellObjects(currentShelf: Bookshelf) {
         self.searches.removeAll(keepCapacity: true)
@@ -69,8 +44,8 @@ class BookshelfViewController: UICollectionViewController {
         self.collectionView?.reloadData()
     }
     
-    func bookForIndexPath(indexPath: NSIndexPath) -> BookFlash {
-        return searches[indexPath.section].books[indexPath.row]
+    func itemForIndexPath(indexPath: NSIndexPath) -> AnyObject {
+        return searches[indexPath.section].items[indexPath.row]
     }
     
     override func viewDidLoad() {
@@ -102,34 +77,41 @@ extension BookshelfViewController : UICollectionViewDataSource {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searches[section].books.count
+        return searches[section].items.count
     }
     
      override func  collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BookCell
-        let book = bookForIndexPath(indexPath)
         cell.backgroundColor = UIColor.whiteColor()
-        cell.bookCover.image = book.bookCover
-        cell.bookTitle.text = book.title
-        let bookCategory = WordCategory(categoryTitle: book.title)
-        if BFToggle.title! == "Books" {
-            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
-            visualEffectView.frame = cell.bookCover.bounds
-            visualEffectView.tag = 1
-           
-            var numOfFlashcards = UILabel(frame: cell.bookCover.frame)
-            numOfFlashcards.textAlignment = NSTextAlignment.Center
-            numOfFlashcards.text = String(bookCategory.wordCount)
-    
-            visualEffectView.addSubview(numOfFlashcards)
-            cell.bookCover.addSubview(visualEffectView)
+        
+        let item: AnyObject = itemForIndexPath(indexPath)
+        
+        if item is Book {
+            let book = item as! Book
+            cell.bookCover.image = book.img
+            cell.bookTitle.text = book.title
             
-        } else {
             if let viewWithTag = cell.bookCover.viewWithTag(1) {
                 viewWithTag.removeFromSuperview()
             }
-
+            
+        } else {
+            let flashcard = item as! WordCategory
+            cell.bookCover.image = flashcard.img
+            cell.bookTitle.text = flashcard.title
+            
+            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
+            visualEffectView.frame = cell.bookCover.bounds
+            visualEffectView.tag = 1
+            
+            var numOfFlashcards = UILabel(frame: cell.bookCover.frame)
+            numOfFlashcards.textAlignment = NSTextAlignment.Center
+            numOfFlashcards.text = String(flashcard.wordCount)
+            
+            visualEffectView.addSubview(numOfFlashcards)
+            cell.bookCover.addSubview(visualEffectView)
         }
+        
         return cell
     }
     

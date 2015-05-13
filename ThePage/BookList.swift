@@ -14,6 +14,23 @@ class BookList: AnyObject {
     func append(book: Book) {
         list.append(book)
     }
+    
+    func titleList() -> [String] {
+        var titleList = [String]()
+        for item in list {
+            titleList.append(item.title!)
+        }
+        return titleList
+    }
+    
+    func getBookByTitle(title: String) -> Book? {
+        for item in list {
+            if item.title == title {
+                return item
+            }
+        }
+        return nil
+    }
 }
 
 var allBooks = BookList()

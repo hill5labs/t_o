@@ -53,6 +53,23 @@ struct CompleteWordList {
             allWords.removeAtIndex(index)
         }
     }
+    
+    // Adam added these
+    func getCategories() -> [WordCategory]{
+        var categories = [String]()
+        var categoryList = [WordCategory]()
+        for word in allWords {
+            for category in word.categoryArray {
+                if find(categories, category) == nil {
+                    categories.append(category)
+                }
+            }
+        }
+        for item in categories {
+            categoryList.append(WordCategory(categoryTitle: item))
+        }
+        return categoryList
+    }
 }
 
 var wordList = CompleteWordList()

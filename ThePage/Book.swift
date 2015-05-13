@@ -10,17 +10,16 @@ import UIKit
 
 class Book: NSObject, KFEpubControllerDelegate {
     
-    var title: String
+    var title: String?
     var url: NSURL?
     var resourceName: String
-    var img: UIImage
+    var img: UIImage?
     var contentModel: KFEpubContentModel?
     var epubController: KFEpubController?
     
     init(recName: String) {
 
         resourceName = recName
-        title = ""
         
         let bundle = NSBundle.mainBundle() as NSBundle
         
@@ -31,7 +30,7 @@ class Book: NSObject, KFEpubControllerDelegate {
         
         url = NSURL(fileURLWithPath: pathForEPUB!)!
         
-        img = UIImage(named: "cover\(arc4random_uniform(6) + 1)")!
+        img = UIImage(named: "cover\(arc4random_uniform(6) + 1)")
         
         epubController = KFEpubController(epubURL: url, andDestinationFolder: documentURL)
         super.init()
@@ -52,7 +51,7 @@ class Book: NSObject, KFEpubControllerDelegate {
         let titleString = "title"
         println("Opened: \(contentModel!.metaData[titleString])")
         self.contentModel = contentModel
-        title = self.contentModel!.metaData[titleString] as! String
+        title = self.contentModel!.metaData[titleString] as? String
         
     }
 }
