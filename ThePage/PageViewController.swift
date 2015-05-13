@@ -30,7 +30,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     
     private let js01 = "var p = document.getElementsByTagName('p');"
     //private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\S+/g, function(word){return \"<span onclick='alert(\\\"\"+word+\"\\\")'>\" + word + \"</span>\";});}"
-    private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\b(\\w+?)\\bt/g, function(word){return \"<span onclick='window.location.href=\\\"alert://\" + word + \"\\\"'>\" + word + \"</span>\";});}"
+    private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\b(\\w+?)\\b/g, function(word){return \"<span onclick='window.location.href=\\\"alert://\" + word + \"\\\"'>\" + word + \"</span>\";});}"
     private let js03 = "document.body.innerHTML"
     override func viewDidLoad() {
         
