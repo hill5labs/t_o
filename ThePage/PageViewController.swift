@@ -29,7 +29,8 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     
     
     private let js01 = "var p = document.getElementsByTagName('p');"
-    private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\S+/g, function(word){return \"<span onclick='alert(\\\"\"+word+\"\\\")'>\" + word + \"</span>\";});}"
+    //private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\S+/g, function(word){return \"<span onclick='alert(\\\"\"+word+\"\\\")'>\" + word + \"</span>\";});}"
+    private let js02 = "for (var i=0; i<p.length; ++i){p[i].innerHTML=p[i].innerText.replace(/\\b(\\w+?)\\bt/g, function(word){return \"<span onclick='window.location.href=\\\"alert://\" + word + \"\\\"'>\" + word + \"</span>\";});}"
     private let js03 = "document.body.innerHTML"
     override func viewDidLoad() {
         
@@ -162,16 +163,10 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let try01 = page.stringByEvaluatingJavaScriptFromString(js01)
         let try02 = page.stringByEvaluatingJavaScriptFromString(js02)
         let try03 = page.stringByEvaluatingJavaScriptFromString(js03)
-        println(try01)
-        println(try02)
-        println(try03)
-        
-//        var ctx = page.valueForKeyPath("documentView.webView.mainFrame.javaScriptContext")
-//        ctx["window"]["alert"] = {(message: ) in
-//            var alert = UIAlertView(title: "JavaScript Alert", message: message.toString, delegate: nil, cancelButtonTitle: "OK", otherButtonTitles: nil)
-//            alert.show()
-//        };
-        
+//        println(try01)
+//        println(try02)
+//        println(try03)
+
         var latestPage = self.page.request!.URL!.absoluteString?.lastPathComponent
         var currentSection = latestPage!.stringByDeletingPathExtension
         var swiftArray = contentModel!.spine as! [String]
@@ -183,21 +178,19 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         }
     }
     
-    //MARK: Javascript alert intercept
+//    MARK: Javascript alert intercept
     
-//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-//        switch navigationType{
-//        case UIWebViewNavigationType.Other:
-//            if (request.URL!.scheme == "alert") {
-//                if let word = request.URL!.host {
-//                    println("\(word)")
-//                }
-//                return false
-//            }
-//            return true
-//        default:
-//            return true
-//        }
-//    }
-
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        switch (navigationType) {
+        case UIWebViewNavigationType.Other:
+            if request.URL?.scheme == "alert" {
+                let message = request.URL?.host
+                println("Word clicked: \(message)")
+                return false
+            }
+            return true
+        default:
+            return true
+        }
+    }
 }
