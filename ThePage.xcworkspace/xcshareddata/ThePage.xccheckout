@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6469EDAC-8007-4646-9D82-DCC18BF8D42A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ThePage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F4AA624A850BD7D6230EE6295754953013E20928</key>
+		<string>https://github.com/hill5labs/t_o.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ThePage.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F4AA624A850BD7D6230EE6295754953013E20928</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hill5labs/t_o.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F4AA624A850BD7D6230EE6295754953013E20928</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F4AA624A850BD7D6230EE6295754953013E20928</string>
+			<key>IDESourceControlWCCName</key>
+			<string>t_o</string>
+		</dict>
+	</array>
+</dict>
+</plist>
