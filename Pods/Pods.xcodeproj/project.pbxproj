@@ -7,443 +7,407 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03696A94897AC4A0D62B5BA2 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CDE6500ABC5C77321736012 /* zip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		06C9D6E442066D8D28B4A580 /* KFEpubKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7460B540163DCB0FDA70F7AB /* KFEpubKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0EE6DFCAF350436C33799412 /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = EB728F3BBF1EE629DB784C5A /* DDXMLPrivate.h */; };
-		189BBD0FA47E5307615016CD /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 000279282FD5A35799B288FB /* mztools.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		1B86866675284A85A5D1FD42 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = 85BB88B71AEE9F1DF5810F99 /* mztools.h */; };
-		1FB0742BE82C6F458A916F6C /* KFEpubConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 384AAC8630314BCE86C7D79F /* KFEpubConstants.h */; };
-		22C11263DF0A838623C8F2F2 /* KFEpubController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5699868378A410C20E0682DF /* KFEpubController.h */; };
-		263641D3D1FB7D445AD3E594 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 074B1D31D3346460741C06CB /* ioapi.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		28149A8C8A700A09C4A6E8EB /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AB09ADFAB660A80B3F3CEB3 /* DDXMLNode.h */; };
-		28252E95214D696352CA959B /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A41141A09160E2C38C8F457 /* Pods-dummy.m */; };
-		33851FA96FF91CA2A92A59BF /* KFEpubContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6931BA7BA091A7BC880433 /* KFEpubContentModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3F25AD57B979762DD1342B4C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FBCA587624938BC46FEBC /* unzip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		41F16ABA5408ABC7F71DEABC /* KFEpubExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 361BF996044304088118E018 /* KFEpubExtractor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4723A9AE4C41C7EA6F910E95 /* KFEpubParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A26FCCA09D79269A523931F /* KFEpubParser.h */; };
-		496C4CA70BA940FAA2F4F811 /* KFEpubParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A03EBBC748F4FB0CF51765 /* KFEpubParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4D10B0B41303A51E0A610F37 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 8041CE58012E1A02F814C429 /* unzip.h */; };
-		4DF57DC4DA40D8C03F8D0E14 /* KFEpubConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C3642757D6DAC5DCBDC8FC0E /* KFEpubConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		594806E9FEFCC8E48549E80B /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 4648EC43B5BC0A5C6116196B /* SSZipArchive.h */; };
-		5FE19D91EB7AB9B143A9AC26 /* Pods-KFEpubKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF236741CDB4ED4E3722CBC /* Pods-KFEpubKit-dummy.m */; };
-		7419D17AE585B05A3BE458FF /* KFEpubController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46647B8E7AB4E40F51D4A060 /* KFEpubController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7A5E2F9E2B83F5EA81ABAA61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170E434A4563B7EE5602A682 /* Foundation.framework */; };
-		832A8EE317213E7E33F1061B /* KFEpubContentModel.h in Headers */ = {isa = PBXBuildFile; fileRef = DE1DEAA3CE05B7658FB7A307 /* KFEpubContentModel.h */; };
-		863E81F7E249813359563718 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CC7308F48A35770D256C263 /* ioapi.h */; };
-		8795887B908C0C7B1BAE7E3F /* KFEpubExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = BDEA3B0E1C34C2D032DB6FC7 /* KFEpubExtractor.h */; };
-		8B7865432B5B0007F5015328 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C59415607CF4654B5C7338 /* DDXMLDocument.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8BC57AA80AC7275B61334332 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170E434A4563B7EE5602A682 /* Foundation.framework */; };
-		8DB00A83EC49CB2FA2B12780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170E434A4563B7EE5602A682 /* Foundation.framework */; };
-		9C10F9BD897303DB0C4721BB /* NSString+DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B2A159EAD7D53876C6E284D /* NSString+DDXML.h */; };
-		AAAB0A0C66E22340F7B3FED6 /* DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 59A22827FE854C38ADBD9837 /* DDXML.h */; };
-		AEAAF1AAC05B08F77D79FE6C /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD2171A9355093E3935824CE /* crypt.h */; };
-		B2EFE70BA5CFC88D31472F4D /* KFEpubKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A715EDBEA89130BCE83B2D4D /* KFEpubKit.h */; };
-		B989145A46219D2FB6BE67E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170E434A4563B7EE5602A682 /* Foundation.framework */; };
-		BC0D217B7DACA46F88F09AA8 /* Pods-SSZipArchive-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B90A279B310E662E8F75C085 /* Pods-SSZipArchive-dummy.m */; };
-		BDAE639554F6657E7BF640F1 /* DDXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 986364E572902605C98C5574 /* DDXMLDocument.h */; };
-		C706BD1A612A9A9E387B0D3D /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDCBFCF3C5AB23641F2A4 /* SSZipArchive.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		CB7711CDFEB1C350A2A5B3EB /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CD365A2A2BF5A74645157167 /* DDXMLNode.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		CC28E372979815B177B31AEF /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDFF36BA4C2A56118BF390 /* NSString+DDXML.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D2F42E043AF851D14663FBDC /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D324B2812BF92ECD6EF29 /* DDXMLElementAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E00BB766D8CF78B76AC4FAEF /* DDXMLElementAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 28C21E2118AF2772A0BCB84E /* DDXMLElementAdditions.h */; };
-		EB0C8FD8CDA232F035D6AAFA /* Pods-KissXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E00690207634BCAE0C7CD315 /* Pods-KissXML-dummy.m */; };
-		F8B3C304B0A45D7293843ACB /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 933C3B05D638C3816CF2E3ED /* zip.h */; };
-		FBDD547A6BF25787FED0B032 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DFEA44F7C1D4CD129949AA /* DDXMLElement.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FE3A5893CBB98B35F9E70E00 /* DDXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 9035B774977935472735A4B0 /* DDXMLElement.h */; };
+		03331E9D3280317E724EB179 /* KFEpubConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF75ADCA0AA0F3E1873C6377 /* KFEpubConstants.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		070A80CE0EA5DF2E71D9AF3D /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = F7154D50D7CF1CE60DD711BF /* mztools.h */; };
+		08CD5F43D574D1FD4BD7041F /* KFEpubParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 38166283D9FBDAD83D3C87CC /* KFEpubParser.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		13C60BB53C62FE76D3F13123 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 385A111CB69A2A5A8E56CC4F /* unzip.h */; };
+		1F402CBFB611EE8E2D275CF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97F1D80E1047C70C03CA98 /* Foundation.framework */; };
+		24E1D85FE0ADF6272057E353 /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = A2D26C662F40A3D014830E29 /* DDXMLNode.h */; };
+		2841428E672B45F060768703 /* KFEpubExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA282BA5270384FB89FE5F8 /* KFEpubExtractor.h */; };
+		3559436CED610D6FDB65C5B6 /* KFEpubContentModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E92DC80375204B29EB7E885A /* KFEpubContentModel.h */; };
+		44438E5C1070B44A04189CD3 /* KFEpubContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C08E2E4D249E637088967A1C /* KFEpubContentModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		44D63F196FE96187A964B7B4 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B92541A5DA1B10F083E7035E /* DDXMLNode.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4E9A92610215669ABEDB7F97 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E608B926F3AF241EBC49D5 /* DDXMLDocument.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4FBE195D7FC5C0D6A69DB911 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFC98CD2D1593612B634A8 /* ioapi.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		52AF9CB38FD7705FFECAAB46 /* DDXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = AC3B182717D84D67206962D0 /* DDXMLElement.h */; };
+		5CF5CD8B40AD692BAE8D67E3 /* KFEpubParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 06B0A3CDEAC6E5FCD41E384F /* KFEpubParser.h */; };
+		62356C2B839FB2F1416EBD3B /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E3240E91991BB70820FEDC8 /* DDXMLPrivate.h */; };
+		62A8E8BF2A1B1D79AD81A16D /* Pods-KFEpubKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4734CCD55698CD2084100263 /* Pods-KFEpubKit-dummy.m */; };
+		676BC34B76CD554570F99832 /* KFEpubKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6937FBD68C03AB5A07459B1F /* KFEpubKit.h */; };
+		6A623768EFE541149D25B8F9 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = DF5C62B5F1F254B1734CF159 /* ioapi.h */; };
+		712ECCE8B75ED60C9C51AD51 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B996A3E204F3A644A646F /* DDXMLElementAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7267BA427042ECC500A43DBD /* KFEpubExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2896FBF33DDEA6FA400F529A /* KFEpubExtractor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		76F65D497DB804E3D641A052 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 030BF0A18B370C0572E068AB /* SSZipArchive.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		771E0392CB4DBDD38915D6BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97F1D80E1047C70C03CA98 /* Foundation.framework */; };
+		811230B6077740C7C72B13BB /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = F799A04EFC8CF93C6B5EAEBC /* zip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		82361EEF1F0CC454A60FF5EF /* KFEpubController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96E46E4280C509D8BE783A /* KFEpubController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8714F6447FFAAF2994ED2689 /* DDXMLElementAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C5CE2FBAAF680E5361C85660 /* DDXMLElementAdditions.h */; };
+		8D25EE89CC1D032170985ED3 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = F08407D493F70828B321B471 /* zip.h */; };
+		9AF4254BD808553B07B7D4D8 /* KFEpubKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E37177F271793D7C0484E44 /* KFEpubKit.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9E97323CE79B078C456A7BF7 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = D9B265EAABAAB52D590DBB36 /* unzip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A0C926671888B01B4ED92C10 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A6E7034492E86A8324062F9 /* SSZipArchive.h */; };
+		BB390AE26712786F697C3F13 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = B752288B369A7A078C02F963 /* NSString+DDXML.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C0A44EA279486EFC0894B6C7 /* KFEpubConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 609BA4832885B6108D0B9725 /* KFEpubConstants.h */; };
+		C10DF8066C70AF602702CD0B /* KFEpubController.h in Headers */ = {isa = PBXBuildFile; fileRef = 73695B068920AF203196A1A9 /* KFEpubController.h */; };
+		C1917A662B1D8BA8BD517EF6 /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = CF0B7ADF342633FB2CA1BC57 /* crypt.h */; };
+		CEF49E0DA46A9DBF43CBAF95 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB06E03A4A2B5243D80BD93 /* DDXMLElement.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D2DBA08C15F306173ED95E8D /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F58213ACA6BA4F274F91E53E /* Pods-dummy.m */; };
+		D4317BFA9F557F0E7F714AE3 /* Pods-SSZipArchive-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C6F6C35279FDF71594178 /* Pods-SSZipArchive-dummy.m */; };
+		DB66E23D6EC25EDF504716C3 /* Pods-KissXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B79517E259F12012CDDBC9 /* Pods-KissXML-dummy.m */; };
+		DE84873A35FF09A7DDF0FFFC /* DDXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 286080F8A65B8CFE30D1D610 /* DDXMLDocument.h */; };
+		DEA3AA4969AD123DA1F73CF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97F1D80E1047C70C03CA98 /* Foundation.framework */; };
+		EAA708A0D45E30677002416F /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 62E6262731B730237940A535 /* mztools.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EDDF3D2BB24723B081E4D1E4 /* NSString+DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 2319C6925991CB0B0A10ACDD /* NSString+DDXML.h */; };
+		FC9301BC87455384CB107224 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC97F1D80E1047C70C03CA98 /* Foundation.framework */; };
+		FFB5507A084E22144476D307 /* DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 922AAE51F59730BE6E7ADA4C /* DDXML.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0099607E6526CA449D25D6AE /* PBXContainerItemProxy */ = {
+		258A1E5E44BA36541389C0C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE4B4725478FBA574C180F93 /* Project object */;
+			containerPortal = 653B0012C8BECDD34B79366C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 94F1E078A794AD0BA9A0D2E7;
-			remoteInfo = "Pods-KissXML";
-		};
-		1724DB69FDD543A82E744AEE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE4B4725478FBA574C180F93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9939FD39B9D265E9F199D06C;
-			remoteInfo = "Pods-SSZipArchive";
-		};
-		45A1C19BBDA8F3FECCE36E06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE4B4725478FBA574C180F93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9939FD39B9D265E9F199D06C;
-			remoteInfo = "Pods-SSZipArchive";
-		};
-		90F5E784FB0C1FF0DBA88D11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EE4B4725478FBA574C180F93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 10220551666EE75C89D5164A;
+			remoteGlobalIDString = E075B7D263ECA28A5B8852FE;
 			remoteInfo = "Pods-KFEpubKit";
 		};
-		EF4EE5DD63F4084A0C0629D1 /* PBXContainerItemProxy */ = {
+		45720FDA6F06B0B33E0FB4A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EE4B4725478FBA574C180F93 /* Project object */;
+			containerPortal = 653B0012C8BECDD34B79366C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 94F1E078A794AD0BA9A0D2E7;
+			remoteGlobalIDString = 06A0566A2E539E3B8B60B01B;
+			remoteInfo = "Pods-SSZipArchive";
+		};
+		4D057D0640B8193AF2222C09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 653B0012C8BECDD34B79366C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DB532CF672E4B391D151452;
 			remoteInfo = "Pods-KissXML";
+		};
+		7CC020FD29D2157A6322BFB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 653B0012C8BECDD34B79366C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DB532CF672E4B391D151452;
+			remoteInfo = "Pods-KissXML";
+		};
+		8BED969EEEAFC2BA978681F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 653B0012C8BECDD34B79366C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06A0566A2E539E3B8B60B01B;
+			remoteInfo = "Pods-SSZipArchive";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000279282FD5A35799B288FB /* mztools.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = SSZipArchive/minizip/mztools.c; sourceTree = "<group>"; };
-		002A92D749BDC5E29CEC9053 /* Pods-KissXML-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KissXML-Private.xcconfig"; sourceTree = "<group>"; };
-		074B1D31D3346460741C06CB /* ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = SSZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
-		0A7D324B2812BF92ECD6EF29 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLElementAdditions.m; path = KissXML/Additions/DDXMLElementAdditions.m; sourceTree = "<group>"; };
-		0B2A159EAD7D53876C6E284D /* NSString+DDXML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+DDXML.h"; path = "KissXML/Categories/NSString+DDXML.h"; sourceTree = "<group>"; };
-		0E9CC46CE38A1F5A408019F9 /* Pods-KFEpubKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFEpubKit-Private.xcconfig"; sourceTree = "<group>"; };
-		161469128BE5FE27C795C6F0 /* libPods-KFEpubKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KFEpubKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		170E434A4563B7EE5602A682 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		1A26FCCA09D79269A523931F /* KFEpubParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubParser.h; path = KFEpubKit/Sources/KFEpubParser.h; sourceTree = "<group>"; };
-		1A41141A09160E2C38C8F457 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		21C59415607CF4654B5C7338 /* DDXMLDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLDocument.m; path = KissXML/DDXMLDocument.m; sourceTree = "<group>"; };
-		28C21E2118AF2772A0BCB84E /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLElementAdditions.h; path = KissXML/Additions/DDXMLElementAdditions.h; sourceTree = "<group>"; };
-		2AB09ADFAB660A80B3F3CEB3 /* DDXMLNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLNode.h; path = KissXML/DDXMLNode.h; sourceTree = "<group>"; };
-		2D03662BDB51392FDD0AB947 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		361BF996044304088118E018 /* KFEpubExtractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubExtractor.m; path = KFEpubKit/Sources/KFEpubExtractor.m; sourceTree = "<group>"; };
-		36BDFF36BA4C2A56118BF390 /* NSString+DDXML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+DDXML.m"; path = "KissXML/Categories/NSString+DDXML.m"; sourceTree = "<group>"; };
-		384AAC8630314BCE86C7D79F /* KFEpubConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubConstants.h; path = KFEpubKit/Sources/KFEpubConstants.h; sourceTree = "<group>"; };
-		3CC7308F48A35770D256C263 /* ioapi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = SSZipArchive/minizip/ioapi.h; sourceTree = "<group>"; };
-		41DFEA44F7C1D4CD129949AA /* DDXMLElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLElement.m; path = KissXML/DDXMLElement.m; sourceTree = "<group>"; };
-		4648EC43B5BC0A5C6116196B /* SSZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = SSZipArchive/SSZipArchive.h; sourceTree = "<group>"; };
-		46647B8E7AB4E40F51D4A060 /* KFEpubController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubController.m; path = KFEpubKit/Sources/KFEpubController.m; sourceTree = "<group>"; };
-		5699868378A410C20E0682DF /* KFEpubController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubController.h; path = KFEpubKit/Sources/KFEpubController.h; sourceTree = "<group>"; };
-		58737E471D1120ED4451230F /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		59A22827FE854C38ADBD9837 /* DDXML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXML.h; path = KissXML/DDXML.h; sourceTree = "<group>"; };
-		5CDE6500ABC5C77321736012 /* zip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = zip.c; path = SSZipArchive/minizip/zip.c; sourceTree = "<group>"; };
-		6FC8CB1554F58798A5F11261 /* Pods-KissXML-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KissXML-prefix.pch"; sourceTree = "<group>"; };
-		7460B540163DCB0FDA70F7AB /* KFEpubKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubKit.m; path = KFEpubKit/Sources/KFEpubKit.m; sourceTree = "<group>"; };
-		7F4FBCA587624938BC46FEBC /* unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = SSZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
-		8041CE58012E1A02F814C429 /* unzip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = SSZipArchive/minizip/unzip.h; sourceTree = "<group>"; };
-		82FB569EEDB005E220F78D6B /* Pods-KissXML.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KissXML.xcconfig"; sourceTree = "<group>"; };
-		85BB88B71AEE9F1DF5810F99 /* mztools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = SSZipArchive/minizip/mztools.h; sourceTree = "<group>"; };
-		8F6FDCBFCF3C5AB23641F2A4 /* SSZipArchive.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = SSZipArchive/SSZipArchive.m; sourceTree = "<group>"; };
-		9035B774977935472735A4B0 /* DDXMLElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLElement.h; path = KissXML/DDXMLElement.h; sourceTree = "<group>"; };
-		933C3B05D638C3816CF2E3ED /* zip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zip.h; path = SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
-		95B090CFAABADCFD09EF1A85 /* Pods-KFEpubKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFEpubKit.xcconfig"; sourceTree = "<group>"; };
-		96D2463258F3D5313C96CAAF /* Pods-SSZipArchive.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSZipArchive.xcconfig"; sourceTree = "<group>"; };
-		986364E572902605C98C5574 /* DDXMLDocument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLDocument.h; path = KissXML/DDXMLDocument.h; sourceTree = "<group>"; };
-		9D778524054DD57557E0A116 /* libPods-KissXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KissXML.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F6931BA7BA091A7BC880433 /* KFEpubContentModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubContentModel.m; path = KFEpubKit/Sources/KFEpubContentModel.m; sourceTree = "<group>"; };
-		A715EDBEA89130BCE83B2D4D /* KFEpubKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubKit.h; path = KFEpubKit/Sources/KFEpubKit.h; sourceTree = "<group>"; };
-		ABF236741CDB4ED4E3722CBC /* Pods-KFEpubKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KFEpubKit-dummy.m"; sourceTree = "<group>"; };
-		B1B21013E9AE8B60066A5719 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		B476C5F580B022B9DDCB2A7B /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B777268680F2B55F7FC8A349 /* Pods-KFEpubKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KFEpubKit-prefix.pch"; sourceTree = "<group>"; };
-		B8E28699AB47C3D62A1379C9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B90A279B310E662E8F75C085 /* Pods-SSZipArchive-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SSZipArchive-dummy.m"; sourceTree = "<group>"; };
-		BA88D76A1A5F8F4CB9B71305 /* Pods-SSZipArchive-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SSZipArchive-prefix.pch"; sourceTree = "<group>"; };
-		BDEA3B0E1C34C2D032DB6FC7 /* KFEpubExtractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubExtractor.h; path = KFEpubKit/Sources/KFEpubExtractor.h; sourceTree = "<group>"; };
-		C3642757D6DAC5DCBDC8FC0E /* KFEpubConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubConstants.m; path = KFEpubKit/Sources/KFEpubConstants.m; sourceTree = "<group>"; };
-		C3C8A828EC08337675860F1D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		CD365A2A2BF5A74645157167 /* DDXMLNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLNode.m; path = KissXML/DDXMLNode.m; sourceTree = "<group>"; };
-		D9FD78E5C74C5F286D5F386C /* libPods-SSZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSZipArchive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB5CAF2A117E3D36BDE6E15A /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		DE1DEAA3CE05B7658FB7A307 /* KFEpubContentModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubContentModel.h; path = KFEpubKit/Sources/KFEpubContentModel.h; sourceTree = "<group>"; };
-		E00690207634BCAE0C7CD315 /* Pods-KissXML-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KissXML-dummy.m"; sourceTree = "<group>"; };
-		E3A03EBBC748F4FB0CF51765 /* KFEpubParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubParser.m; path = KFEpubKit/Sources/KFEpubParser.m; sourceTree = "<group>"; };
-		EB728F3BBF1EE629DB784C5A /* DDXMLPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLPrivate.h; path = KissXML/Private/DDXMLPrivate.h; sourceTree = "<group>"; };
-		F282D03B28422084854D4C9C /* Pods-SSZipArchive-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSZipArchive-Private.xcconfig"; sourceTree = "<group>"; };
-		FC47887918DEED32912DD53C /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FD2171A9355093E3935824CE /* crypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = SSZipArchive/minizip/crypt.h; sourceTree = "<group>"; };
+		030BF0A18B370C0572E068AB /* SSZipArchive.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = SSZipArchive/SSZipArchive.m; sourceTree = "<group>"; };
+		03F9ECB30C6CBC873A93F3D5 /* Pods-KFEpubKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFEpubKit.xcconfig"; sourceTree = "<group>"; };
+		06B0A3CDEAC6E5FCD41E384F /* KFEpubParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubParser.h; path = KFEpubKit/Sources/KFEpubParser.h; sourceTree = "<group>"; };
+		1C917BCF27BF3C3A1E921CDF /* Pods-KissXML-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KissXML-Private.xcconfig"; sourceTree = "<group>"; };
+		1F8C6F6C35279FDF71594178 /* Pods-SSZipArchive-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SSZipArchive-dummy.m"; sourceTree = "<group>"; };
+		2319C6925991CB0B0A10ACDD /* NSString+DDXML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+DDXML.h"; path = "KissXML/Categories/NSString+DDXML.h"; sourceTree = "<group>"; };
+		286080F8A65B8CFE30D1D610 /* DDXMLDocument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLDocument.h; path = KissXML/DDXMLDocument.h; sourceTree = "<group>"; };
+		2896FBF33DDEA6FA400F529A /* KFEpubExtractor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubExtractor.m; path = KFEpubKit/Sources/KFEpubExtractor.m; sourceTree = "<group>"; };
+		2A6E7034492E86A8324062F9 /* SSZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = SSZipArchive/SSZipArchive.h; sourceTree = "<group>"; };
+		2E37177F271793D7C0484E44 /* KFEpubKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubKit.m; path = KFEpubKit/Sources/KFEpubKit.m; sourceTree = "<group>"; };
+		38166283D9FBDAD83D3C87CC /* KFEpubParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubParser.m; path = KFEpubKit/Sources/KFEpubParser.m; sourceTree = "<group>"; };
+		385A111CB69A2A5A8E56CC4F /* unzip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = SSZipArchive/minizip/unzip.h; sourceTree = "<group>"; };
+		3A96E46E4280C509D8BE783A /* KFEpubController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubController.m; path = KFEpubKit/Sources/KFEpubController.m; sourceTree = "<group>"; };
+		3D232652238490D016DA650E /* libPods-SSZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSZipArchive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4734CCD55698CD2084100263 /* Pods-KFEpubKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KFEpubKit-dummy.m"; sourceTree = "<group>"; };
+		55B935AB2AF57572979C12CC /* Pods-KissXML-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KissXML-prefix.pch"; sourceTree = "<group>"; };
+		5A98FC5FEFFC98984C2A9823 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		5FDFC98CD2D1593612B634A8 /* ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = SSZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
+		609BA4832885B6108D0B9725 /* KFEpubConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubConstants.h; path = KFEpubKit/Sources/KFEpubConstants.h; sourceTree = "<group>"; };
+		62E6262731B730237940A535 /* mztools.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = SSZipArchive/minizip/mztools.c; sourceTree = "<group>"; };
+		664285BB7C106E06251858DF /* Pods-SSZipArchive-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SSZipArchive-prefix.pch"; sourceTree = "<group>"; };
+		69056E5153D7737B00202435 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		6937FBD68C03AB5A07459B1F /* KFEpubKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubKit.h; path = KFEpubKit/Sources/KFEpubKit.h; sourceTree = "<group>"; };
+		6CA282BA5270384FB89FE5F8 /* KFEpubExtractor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubExtractor.h; path = KFEpubKit/Sources/KFEpubExtractor.h; sourceTree = "<group>"; };
+		6F9B996A3E204F3A644A646F /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLElementAdditions.m; path = KissXML/Additions/DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		73695B068920AF203196A1A9 /* KFEpubController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubController.h; path = KFEpubKit/Sources/KFEpubController.h; sourceTree = "<group>"; };
+		81D81DADF92444726A72E20C /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		83B79517E259F12012CDDBC9 /* Pods-KissXML-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KissXML-dummy.m"; sourceTree = "<group>"; };
+		888804C67CFE4E91347BF309 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB9306B12BB46C05BE8DDDF /* libPods-KissXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KissXML.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E3240E91991BB70820FEDC8 /* DDXMLPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLPrivate.h; path = KissXML/Private/DDXMLPrivate.h; sourceTree = "<group>"; };
+		922AAE51F59730BE6E7ADA4C /* DDXML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXML.h; path = KissXML/DDXML.h; sourceTree = "<group>"; };
+		98AE77B0B1978CBAD7071AF0 /* Pods-KFEpubKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KFEpubKit-Private.xcconfig"; sourceTree = "<group>"; };
+		9AB06E03A4A2B5243D80BD93 /* DDXMLElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLElement.m; path = KissXML/DDXMLElement.m; sourceTree = "<group>"; };
+		A2D26C662F40A3D014830E29 /* DDXMLNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLNode.h; path = KissXML/DDXMLNode.h; sourceTree = "<group>"; };
+		AB458278BB982BE4FD57D837 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AC3B182717D84D67206962D0 /* DDXMLElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLElement.h; path = KissXML/DDXMLElement.h; sourceTree = "<group>"; };
+		AE9135D61C5DB4007B1B9115 /* Pods-KFEpubKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KFEpubKit-prefix.pch"; sourceTree = "<group>"; };
+		B752288B369A7A078C02F963 /* NSString+DDXML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+DDXML.m"; path = "KissXML/Categories/NSString+DDXML.m"; sourceTree = "<group>"; };
+		B92541A5DA1B10F083E7035E /* DDXMLNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLNode.m; path = KissXML/DDXMLNode.m; sourceTree = "<group>"; };
+		B9DDDDD38D5B675129D24751 /* Pods-SSZipArchive.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSZipArchive.xcconfig"; sourceTree = "<group>"; };
+		BC2AB893BA66471353DE0E54 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		BF0BC5893E87C6AE4111C235 /* Pods-KissXML.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KissXML.xcconfig"; sourceTree = "<group>"; };
+		C08E2E4D249E637088967A1C /* KFEpubContentModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubContentModel.m; path = KFEpubKit/Sources/KFEpubContentModel.m; sourceTree = "<group>"; };
+		C5CE2FBAAF680E5361C85660 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLElementAdditions.h; path = KissXML/Additions/DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		CBF3370521FBF7E4F23F3F90 /* libPods-KFEpubKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KFEpubKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC97F1D80E1047C70C03CA98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CF0B7ADF342633FB2CA1BC57 /* crypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = SSZipArchive/minizip/crypt.h; sourceTree = "<group>"; };
+		CFD03276CB94A44471FF8B01 /* Pods-SSZipArchive-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SSZipArchive-Private.xcconfig"; sourceTree = "<group>"; };
+		D98A146034ACF610F74D1B28 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D9B265EAABAAB52D590DBB36 /* unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = SSZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
+		DF5C62B5F1F254B1734CF159 /* ioapi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = SSZipArchive/minizip/ioapi.h; sourceTree = "<group>"; };
+		E0E608B926F3AF241EBC49D5 /* DDXMLDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLDocument.m; path = KissXML/DDXMLDocument.m; sourceTree = "<group>"; };
+		E92DC80375204B29EB7E885A /* KFEpubContentModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KFEpubContentModel.h; path = KFEpubKit/Sources/KFEpubContentModel.h; sourceTree = "<group>"; };
+		EB6CDA44A7BDDE0F966BCFBB /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		F08407D493F70828B321B471 /* zip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zip.h; path = SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
+		F58213ACA6BA4F274F91E53E /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		F7154D50D7CF1CE60DD711BF /* mztools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = SSZipArchive/minizip/mztools.h; sourceTree = "<group>"; };
+		F799A04EFC8CF93C6B5EAEBC /* zip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = zip.c; path = SSZipArchive/minizip/zip.c; sourceTree = "<group>"; };
+		FF75ADCA0AA0F3E1873C6377 /* KFEpubConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KFEpubConstants.m; path = KFEpubKit/Sources/KFEpubConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E670B7A4E1CE35230FD7EDC /* Frameworks */ = {
+		2D8D680241057D51923AE1F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B989145A46219D2FB6BE67E6 /* Foundation.framework in Frameworks */,
+				771E0392CB4DBDD38915D6BC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E8B106FE7A01428437A8360 /* Frameworks */ = {
+		55A064E83EBAB25418F04758 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DB00A83EC49CB2FA2B12780 /* Foundation.framework in Frameworks */,
+				FC9301BC87455384CB107224 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7929019835C6FDF666CA529B /* Frameworks */ = {
+		57AC2991A56A0B0B4AC6E8C0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BC57AA80AC7275B61334332 /* Foundation.framework in Frameworks */,
+				1F402CBFB611EE8E2D275CF8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEC1AFD91FA96B4E7CC2CEA6 /* Frameworks */ = {
+		7B6B8F3D7FFEF4FFE9982E03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A5E2F9E2B83F5EA81ABAA61 /* Foundation.framework in Frameworks */,
+				DEA3AA4969AD123DA1F73CF0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E9DB1BB977F3C4CB23361E8 /* Support Files */ = {
+		09316899C087F219AF05529F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				95B090CFAABADCFD09EF1A85 /* Pods-KFEpubKit.xcconfig */,
-				0E9CC46CE38A1F5A408019F9 /* Pods-KFEpubKit-Private.xcconfig */,
-				ABF236741CDB4ED4E3722CBC /* Pods-KFEpubKit-dummy.m */,
-				B777268680F2B55F7FC8A349 /* Pods-KFEpubKit-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-KFEpubKit";
-			sourceTree = "<group>";
-		};
-		2040620B36C838A540EE6D76 /* SSZipArchive */ = {
-			isa = PBXGroup;
-			children = (
-				4648EC43B5BC0A5C6116196B /* SSZipArchive.h */,
-				8F6FDCBFCF3C5AB23641F2A4 /* SSZipArchive.m */,
-				FD2171A9355093E3935824CE /* crypt.h */,
-				074B1D31D3346460741C06CB /* ioapi.c */,
-				3CC7308F48A35770D256C263 /* ioapi.h */,
-				000279282FD5A35799B288FB /* mztools.c */,
-				85BB88B71AEE9F1DF5810F99 /* mztools.h */,
-				7F4FBCA587624938BC46FEBC /* unzip.c */,
-				8041CE58012E1A02F814C429 /* unzip.h */,
-				5CDE6500ABC5C77321736012 /* zip.c */,
-				933C3B05D638C3816CF2E3ED /* zip.h */,
-				F791A1998E47E58E6C57F326 /* Support Files */,
-			);
-			path = SSZipArchive;
-			sourceTree = "<group>";
-		};
-		3921E1087CE28920DD096332 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B8E28699AB47C3D62A1379C9 /* libPods.a */,
-				161469128BE5FE27C795C6F0 /* libPods-KFEpubKit.a */,
-				9D778524054DD57557E0A116 /* libPods-KissXML.a */,
-				D9FD78E5C74C5F286D5F386C /* libPods-SSZipArchive.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		472DDF6D4D58BACC1A4F3012 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				63652EECF988208A6861B9F9 /* KFEpubKit */,
-				650C4E76931EE3473E48122D /* KissXML */,
-				2040620B36C838A540EE6D76 /* SSZipArchive */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		4ADF85D6E579249204677F20 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F73A8FB60F5B0D24CDA2F216 /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		50118DD4E7360DC2FE7590AD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				82FB569EEDB005E220F78D6B /* Pods-KissXML.xcconfig */,
-				002A92D749BDC5E29CEC9053 /* Pods-KissXML-Private.xcconfig */,
-				E00690207634BCAE0C7CD315 /* Pods-KissXML-dummy.m */,
-				6FC8CB1554F58798A5F11261 /* Pods-KissXML-prefix.pch */,
+				BF0BC5893E87C6AE4111C235 /* Pods-KissXML.xcconfig */,
+				1C917BCF27BF3C3A1E921CDF /* Pods-KissXML-Private.xcconfig */,
+				83B79517E259F12012CDDBC9 /* Pods-KissXML-dummy.m */,
+				55B935AB2AF57572979C12CC /* Pods-KissXML-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-KissXML";
 			sourceTree = "<group>";
 		};
-		63652EECF988208A6861B9F9 /* KFEpubKit */ = {
+		20C29BD952BDDE5AB51DEB32 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				384AAC8630314BCE86C7D79F /* KFEpubConstants.h */,
-				C3642757D6DAC5DCBDC8FC0E /* KFEpubConstants.m */,
-				DE1DEAA3CE05B7658FB7A307 /* KFEpubContentModel.h */,
-				9F6931BA7BA091A7BC880433 /* KFEpubContentModel.m */,
-				5699868378A410C20E0682DF /* KFEpubController.h */,
-				46647B8E7AB4E40F51D4A060 /* KFEpubController.m */,
-				BDEA3B0E1C34C2D032DB6FC7 /* KFEpubExtractor.h */,
-				361BF996044304088118E018 /* KFEpubExtractor.m */,
-				A715EDBEA89130BCE83B2D4D /* KFEpubKit.h */,
-				7460B540163DCB0FDA70F7AB /* KFEpubKit.m */,
-				1A26FCCA09D79269A523931F /* KFEpubParser.h */,
-				E3A03EBBC748F4FB0CF51765 /* KFEpubParser.m */,
-				1E9DB1BB977F3C4CB23361E8 /* Support Files */,
+				B1937480174C0D55F77EE108 /* KFEpubKit */,
+				A500B60149BEC995899223B8 /* KissXML */,
+				A3030C1FF8B3ACFFA9459C86 /* SSZipArchive */,
 			);
-			path = KFEpubKit;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		650C4E76931EE3473E48122D /* KissXML */ = {
+		434DCAE71FE3ECC366F24BB6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				59A22827FE854C38ADBD9837 /* DDXML.h */,
-				986364E572902605C98C5574 /* DDXMLDocument.h */,
-				21C59415607CF4654B5C7338 /* DDXMLDocument.m */,
-				9035B774977935472735A4B0 /* DDXMLElement.h */,
-				41DFEA44F7C1D4CD129949AA /* DDXMLElement.m */,
-				28C21E2118AF2772A0BCB84E /* DDXMLElementAdditions.h */,
-				0A7D324B2812BF92ECD6EF29 /* DDXMLElementAdditions.m */,
-				2AB09ADFAB660A80B3F3CEB3 /* DDXMLNode.h */,
-				CD365A2A2BF5A74645157167 /* DDXMLNode.m */,
-				EB728F3BBF1EE629DB784C5A /* DDXMLPrivate.h */,
-				0B2A159EAD7D53876C6E284D /* NSString+DDXML.h */,
-				36BDFF36BA4C2A56118BF390 /* NSString+DDXML.m */,
-				50118DD4E7360DC2FE7590AD /* Support Files */,
+				4710924CE4D272AB59114291 /* Pods */,
 			);
-			path = KissXML;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		8F2FDD0EA9C666EEF76AA67C = {
+		4710924CE4D272AB59114291 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FC47887918DEED32912DD53C /* Podfile */,
-				94AD6106199119B88AE550C8 /* Frameworks */,
-				472DDF6D4D58BACC1A4F3012 /* Pods */,
-				3921E1087CE28920DD096332 /* Products */,
-				4ADF85D6E579249204677F20 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		94AD6106199119B88AE550C8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D059495085797A475BFD7533 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D059495085797A475BFD7533 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				170E434A4563B7EE5602A682 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F73A8FB60F5B0D24CDA2F216 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B476C5F580B022B9DDCB2A7B /* Pods-acknowledgements.markdown */,
-				DB5CAF2A117E3D36BDE6E15A /* Pods-acknowledgements.plist */,
-				1A41141A09160E2C38C8F457 /* Pods-dummy.m */,
-				58737E471D1120ED4451230F /* Pods-environment.h */,
-				2D03662BDB51392FDD0AB947 /* Pods-resources.sh */,
-				B1B21013E9AE8B60066A5719 /* Pods.debug.xcconfig */,
-				C3C8A828EC08337675860F1D /* Pods.release.xcconfig */,
+				D98A146034ACF610F74D1B28 /* Pods-acknowledgements.markdown */,
+				BC2AB893BA66471353DE0E54 /* Pods-acknowledgements.plist */,
+				F58213ACA6BA4F274F91E53E /* Pods-dummy.m */,
+				81D81DADF92444726A72E20C /* Pods-environment.h */,
+				EB6CDA44A7BDDE0F966BCFBB /* Pods-resources.sh */,
+				5A98FC5FEFFC98984C2A9823 /* Pods.debug.xcconfig */,
+				69056E5153D7737B00202435 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		F791A1998E47E58E6C57F326 /* Support Files */ = {
+		4A6CB472B8B779035E51B4FF = {
 			isa = PBXGroup;
 			children = (
-				96D2463258F3D5313C96CAAF /* Pods-SSZipArchive.xcconfig */,
-				F282D03B28422084854D4C9C /* Pods-SSZipArchive-Private.xcconfig */,
-				B90A279B310E662E8F75C085 /* Pods-SSZipArchive-dummy.m */,
-				BA88D76A1A5F8F4CB9B71305 /* Pods-SSZipArchive-prefix.pch */,
+				AB458278BB982BE4FD57D837 /* Podfile */,
+				4BD50E48E9C802E179AC4569 /* Frameworks */,
+				20C29BD952BDDE5AB51DEB32 /* Pods */,
+				BB5F69865BA413C9FC355BAD /* Products */,
+				434DCAE71FE3ECC366F24BB6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		4BD50E48E9C802E179AC4569 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B75DA2466D71ED3EC2C4CA8F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		633F04708E7D4457314B343F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9DDDDD38D5B675129D24751 /* Pods-SSZipArchive.xcconfig */,
+				CFD03276CB94A44471FF8B01 /* Pods-SSZipArchive-Private.xcconfig */,
+				1F8C6F6C35279FDF71594178 /* Pods-SSZipArchive-dummy.m */,
+				664285BB7C106E06251858DF /* Pods-SSZipArchive-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-SSZipArchive";
 			sourceTree = "<group>";
 		};
+		A3030C1FF8B3ACFFA9459C86 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				2A6E7034492E86A8324062F9 /* SSZipArchive.h */,
+				030BF0A18B370C0572E068AB /* SSZipArchive.m */,
+				CF0B7ADF342633FB2CA1BC57 /* crypt.h */,
+				5FDFC98CD2D1593612B634A8 /* ioapi.c */,
+				DF5C62B5F1F254B1734CF159 /* ioapi.h */,
+				62E6262731B730237940A535 /* mztools.c */,
+				F7154D50D7CF1CE60DD711BF /* mztools.h */,
+				D9B265EAABAAB52D590DBB36 /* unzip.c */,
+				385A111CB69A2A5A8E56CC4F /* unzip.h */,
+				F799A04EFC8CF93C6B5EAEBC /* zip.c */,
+				F08407D493F70828B321B471 /* zip.h */,
+				633F04708E7D4457314B343F /* Support Files */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		A500B60149BEC995899223B8 /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				922AAE51F59730BE6E7ADA4C /* DDXML.h */,
+				286080F8A65B8CFE30D1D610 /* DDXMLDocument.h */,
+				E0E608B926F3AF241EBC49D5 /* DDXMLDocument.m */,
+				AC3B182717D84D67206962D0 /* DDXMLElement.h */,
+				9AB06E03A4A2B5243D80BD93 /* DDXMLElement.m */,
+				C5CE2FBAAF680E5361C85660 /* DDXMLElementAdditions.h */,
+				6F9B996A3E204F3A644A646F /* DDXMLElementAdditions.m */,
+				A2D26C662F40A3D014830E29 /* DDXMLNode.h */,
+				B92541A5DA1B10F083E7035E /* DDXMLNode.m */,
+				8E3240E91991BB70820FEDC8 /* DDXMLPrivate.h */,
+				2319C6925991CB0B0A10ACDD /* NSString+DDXML.h */,
+				B752288B369A7A078C02F963 /* NSString+DDXML.m */,
+				09316899C087F219AF05529F /* Support Files */,
+			);
+			path = KissXML;
+			sourceTree = "<group>";
+		};
+		B1937480174C0D55F77EE108 /* KFEpubKit */ = {
+			isa = PBXGroup;
+			children = (
+				609BA4832885B6108D0B9725 /* KFEpubConstants.h */,
+				FF75ADCA0AA0F3E1873C6377 /* KFEpubConstants.m */,
+				E92DC80375204B29EB7E885A /* KFEpubContentModel.h */,
+				C08E2E4D249E637088967A1C /* KFEpubContentModel.m */,
+				73695B068920AF203196A1A9 /* KFEpubController.h */,
+				3A96E46E4280C509D8BE783A /* KFEpubController.m */,
+				6CA282BA5270384FB89FE5F8 /* KFEpubExtractor.h */,
+				2896FBF33DDEA6FA400F529A /* KFEpubExtractor.m */,
+				6937FBD68C03AB5A07459B1F /* KFEpubKit.h */,
+				2E37177F271793D7C0484E44 /* KFEpubKit.m */,
+				06B0A3CDEAC6E5FCD41E384F /* KFEpubParser.h */,
+				38166283D9FBDAD83D3C87CC /* KFEpubParser.m */,
+				D041AB51026D29A13FAD846D /* Support Files */,
+			);
+			path = KFEpubKit;
+			sourceTree = "<group>";
+		};
+		B75DA2466D71ED3EC2C4CA8F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CC97F1D80E1047C70C03CA98 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BB5F69865BA413C9FC355BAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				888804C67CFE4E91347BF309 /* libPods.a */,
+				CBF3370521FBF7E4F23F3F90 /* libPods-KFEpubKit.a */,
+				8CB9306B12BB46C05BE8DDDF /* libPods-KissXML.a */,
+				3D232652238490D016DA650E /* libPods-SSZipArchive.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D041AB51026D29A13FAD846D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				03F9ECB30C6CBC873A93F3D5 /* Pods-KFEpubKit.xcconfig */,
+				98AE77B0B1978CBAD7071AF0 /* Pods-KFEpubKit-Private.xcconfig */,
+				4734CCD55698CD2084100263 /* Pods-KFEpubKit-dummy.m */,
+				AE9135D61C5DB4007B1B9115 /* Pods-KFEpubKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-KFEpubKit";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		227F0CCE9A4A1A767E8F1FD9 /* Headers */ = {
+		3D3CE1175DFBE419505E8F90 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				594806E9FEFCC8E48549E80B /* SSZipArchive.h in Headers */,
-				AEAAF1AAC05B08F77D79FE6C /* crypt.h in Headers */,
-				863E81F7E249813359563718 /* ioapi.h in Headers */,
-				1B86866675284A85A5D1FD42 /* mztools.h in Headers */,
-				4D10B0B41303A51E0A610F37 /* unzip.h in Headers */,
-				F8B3C304B0A45D7293843ACB /* zip.h in Headers */,
+				C0A44EA279486EFC0894B6C7 /* KFEpubConstants.h in Headers */,
+				3559436CED610D6FDB65C5B6 /* KFEpubContentModel.h in Headers */,
+				C10DF8066C70AF602702CD0B /* KFEpubController.h in Headers */,
+				2841428E672B45F060768703 /* KFEpubExtractor.h in Headers */,
+				676BC34B76CD554570F99832 /* KFEpubKit.h in Headers */,
+				5CF5CD8B40AD692BAE8D67E3 /* KFEpubParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E9A2AEB96D23C49AB1FB88C /* Headers */ = {
+		AC107BE1332DF4AF9BAD0164 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAAB0A0C66E22340F7B3FED6 /* DDXML.h in Headers */,
-				BDAE639554F6657E7BF640F1 /* DDXMLDocument.h in Headers */,
-				FE3A5893CBB98B35F9E70E00 /* DDXMLElement.h in Headers */,
-				E00BB766D8CF78B76AC4FAEF /* DDXMLElementAdditions.h in Headers */,
-				28149A8C8A700A09C4A6E8EB /* DDXMLNode.h in Headers */,
-				0EE6DFCAF350436C33799412 /* DDXMLPrivate.h in Headers */,
-				9C10F9BD897303DB0C4721BB /* NSString+DDXML.h in Headers */,
+				A0C926671888B01B4ED92C10 /* SSZipArchive.h in Headers */,
+				C1917A662B1D8BA8BD517EF6 /* crypt.h in Headers */,
+				6A623768EFE541149D25B8F9 /* ioapi.h in Headers */,
+				070A80CE0EA5DF2E71D9AF3D /* mztools.h in Headers */,
+				13C60BB53C62FE76D3F13123 /* unzip.h in Headers */,
+				8D25EE89CC1D032170985ED3 /* zip.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		440325F25BF600E94E52B902 /* Headers */ = {
+		F1929CC1BA6DF593F9F784F4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FB0742BE82C6F458A916F6C /* KFEpubConstants.h in Headers */,
-				832A8EE317213E7E33F1061B /* KFEpubContentModel.h in Headers */,
-				22C11263DF0A838623C8F2F2 /* KFEpubController.h in Headers */,
-				8795887B908C0C7B1BAE7E3F /* KFEpubExtractor.h in Headers */,
-				B2EFE70BA5CFC88D31472F4D /* KFEpubKit.h in Headers */,
-				4723A9AE4C41C7EA6F910E95 /* KFEpubParser.h in Headers */,
+				FFB5507A084E22144476D307 /* DDXML.h in Headers */,
+				DE84873A35FF09A7DDF0FFFC /* DDXMLDocument.h in Headers */,
+				52AF9CB38FD7705FFECAAB46 /* DDXMLElement.h in Headers */,
+				8714F6447FFAAF2994ED2689 /* DDXMLElementAdditions.h in Headers */,
+				24E1D85FE0ADF6272057E353 /* DDXMLNode.h in Headers */,
+				62356C2B839FB2F1416EBD3B /* DDXMLPrivate.h in Headers */,
+				EDDF3D2BB24723B081E4D1E4 /* NSString+DDXML.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		10220551666EE75C89D5164A /* Pods-KFEpubKit */ = {
+		06A0566A2E539E3B8B60B01B /* Pods-SSZipArchive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0359602649B3B6FB48BC4D7 /* Build configuration list for PBXNativeTarget "Pods-KFEpubKit" */;
+			buildConfigurationList = 08E21B48D1D00B80E37A88E8 /* Build configuration list for PBXNativeTarget "Pods-SSZipArchive" */;
 			buildPhases = (
-				76DDB8311D1067C09429C986 /* Sources */,
-				5E8B106FE7A01428437A8360 /* Frameworks */,
-				440325F25BF600E94E52B902 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				092EA16B4D4E3CA5D3BC5344 /* PBXTargetDependency */,
-				BD4656973BEA8AA526823EA1 /* PBXTargetDependency */,
-			);
-			name = "Pods-KFEpubKit";
-			productName = "Pods-KFEpubKit";
-			productReference = 161469128BE5FE27C795C6F0 /* libPods-KFEpubKit.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		94F1E078A794AD0BA9A0D2E7 /* Pods-KissXML */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19463ED192184C79463F9509 /* Build configuration list for PBXNativeTarget "Pods-KissXML" */;
-			buildPhases = (
-				1A41720E6D97AEF1E329E52E /* Sources */,
-				0E670B7A4E1CE35230FD7EDC /* Frameworks */,
-				3E9A2AEB96D23C49AB1FB88C /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-KissXML";
-			productName = "Pods-KissXML";
-			productReference = 9D778524054DD57557E0A116 /* libPods-KissXML.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		9939FD39B9D265E9F199D06C /* Pods-SSZipArchive */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDEB414ECA618F176EDB7E04 /* Build configuration list for PBXNativeTarget "Pods-SSZipArchive" */;
-			buildPhases = (
-				D413F66490FAE3230BF05E9B /* Sources */,
-				AEC1AFD91FA96B4E7CC2CEA6 /* Frameworks */,
-				227F0CCE9A4A1A767E8F1FD9 /* Headers */,
+				DEA259D8BC8AD5FE394FA375 /* Sources */,
+				57AC2991A56A0B0B4AC6E8C0 /* Frameworks */,
+				AC107BE1332DF4AF9BAD0164 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -451,148 +415,218 @@
 			);
 			name = "Pods-SSZipArchive";
 			productName = "Pods-SSZipArchive";
-			productReference = D9FD78E5C74C5F286D5F386C /* libPods-SSZipArchive.a */;
+			productReference = 3D232652238490D016DA650E /* libPods-SSZipArchive.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		C23438EA04B7BF5AA2D7166E /* Pods */ = {
+		2DB532CF672E4B391D151452 /* Pods-KissXML */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1E9D1A015C3AB6FCD64305A4 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = 50520B5108780589B22E11CB /* Build configuration list for PBXNativeTarget "Pods-KissXML" */;
 			buildPhases = (
-				4A31280371CCEFC8FC3BEFFC /* Sources */,
-				7929019835C6FDF666CA529B /* Frameworks */,
+				D5B96EF814CBD4B455E4D168 /* Sources */,
+				7B6B8F3D7FFEF4FFE9982E03 /* Frameworks */,
+				F1929CC1BA6DF593F9F784F4 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B473EA31929C16548E6BCB48 /* PBXTargetDependency */,
-				DFD4C1FEB9854A501C78C4CC /* PBXTargetDependency */,
-				810D553B5BF70F4ADD16F803 /* PBXTargetDependency */,
+			);
+			name = "Pods-KissXML";
+			productName = "Pods-KissXML";
+			productReference = 8CB9306B12BB46C05BE8DDDF /* libPods-KissXML.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3987D36BB5EAA589CAF80383 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AE2F9FE077450844B5C6A83 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				F99D9589341395D311A929AE /* Sources */,
+				55A064E83EBAB25418F04758 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B87027B5608F73521BBA3CB /* PBXTargetDependency */,
+				B4F22168BFCB736D7EC1802E /* PBXTargetDependency */,
+				EA5110C33C4DB2B7ECD0CAC9 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = B8E28699AB47C3D62A1379C9 /* libPods.a */;
+			productReference = 888804C67CFE4E91347BF309 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E075B7D263ECA28A5B8852FE /* Pods-KFEpubKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2A5E90A1D57B4F58EEA2CB9 /* Build configuration list for PBXNativeTarget "Pods-KFEpubKit" */;
+			buildPhases = (
+				844E03124DC90BD9974721FB /* Sources */,
+				2D8D680241057D51923AE1F0 /* Frameworks */,
+				3D3CE1175DFBE419505E8F90 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				399BE3A0E011C2A87FF9CF07 /* PBXTargetDependency */,
+				F009DF4AAD85F5AC265A1AB1 /* PBXTargetDependency */,
+			);
+			name = "Pods-KFEpubKit";
+			productName = "Pods-KFEpubKit";
+			productReference = CBF3370521FBF7E4F23F3F90 /* libPods-KFEpubKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EE4B4725478FBA574C180F93 /* Project object */ = {
+		653B0012C8BECDD34B79366C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 5486C79D633D6AB4CEBB7F57 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 50DF96E9BCE901295E25D34C /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 8F2FDD0EA9C666EEF76AA67C;
-			productRefGroup = 3921E1087CE28920DD096332 /* Products */;
+			mainGroup = 4A6CB472B8B779035E51B4FF;
+			productRefGroup = BB5F69865BA413C9FC355BAD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C23438EA04B7BF5AA2D7166E /* Pods */,
-				10220551666EE75C89D5164A /* Pods-KFEpubKit */,
-				94F1E078A794AD0BA9A0D2E7 /* Pods-KissXML */,
-				9939FD39B9D265E9F199D06C /* Pods-SSZipArchive */,
+				3987D36BB5EAA589CAF80383 /* Pods */,
+				E075B7D263ECA28A5B8852FE /* Pods-KFEpubKit */,
+				2DB532CF672E4B391D151452 /* Pods-KissXML */,
+				06A0566A2E539E3B8B60B01B /* Pods-SSZipArchive */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1A41720E6D97AEF1E329E52E /* Sources */ = {
+		844E03124DC90BD9974721FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B7865432B5B0007F5015328 /* DDXMLDocument.m in Sources */,
-				FBDD547A6BF25787FED0B032 /* DDXMLElement.m in Sources */,
-				D2F42E043AF851D14663FBDC /* DDXMLElementAdditions.m in Sources */,
-				CB7711CDFEB1C350A2A5B3EB /* DDXMLNode.m in Sources */,
-				CC28E372979815B177B31AEF /* NSString+DDXML.m in Sources */,
-				EB0C8FD8CDA232F035D6AAFA /* Pods-KissXML-dummy.m in Sources */,
+				03331E9D3280317E724EB179 /* KFEpubConstants.m in Sources */,
+				44438E5C1070B44A04189CD3 /* KFEpubContentModel.m in Sources */,
+				82361EEF1F0CC454A60FF5EF /* KFEpubController.m in Sources */,
+				7267BA427042ECC500A43DBD /* KFEpubExtractor.m in Sources */,
+				9AF4254BD808553B07B7D4D8 /* KFEpubKit.m in Sources */,
+				08CD5F43D574D1FD4BD7041F /* KFEpubParser.m in Sources */,
+				62A8E8BF2A1B1D79AD81A16D /* Pods-KFEpubKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A31280371CCEFC8FC3BEFFC /* Sources */ = {
+		D5B96EF814CBD4B455E4D168 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28252E95214D696352CA959B /* Pods-dummy.m in Sources */,
+				4E9A92610215669ABEDB7F97 /* DDXMLDocument.m in Sources */,
+				CEF49E0DA46A9DBF43CBAF95 /* DDXMLElement.m in Sources */,
+				712ECCE8B75ED60C9C51AD51 /* DDXMLElementAdditions.m in Sources */,
+				44D63F196FE96187A964B7B4 /* DDXMLNode.m in Sources */,
+				BB390AE26712786F697C3F13 /* NSString+DDXML.m in Sources */,
+				DB66E23D6EC25EDF504716C3 /* Pods-KissXML-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76DDB8311D1067C09429C986 /* Sources */ = {
+		DEA259D8BC8AD5FE394FA375 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DF57DC4DA40D8C03F8D0E14 /* KFEpubConstants.m in Sources */,
-				33851FA96FF91CA2A92A59BF /* KFEpubContentModel.m in Sources */,
-				7419D17AE585B05A3BE458FF /* KFEpubController.m in Sources */,
-				41F16ABA5408ABC7F71DEABC /* KFEpubExtractor.m in Sources */,
-				06C9D6E442066D8D28B4A580 /* KFEpubKit.m in Sources */,
-				496C4CA70BA940FAA2F4F811 /* KFEpubParser.m in Sources */,
-				5FE19D91EB7AB9B143A9AC26 /* Pods-KFEpubKit-dummy.m in Sources */,
+				D4317BFA9F557F0E7F714AE3 /* Pods-SSZipArchive-dummy.m in Sources */,
+				76F65D497DB804E3D641A052 /* SSZipArchive.m in Sources */,
+				4FBE195D7FC5C0D6A69DB911 /* ioapi.c in Sources */,
+				EAA708A0D45E30677002416F /* mztools.c in Sources */,
+				9E97323CE79B078C456A7BF7 /* unzip.c in Sources */,
+				811230B6077740C7C72B13BB /* zip.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D413F66490FAE3230BF05E9B /* Sources */ = {
+		F99D9589341395D311A929AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC0D217B7DACA46F88F09AA8 /* Pods-SSZipArchive-dummy.m in Sources */,
-				C706BD1A612A9A9E387B0D3D /* SSZipArchive.m in Sources */,
-				263641D3D1FB7D445AD3E594 /* ioapi.c in Sources */,
-				189BBD0FA47E5307615016CD /* mztools.c in Sources */,
-				3F25AD57B979762DD1342B4C /* unzip.c in Sources */,
-				03696A94897AC4A0D62B5BA2 /* zip.c in Sources */,
+				D2DBA08C15F306173ED95E8D /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		092EA16B4D4E3CA5D3BC5344 /* PBXTargetDependency */ = {
+		399BE3A0E011C2A87FF9CF07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-KissXML";
-			target = 94F1E078A794AD0BA9A0D2E7 /* Pods-KissXML */;
-			targetProxy = 0099607E6526CA449D25D6AE /* PBXContainerItemProxy */;
+			target = 2DB532CF672E4B391D151452 /* Pods-KissXML */;
+			targetProxy = 4D057D0640B8193AF2222C09 /* PBXContainerItemProxy */;
 		};
-		810D553B5BF70F4ADD16F803 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-SSZipArchive";
-			target = 9939FD39B9D265E9F199D06C /* Pods-SSZipArchive */;
-			targetProxy = 45A1C19BBDA8F3FECCE36E06 /* PBXContainerItemProxy */;
-		};
-		B473EA31929C16548E6BCB48 /* PBXTargetDependency */ = {
+		3B87027B5608F73521BBA3CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-KFEpubKit";
-			target = 10220551666EE75C89D5164A /* Pods-KFEpubKit */;
-			targetProxy = 90F5E784FB0C1FF0DBA88D11 /* PBXContainerItemProxy */;
+			target = E075B7D263ECA28A5B8852FE /* Pods-KFEpubKit */;
+			targetProxy = 258A1E5E44BA36541389C0C3 /* PBXContainerItemProxy */;
 		};
-		BD4656973BEA8AA526823EA1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-SSZipArchive";
-			target = 9939FD39B9D265E9F199D06C /* Pods-SSZipArchive */;
-			targetProxy = 1724DB69FDD543A82E744AEE /* PBXContainerItemProxy */;
-		};
-		DFD4C1FEB9854A501C78C4CC /* PBXTargetDependency */ = {
+		B4F22168BFCB736D7EC1802E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-KissXML";
-			target = 94F1E078A794AD0BA9A0D2E7 /* Pods-KissXML */;
-			targetProxy = EF4EE5DD63F4084A0C0629D1 /* PBXContainerItemProxy */;
+			target = 2DB532CF672E4B391D151452 /* Pods-KissXML */;
+			targetProxy = 7CC020FD29D2157A6322BFB3 /* PBXContainerItemProxy */;
+		};
+		EA5110C33C4DB2B7ECD0CAC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SSZipArchive";
+			target = 06A0566A2E539E3B8B60B01B /* Pods-SSZipArchive */;
+			targetProxy = 8BED969EEEAFC2BA978681F3 /* PBXContainerItemProxy */;
+		};
+		F009DF4AAD85F5AC265A1AB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SSZipArchive";
+			target = 06A0566A2E539E3B8B60B01B /* Pods-SSZipArchive */;
+			targetProxy = 45720FDA6F06B0B33E0FB4A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1C0EA7116BE63A9ABAC8FA50 /* Debug */ = {
+		08E64B0DA69DF8D7E464465D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1B21013E9AE8B60066A5719 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		187C4E086DA0ADF05C971C6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69056E5153D7737B00202435 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -600,14 +634,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		6E1896D0454748577DAD7D07 /* Release */ = {
+		1E7D8AA1A50B3DAC16BEAFBE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 002A92D749BDC5E29CEC9053 /* Pods-KissXML-Private.xcconfig */;
+			baseConfigurationReference = 98AE77B0B1978CBAD7071AF0 /* Pods-KFEpubKit-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-KissXML/Pods-KissXML-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-KFEpubKit/Pods-KFEpubKit-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -618,7 +652,7 @@
 			};
 			name = Release;
 		};
-		8E95C1D0DFDFE4214D410BFD /* Debug */ = {
+		33DF6912ECC14E97FDBFA4E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -657,107 +691,25 @@
 			};
 			name = Debug;
 		};
-		9709B7D63A9B2CCFDCA7A1CE /* Debug */ = {
+		62685E2BB4CDB0B52A80DD3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E9CC46CE38A1F5A408019F9 /* Pods-KFEpubKit-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-KFEpubKit/Pods-KFEpubKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B8327146F470013A9266F778 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3C8A828EC08337675860F1D /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		BF8C022BB67E480D7ECD9F26 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E9CC46CE38A1F5A408019F9 /* Pods-KFEpubKit-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-KFEpubKit/Pods-KFEpubKit-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		CDC686B0FE5DA0FE9ECBE3F8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F282D03B28422084854D4C9C /* Pods-SSZipArchive-Private.xcconfig */;
+			baseConfigurationReference = CFD03276CB94A44471FF8B01 /* Pods-SSZipArchive-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-SSZipArchive/Pods-SSZipArchive-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
-		};
-		D1132715E0AF9513543B0C6D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
 			name = Release;
 		};
-		EAC3C95F4CD613BCD4732C7E /* Debug */ = {
+		83240B44E720A7E122A3D792 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 002A92D749BDC5E29CEC9053 /* Pods-KissXML-Private.xcconfig */;
+			baseConfigurationReference = 1C917BCF27BF3C3A1E921CDF /* Pods-KissXML-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-KissXML/Pods-KissXML-prefix.pch";
@@ -771,12 +723,28 @@
 			};
 			name = Debug;
 		};
-		ECCFEE8AE079C918852B31E9 /* Release */ = {
+		BA7D271ECE083C0ADAB210D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F282D03B28422084854D4C9C /* Pods-SSZipArchive-Private.xcconfig */;
+			baseConfigurationReference = CFD03276CB94A44471FF8B01 /* Pods-SSZipArchive-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-SSZipArchive/Pods-SSZipArchive-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CC0612B7E3B29A4E9C277026 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C917BCF27BF3C3A1E921CDF /* Pods-KissXML-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-KissXML/Pods-KissXML-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -787,55 +755,87 @@
 			};
 			name = Release;
 		};
+		DC3E485A34618966AD18BB94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A98FC5FEFFC98984C2A9823 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DFE028A09DE673F6DB320E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98AE77B0B1978CBAD7071AF0 /* Pods-KFEpubKit-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-KFEpubKit/Pods-KFEpubKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		19463ED192184C79463F9509 /* Build configuration list for PBXNativeTarget "Pods-KissXML" */ = {
+		08E21B48D1D00B80E37A88E8 /* Build configuration list for PBXNativeTarget "Pods-SSZipArchive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAC3C95F4CD613BCD4732C7E /* Debug */,
-				6E1896D0454748577DAD7D07 /* Release */,
+				BA7D271ECE083C0ADAB210D6 /* Debug */,
+				62685E2BB4CDB0B52A80DD3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1E9D1A015C3AB6FCD64305A4 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		4AE2F9FE077450844B5C6A83 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C0EA7116BE63A9ABAC8FA50 /* Debug */,
-				B8327146F470013A9266F778 /* Release */,
+				DC3E485A34618966AD18BB94 /* Debug */,
+				187C4E086DA0ADF05C971C6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5486C79D633D6AB4CEBB7F57 /* Build configuration list for PBXProject "Pods" */ = {
+		50520B5108780589B22E11CB /* Build configuration list for PBXNativeTarget "Pods-KissXML" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8E95C1D0DFDFE4214D410BFD /* Debug */,
-				D1132715E0AF9513543B0C6D /* Release */,
+				83240B44E720A7E122A3D792 /* Debug */,
+				CC0612B7E3B29A4E9C277026 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDEB414ECA618F176EDB7E04 /* Build configuration list for PBXNativeTarget "Pods-SSZipArchive" */ = {
+		50DF96E9BCE901295E25D34C /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDC686B0FE5DA0FE9ECBE3F8 /* Debug */,
-				ECCFEE8AE079C918852B31E9 /* Release */,
+				33DF6912ECC14E97FDBFA4E0 /* Debug */,
+				08E64B0DA69DF8D7E464465D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0359602649B3B6FB48BC4D7 /* Build configuration list for PBXNativeTarget "Pods-KFEpubKit" */ = {
+		D2A5E90A1D57B4F58EEA2CB9 /* Build configuration list for PBXNativeTarget "Pods-KFEpubKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9709B7D63A9B2CCFDCA7A1CE /* Debug */,
-				BF8C022BB67E480D7ECD9F26 /* Release */,
+				DFE028A09DE673F6DB320E88 /* Debug */,
+				1E7D8AA1A50B3DAC16BEAFBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EE4B4725478FBA574C180F93 /* Project object */;
+	rootObject = 653B0012C8BECDD34B79366C /* Project object */;
 }

@@ -15,10 +15,6 @@ struct Bookshelf {
     let items : [AnyObject]
 }
 
-let FlashcardList = Array(map(1..<2) {"F\($0)"})
-let image: UIImage = UIImage(named:"@public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg")!
-let atitle: String = "Across the Reef"
-
 
 
 class BookshelfViewController: UICollectionViewController {
@@ -34,8 +30,8 @@ class BookshelfViewController: UICollectionViewController {
         return Bookshelf(containsBooks: isBooks, items: itemList)
     }
     
-    private let myBooks = BookshelfViewController.convertToShelf(allBooks.list, isBooks: true)
-    private let myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
+    private var myBooks: Bookshelf?
+    private var myFlashcards: Bookshelf?
     
     
     func drawCellObjects(currentShelf: Bookshelf) {
@@ -50,8 +46,10 @@ class BookshelfViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        myBooks = BookshelfViewController.convertToShelf(allBooks.list, isBooks: true)
+        myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
         println(allBooks.list)
-        drawCellObjects(self.myBooks)
+        drawCellObjects(self.myBooks!)
     }
     
     @IBAction func toggleBetweenBooksAndFlashcards(sender: UIBarButtonItem) {
@@ -64,7 +62,7 @@ class BookshelfViewController: UICollectionViewController {
             nextShelf = myFlashcards
         }
         
-        drawCellObjects(nextShelf)
+        drawCellObjects(nextShelf!)
         
     }
 }
