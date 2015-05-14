@@ -45,11 +45,16 @@ class BookshelfViewController: UICollectionViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         myBooks = BookshelfViewController.convertToShelf(allBooks.list, isBooks: true)
         myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
         println(allBooks.list)
         drawCellObjects(self.myBooks!)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
     }
     
     @IBAction func toggleBetweenBooksAndFlashcards(sender: UIBarButtonItem) {
@@ -98,7 +103,7 @@ extension BookshelfViewController : UICollectionViewDataSource {
             cell.bookCover.image = flashcard.img
             cell.bookTitle.text = flashcard.title
             
-            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
+            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .ExtraLight)) as UIVisualEffectView
             visualEffectView.frame = cell.bookCover.bounds
             visualEffectView.tag = 1
             
