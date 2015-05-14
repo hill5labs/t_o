@@ -10,10 +10,10 @@ import UIKit
 
 class DefinitionViewController: UITableViewController {
     
-    var currentCategory = WordCategory(categoryTitle: "Nicomachean Ethics")
+    var currentCategory: WordCategory?
     
     override func viewWillAppear(animated: Bool) {
-        currentCategory.getWords()
+        currentCategory!.getWords()
     }
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
@@ -26,12 +26,12 @@ class DefinitionViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return currentCategory.wordCount
+        return currentCategory!.wordCount
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("definitionCell", forIndexPath: indexPath) as! DefintionCell
-        let curWord = currentCategory.wordArray[currentCategory.wordCount - indexPath.row - 1] //Display newer words (near end of array) at top of table
+        let curWord = currentCategory!.wordArray[currentCategory!.wordCount - indexPath.row - 1] //Display newer words (near end of array) at top of table
         cell.word.text = curWord.word
         cell.definition.text = curWord.information.definition
         cell.isFlashcardSwitch.on = true
@@ -49,8 +49,8 @@ class DefinitionViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            currentCategory.wordArray[currentCategory.wordCount - indexPath.row - 1].removeFromCategory(currentCategory.title!)
-            currentCategory.getWords()
+            currentCategory!.wordArray[currentCategory!.wordCount - indexPath.row - 1].removeFromCategory(currentCategory!.title!)
+            currentCategory!.getWords()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }

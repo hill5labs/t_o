@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureRecognizerDelegate, UIWebViewDelegate {
+class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate {
     
     //MARK: Properti
     
@@ -23,8 +23,10 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
     var epubController: KFEpubController?
     var contentModel: KFEpubContentModel?
 
-    var spineIndex: Int = 0
+    var spineIndex: Int = 2
     var toLastPage = false
+    
+    var book: Book?
 
     var debug: NSURL?
     //MARK: View Lifecycle
@@ -36,12 +38,12 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         
         super.viewDidLoad()
 
-        let bundle = NSBundle.mainBundle() as NSBundle
-        let pathForEPUB = bundle.pathForResource("nicomachean", ofType: "epub") as String?
-        let wapURL = NSURL(fileURLWithPath: pathForEPUB!)
-        
-        let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        let documentURL = paths[0] as! NSURL
+//        let bundle = NSBundle.mainBundle() as NSBundle
+//        let pathForEPUB = bundle.pathForResource("nicomachean", ofType: "epub") as String?
+//        let wapURL = NSURL(fileURLWithPath: pathForEPUB!)
+//        
+//        let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+//        let documentURL = paths[0] as! NSURL
         
         page.delegate = self
         page.scrollView.pagingEnabled = true
@@ -55,9 +57,14 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         page.scalesPageToFit = false
         page.scrollView.bounces = false
 
-        epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
-        epubController!.delegate = self
-        epubController!.openAsynchronous(true)
+//        epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
+//        epubController!.delegate = self
+//        epubController!.openAsynchronous(true)
+        
+        epubController = book!.epubController
+        contentModel = book!.contentModel
+        updateContentForSpineIndex(spineIndex)
+        
         
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipe:"))
         rightSwipeRecognizer.direction = .Right
@@ -121,24 +128,24 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
   
     //MARK: KFEpubControllerDelegate methods
     
-    func epubController(controller: KFEpubController!, willOpenEpub epubURL: NSURL!) {
-        
-        println("will open EPUB")
-    }
-    
-    func epubController(controller: KFEpubController!, didOpenEpub contentModel: KFEpubContentModel!) {
-        let title = "title"
-        println("Opened: \(contentModel!.metaData[title])")
-        self.contentModel = contentModel
-        spineIndex = 1
-        updateContentForSpineIndex(spineIndex)
-        println("will open!")
-    }
-    
-    func epubController(controller: KFEpubController!, didFailWithError error: NSError!) {
-        
-        println("epubcontroller:didFailWithError: \(error.description)")
-    }
+//    func epubController(controller: KFEpubController!, willOpenEpub epubURL: NSURL!) {
+//        
+//        println("will open EPUB")
+//    }
+//    
+//    func epubController(controller: KFEpubController!, didOpenEpub contentModel: KFEpubContentModel!) {
+//        let title = "title"
+//        println("Opened: \(contentModel!.metaData[title])")
+//        self.contentModel = contentModel
+//        spineIndex = 1
+//        updateContentForSpineIndex(spineIndex)
+//        println("will open!")
+//    }
+//    
+//    func epubController(controller: KFEpubController!, didFailWithError error: NSError!) {
+//        
+//        println("epubcontroller:didFailWithError: \(error.description)")
+//    }
     
     func getCurrentPage() -> Int {
         let width: CGFloat = page.scrollView.frame.size.width
@@ -179,6 +186,7 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
         let segueName = segue.identifier
         if segueName == "embedDefinitionController" {
             dvc = segue.destinationViewController as? DefinitionViewController
+            dvc?.currentCategory = WordCategory(categoryTitle: book!.title!)
         }
     }
     
@@ -191,8 +199,8 @@ class PageViewController: UIViewController, KFEpubControllerDelegate, UIGestureR
                 let message = request.URL?.host
                 println("Word clicked: \(message)")
                 let defineWord = message!.lowercaseString
-                wordList.addWord(defineWord, newCategory: "Nicomachean Ethics")
-                dvc?.currentCategory.getWords()
+                wordList.addWord(defineWord, newCategory: book!.title!)
+                dvc?.currentCategory!.getWords()
                 dvc?.tableView.reloadData()
                 return false
             }

@@ -16,7 +16,7 @@ import UIKit
 
 class FlashcardListTableViewController: UITableViewController {
 
-    var currentCategory = WordCategory(categoryTitle: "Nicomachean Ethics")
+    var currentCategory: WordCategory?
     
     @IBOutlet weak var selectUIBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var deleteUIBarButtonItem: UIBarButtonItem!
@@ -24,8 +24,8 @@ class FlashcardListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = currentCategory.title
-        currentCategory.getWords()
+        self.title = currentCategory!.title
+        currentCategory!.getWords()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -44,7 +44,7 @@ class FlashcardListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentCategory.wordCount
+        return currentCategory!.wordCount
     }
 
     private struct Storyboard {
@@ -56,8 +56,8 @@ class FlashcardListTableViewController: UITableViewController {
 
         // Configure the cell...
         println("\(indexPath.row)")
-        println("\(currentCategory.wordCount)")
-        let curWord = currentCategory.wordArray[indexPath.row]
+        println("\(currentCategory!.wordCount)")
+        let curWord = currentCategory!.wordArray[indexPath.row]
         cell.textLabel?.text = curWord.word
         cell.detailTextLabel?.text = curWord.information.definition
 
@@ -102,9 +102,9 @@ class FlashcardListTableViewController: UITableViewController {
     @IBAction func deleteSelectedRows(sender: UIBarButtonItem) {
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows(){
             for path in selectedIndexPaths {
-                currentCategory.wordArray[path.row].removeFromCategory(currentCategory.title!)
+                currentCategory!.wordArray[path.row].removeFromCategory(currentCategory!.title!)
             }
-            currentCategory.getWords()
+            currentCategory!.getWords()
             showTableView()
             toggleEdit()
         }

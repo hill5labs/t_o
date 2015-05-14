@@ -128,13 +128,30 @@ extension BookshelfViewController : UICollectionViewDataSource {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if(BFToggle.title == "Books") {
-            performSegueWithIdentifier("ToFlashCards", sender: self)
+        let item: AnyObject = itemForIndexPath(indexPath)
+        if item is Book {
+            let book = item as! Book
+            performSegueWithIdentifier("ToPages", sender: book)
         } else {
-            performSegueWithIdentifier("ToPages", sender: self)
+            let flashcard = item as! WordCategory
+            performSegueWithIdentifier("ToFlashCards", sender: flashcard)
         }
 
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ToPages" {
+            let pvController = segue.destinationViewController as! PageViewController
+            let book = sender as! Book
+            pvController.book = book
+            
+        } else if segue.identifier == "ToFlashCards" {
+            let fltvController = segue.destinationViewController as! FlashcardListTableViewController
+            let flashcard = sender as! WordCategory
+            fltvController.currentCategory = flashcard
+        }
+    }
+    
 }
 
 
