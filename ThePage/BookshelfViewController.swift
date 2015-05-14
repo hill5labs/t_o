@@ -35,7 +35,7 @@ class BookshelfViewController: UICollectionViewController {
     
     
     func drawCellObjects(currentShelf: Bookshelf) {
-        self.searches.removeAll(keepCapacity: true)
+        self.searches.removeAll(keepCapacity: false)
         self.searches.insert(currentShelf, atIndex: 0)
         self.collectionView?.reloadData()
     }
@@ -55,7 +55,8 @@ class BookshelfViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
-        if searches[0].containsBooks == false {
+
+        if BFToggle.title == "Books" {
             drawCellObjects(myFlashcards!)
         }
     }
@@ -92,14 +93,14 @@ extension BookshelfViewController : UICollectionViewDataSource {
         
         let item: AnyObject = itemForIndexPath(indexPath)
         
+        if let viewWithTag = cell.bookCover.viewWithTag(1) {
+            viewWithTag.removeFromSuperview()
+        }
+        
         if item is Book {
             let book = item as! Book
             cell.bookCover.image = book.img
             cell.bookTitle.text = book.title
-            
-            if let viewWithTag = cell.bookCover.viewWithTag(1) {
-                viewWithTag.removeFromSuperview()
-            }
             
         } else {
             let flashcard = item as! WordCategory
