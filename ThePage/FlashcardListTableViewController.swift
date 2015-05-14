@@ -110,13 +110,33 @@ class FlashcardListTableViewController: UITableViewController {
         }
     }
     
+    // MARK: add to category
+    
     @IBAction func addSelectedRows(sender: UIBarButtonItem) {
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows(){
-            //Bring up keyboard
-            //Add user category to each card
-            showTableView()
-            toggleEdit()
+            var inputTextField = UITextField()
+            let alertController = UIAlertController(title: "Enter Category Name", message: "", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            alertController.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default) { action -> Void in
+                print(inputTextField.text)
+                for path in selectedIndexPaths {
+                    self.currentCategory!.wordArray[path.row].addToCategory(inputTextField.text)
+                }
+                self.showTableView()
+                self.toggleEdit()
+            })
+            
+            alertController.addTextFieldWithConfigurationHandler{ textField -> Void in inputTextField = textField }
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func categoryAdder(selectedIndexPaths: [AnyObject], category: String) {
+        
     }
     
     

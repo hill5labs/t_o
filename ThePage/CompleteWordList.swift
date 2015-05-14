@@ -55,7 +55,7 @@ struct CompleteWordList {
     }
     
     // Adam added these
-    func getCategories() -> [WordCategory]{
+    func getCategories() -> [WordCategory] {
         var categories = [String]()
         var categoryList = [WordCategory]()
         for word in allWords {

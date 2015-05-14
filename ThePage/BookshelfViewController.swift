@@ -55,6 +55,9 @@ class BookshelfViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
+        if searches[0].containsBooks == false {
+            drawCellObjects(myFlashcards!)
+        }
     }
     
     @IBAction func toggleBetweenBooksAndFlashcards(sender: UIBarButtonItem) {
