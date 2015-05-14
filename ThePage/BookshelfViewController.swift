@@ -103,13 +103,22 @@ extension BookshelfViewController : UICollectionViewDataSource {
             cell.bookCover.image = flashcard.img
             cell.bookTitle.text = flashcard.title
             
-            var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .ExtraLight)) as UIVisualEffectView
+            let blurEffect = UIBlurEffect(style: .Light)
+            var visualEffectView = UIVisualEffectView(effect: blurEffect)
             visualEffectView.frame = cell.bookCover.bounds
             visualEffectView.tag = 1
             
             var numOfFlashcards = UILabel(frame: cell.bookCover.frame)
             numOfFlashcards.textAlignment = NSTextAlignment.Center
             numOfFlashcards.text = String(flashcard.wordCount)
+            numOfFlashcards.font = UIFont(name: "HelveticaNeue-UltraLight", size: 48)
+
+            
+            let vibrancyEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
+            let vibrancyView = UIVisualEffectView(effect: vibrancyEffect)
+            vibrancyView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            vibrancyView.contentView.addSubview(numOfFlashcards)
+            visualEffectView.contentView.addSubview(vibrancyView)
             
             visualEffectView.addSubview(numOfFlashcards)
             cell.bookCover.addSubview(visualEffectView)
