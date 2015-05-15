@@ -51,9 +51,11 @@ class DefinitionViewController: UITableViewController {
         let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: mySwitch.tag, inSection: 0)) as! DefintionCell
         if mySwitch.on {
             wordList.addWord(cell.word.text!, newCategory: storedWordCategory!.title)
+            storedWordCategory!.getWords(from: wordList)
         } else {
             if let wordMatch = wordList.allWords.filter({$0.word == cell.word.text}).first {
                 wordMatch.removeFromCategory(storedWordCategory!.title!)
+                storedWordCategory!.getWords(from: wordList)
             }
         }
     }
