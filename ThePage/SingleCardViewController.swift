@@ -31,7 +31,9 @@ class SingleCardViewController: UIViewController {
     private var itemBehavior: UIDynamicItemBehavior!
     
     let ThrowingThreshold: CGFloat = 1000   //Arbitrarily determined
-    let ThrowingVelocityPadding: CGFloat = 35   //Arbitrarily determined
+    let ThrowingVelocityPadding: CGFloat = 10   //Arbitrarily determined
+    var anchorOffsetX: CGFloat = 0      //Tracks finger location on card for anchorpoint values while animating
+
 
     //MARK - viewDidLoad preparation
     
@@ -124,12 +126,14 @@ class SingleCardViewController: UIViewController {
     
     func panned(sender:UIPanGestureRecognizer){
         let location = sender.locationInView(self.view)
+        //TODO: Adjust anchor point to be offset of card center and touch location
         switch sender.state {
         case .Began:
             println("Pan start")
-            attachmentBehavior = UIAttachmentBehavior(item: flashcardView, attachedToAnchor: originalCenter)
+            anchorOffsetX = location.x - self.originalCenter.x
+            attachmentBehavior = UIAttachmentBehavior(item: flashcardView, attachedToAnchor: self.originalCenter)
             animator.addBehavior(attachmentBehavior)
-            attachmentBehavior!.anchorPoint.x = location.x  //Don't want flashcard moving vertically
+            attachmentBehavior!.anchorPoint.x = location.x - anchorOffsetX //Don't want flashcard moving vertically
             
         case .Ended:
             println("Pan end")
@@ -137,10 +141,14 @@ class SingleCardViewController: UIViewController {
             animator.removeAllBehaviors()       //Doesn't quite work if behaviors stick around (except item behavior)
             itemBehavior = UIDynamicItemBehavior(items: [flashcardView])
             itemBehavior.allowsRotation = false
-            itemBehavior.friction = 0.7
+            itemBehavior.friction = 0.4
             
             let velocity = sender.velocityInView(view)
             let magnitude = abs(velocity.x)     //Covers both directions
+            var resetTime = Double( 500 / magnitude) //Arbitrary, faster magnitude = quicker time to reset
+            if resetTime > 0.45 {
+                resetTime = 0.45
+            }
             
             if magnitude > ThrowingThreshold {
                 println("Push initiated")
@@ -149,7 +157,7 @@ class SingleCardViewController: UIViewController {
                 pushBehavior.magnitude = magnitude / ThrowingVelocityPadding
                 animator.addBehavior(pushBehavior)
 
-                let timeOffset = Int64(0.4 * Double(NSEC_PER_SEC))
+                let timeOffset = Int64(0.45 * Double(NSEC_PER_SEC))
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeOffset), dispatch_get_main_queue()) {
                     if (!self.inView(self.flashcardView.frame)) {
                         let flashcardX = self.flashcardView.frame.origin.x
@@ -169,22 +177,22 @@ class SingleCardViewController: UIViewController {
                             }
                         }
                     }
-                    self.resetFlashcardPosition()       //Needs to be inside if{} so push has time to animate offscreen
+                    self.resetFlashcardPosition(animationTime: resetTime)       //Needs to be inside if{} so push has time to animate offscreen
                 }
-            } else { self.resetFlashcardPosition() }    //If no push, just reset right away
+            } else { self.resetFlashcardPosition(animationTime: resetTime) }    //If no push, just reset right away
         default:
-            attachmentBehavior!.anchorPoint.x = sender.locationInView(view).x
+            attachmentBehavior!.anchorPoint.x = location.x - anchorOffsetX
         }
     }
     
-    func resetFlashcardPosition() {
+    func resetFlashcardPosition(animationTime: Double = 0.45) {
         println("Resetting")
         animator.removeAllBehaviors()       //Things don't like to work unless all behaviors are gone besides item behavior
         itemBehavior = UIDynamicItemBehavior(items: [flashcardView])
         itemBehavior.allowsRotation = false
         itemBehavior.friction = 0.7
         
-        UIView.animateWithDuration(0.45,
+        UIView.animateWithDuration(animationTime,
             animations: {
             self.flashcardView.bounds = self.originalBounds
             self.flashcardView.center = self.view.center
