@@ -35,7 +35,7 @@ class Book: NSObject, KFEpubControllerDelegate {
         epubController?.delegate = self
         epubController!.openAsynchronous(false)
         
-        img = UIImage(named: "cover\(arc4random_uniform(5) + 2)")
+        img = UIImage(named: "bookCover")
     }
     
     //MARK: KFEpubControllerDelegate Methods

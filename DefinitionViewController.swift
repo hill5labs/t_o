@@ -37,7 +37,7 @@ class DefinitionViewController: UITableViewController {
         cell.definition.text = curWord.information.definition
         cell.isFlashcardSwitch.tag = indexPath.item
         cell.isFlashcardSwitch.addTarget(self, action: "flashCardToggled:", forControlEvents: UIControlEvents.ValueChanged)
-        if let wordMatch = wordList.allWords.filter({$0.word == curWord.word}).first {
+        if let wordMatch = storedWordCategory!.wordArray.filter({$0.word == curWord.word}).first {
             cell.isFlashcardSwitch.on = true
         } else {
             cell.isFlashcardSwitch.on = false

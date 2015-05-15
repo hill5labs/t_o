@@ -106,19 +106,21 @@ extension BookshelfViewController : UICollectionViewDataSource {
             cell.bookTitle.text = book.title
             
         } else {
+            
+            let frameRect = CGRect(x: 0, y: 0, width: 150, height: 230 - cell.bookTitle.frame.size.height)
             let flashcard = item as! WordCategory
             cell.bookCover.image = flashcard.img
             cell.bookTitle.text = flashcard.title
             
             let blurEffect = UIBlurEffect(style: .Light)
             var visualEffectView = UIVisualEffectView(effect: blurEffect)
-            visualEffectView.frame = cell.bookCover.bounds
+            visualEffectView.frame = frameRect
             visualEffectView.tag = 1
             
-            var numOfFlashcards = UILabel(frame: cell.bookCover.frame)
+            var numOfFlashcards = UILabel(frame: frameRect)
             numOfFlashcards.textAlignment = NSTextAlignment.Center
             numOfFlashcards.text = String(flashcard.wordCount)
-            numOfFlashcards.font = UIFont(name: "HelveticaNeue-UltraLight", size: 48)
+            numOfFlashcards.font = UIFont(name: "HelveticaNeue-UltraLight", size: 72)
 
             
             let vibrancyEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
@@ -130,7 +132,6 @@ extension BookshelfViewController : UICollectionViewDataSource {
             visualEffectView.addSubview(numOfFlashcards)
             cell.bookCover.addSubview(visualEffectView)
         }
-        
         return cell
     }
     

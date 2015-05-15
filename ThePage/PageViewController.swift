@@ -11,7 +11,7 @@ import UIKit
 
 class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate {
     
-    //MARK: Properti
+    //MARK: Properties
     
     @IBOutlet weak var page: UIWebView!
     @IBOutlet weak var pageContainer: UIView!
@@ -37,13 +37,6 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-//        let bundle = NSBundle.mainBundle() as NSBundle
-//        let pathForEPUB = bundle.pathForResource("nicomachean", ofType: "epub") as String?
-//        let wapURL = NSURL(fileURLWithPath: pathForEPUB!)
-//        
-//        let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-//        let documentURL = paths[0] as! NSURL
         
         page.delegate = self
         page.scrollView.pagingEnabled = true
@@ -56,14 +49,12 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         page.scrollView.minimumZoomScale = 1.0
         page.scalesPageToFit = false
         page.scrollView.bounces = false
-
-//        epubController = KFEpubController(epubURL: wapURL!, andDestinationFolder: documentURL)
-//        epubController!.delegate = self
-//        epubController!.openAsynchronous(true)
         
         epubController = book!.epubController
         contentModel = book!.contentModel
         updateContentForSpineIndex(spineIndex)
+        
+        self.title = book!.title
         
         
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("respondToSwipe:"))
@@ -101,7 +92,7 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
                 toLastPage = true
                 page.scrollView.panGestureRecognizer.enabled = true
             }
-        } else if gestureRecognizer.direction == .Left && spineIndex < contentModel?.spine.count  {
+        } else if gestureRecognizer.direction == .Left && cPage < contentModel?.spine.count  {
             if (cPage == self.page.pageCount) {
                 page.scrollView.panGestureRecognizer.enabled = false
                 spineIndex++
@@ -125,27 +116,6 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         var request = NSURLRequest(URL: contentURL)
         page.loadRequest(request)
     }
-  
-    //MARK: KFEpubControllerDelegate methods
-    
-//    func epubController(controller: KFEpubController!, willOpenEpub epubURL: NSURL!) {
-//        
-//        println("will open EPUB")
-//    }
-//    
-//    func epubController(controller: KFEpubController!, didOpenEpub contentModel: KFEpubContentModel!) {
-//        let title = "title"
-//        println("Opened: \(contentModel!.metaData[title])")
-//        self.contentModel = contentModel
-//        spineIndex = 1
-//        updateContentForSpineIndex(spineIndex)
-//        println("will open!")
-//    }
-//    
-//    func epubController(controller: KFEpubController!, didFailWithError error: NSError!) {
-//        
-//        println("epubcontroller:didFailWithError: \(error.description)")
-//    }
     
     func getCurrentPage() -> Int {
         let width: CGFloat = page.scrollView.frame.size.width

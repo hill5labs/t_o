@@ -33,7 +33,7 @@ class WordCategory: NSObject {
         if find(allBooks.titleList(), title!) != nil {
             img = allBooks.getBookByTitle(title!)!.img
         } else {
-            img = UIImage(named: "cover1")
+            img = UIImage(named: "flashCover")
         }
     }
 }
