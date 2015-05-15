@@ -198,7 +198,7 @@ class SingleCardViewController: UIViewController {
     @IBAction func deleteCurrentCard(sender: UIBarButtonItem) {
         if (currentFlashcard != nil){
             currentFlashcard!.removeFromCategory(currentCategory!.title!)
-            currentCategory!.getWords()
+            currentCategory!.getWords(from: wordList)
             showCard()
         }
     }

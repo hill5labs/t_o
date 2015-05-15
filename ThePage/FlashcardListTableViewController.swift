@@ -25,7 +25,7 @@ class FlashcardListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = currentCategory!.title
-        currentCategory!.getWords()
+        currentCategory!.getWords(from: wordList)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -104,7 +104,7 @@ class FlashcardListTableViewController: UITableViewController {
             for path in selectedIndexPaths {
                 currentCategory!.wordArray[path.row].removeFromCategory(currentCategory!.title!)
             }
-            currentCategory!.getWords()
+            currentCategory!.getWords(from: wordList)
             showTableView()
             toggleEdit()
         }
@@ -115,10 +115,23 @@ class FlashcardListTableViewController: UITableViewController {
     @IBAction func addSelectedRows(sender: UIBarButtonItem) {
         if let selectedIndexPaths = tableView.indexPathsForSelectedRows(){
             var inputTextField = UITextField()
-            let alertController = UIAlertController(title: "Enter Category Name", message: "", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Enter category name or select a category below", message: "", preferredStyle: .Alert)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             alertController.addAction(cancelAction)
+            
+            for item in wordList.getCategories() {
+                if find(allBooks.titleList(), item.title!) == nil {
+                    alertController.addAction(UIAlertAction(title: item.title!, style: UIAlertActionStyle.Default) { action -> Void in
+                        print(item.title!)
+                        for path in selectedIndexPaths {
+                            self.currentCategory!.wordArray[path.row].addToCategory(item.title!)
+                        }
+                        self.showTableView()
+                        self.toggleEdit()
+                    })
+                }
+            }
             
             alertController.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default) { action -> Void in
                 print(inputTextField.text)

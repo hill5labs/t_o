@@ -30,12 +30,12 @@ class Book: NSObject, KFEpubControllerDelegate {
         
         url = NSURL(fileURLWithPath: pathForEPUB!)!
         
-        img = UIImage(named: "cover\(arc4random_uniform(6) + 1)")
-        
         epubController = KFEpubController(epubURL: url, andDestinationFolder: documentURL)
         super.init()
         epubController?.delegate = self
         epubController!.openAsynchronous(false)
+        
+        img = UIImage(named: "cover\(arc4random_uniform(5) + 2)")
     }
     
     //MARK: KFEpubControllerDelegate Methods

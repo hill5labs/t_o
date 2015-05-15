@@ -186,7 +186,8 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         let segueName = segue.identifier
         if segueName == "embedDefinitionController" {
             dvc = segue.destinationViewController as? DefinitionViewController
-            dvc?.currentCategory = WordCategory(categoryTitle: book!.title!)
+            dvc?.currentCategory = WordCategory(categoryTitle: book!.title!, _for: definitionList)
+            dvc?.storedWordCategory = WordCategory(categoryTitle: book!.title!, _for: wordList)
         }
     }
     
@@ -199,8 +200,8 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
                 let message = request.URL?.host
                 println("Word clicked: \(message)")
                 let defineWord = message!.lowercaseString
-                wordList.addWord(defineWord, newCategory: book!.title!)
-                dvc?.currentCategory!.getWords()
+                definitionList.addWord(defineWord, newCategory: book!.title!)
+                dvc?.currentCategory!.getWords(from: definitionList)
                 dvc?.tableView.reloadData()
                 return false
             }

@@ -23,6 +23,7 @@ class BookshelfViewController: UICollectionViewController {
     private let sectionInsets = UIEdgeInsets(top: 30.0, left: 30.0, bottom: 30.0, right: 30.0)
     
     @IBOutlet weak var BFToggle: UIBarButtonItem!
+    @IBOutlet weak var BSTitle: UINavigationItem!
     
     private var searches = [Bookshelf]()
     
@@ -65,9 +66,11 @@ class BookshelfViewController: UICollectionViewController {
         var nextShelf = myBooks
         if BFToggle.title == "Books" {
             BFToggle.title = "Flashcards"
+            BSTitle.title = "Books"
         }
         else {
             BFToggle.title = "Books"
+            BSTitle.title = "Flashcards"
             nextShelf = myFlashcards
         }
         

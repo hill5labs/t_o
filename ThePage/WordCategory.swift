@@ -14,15 +14,15 @@ class WordCategory: NSObject {
     var wordCount: Int = 0
     var wordArray = [Word]()
         
-    init(categoryTitle: String){
+    init(categoryTitle: String, _for aWordList: CompleteWordList){
         super.init()
         title=categoryTitle
-        getWords()
+        getWords(from: aWordList)
     }
         
-    func getWords(){
+    func getWords(from aWordList: CompleteWordList){
         wordArray.removeAll(keepCapacity: false)
-        for thisWord in wordList.allWords {
+        for thisWord in aWordList.allWords {
             if let index = find(thisWord.categoryArray, title!) {
                 wordArray.append(thisWord)
             }
@@ -33,7 +33,7 @@ class WordCategory: NSObject {
         if find(allBooks.titleList(), title!) != nil {
             img = allBooks.getBookByTitle(title!)!.img
         } else {
-            img = UIImage(named: "cover\(arc4random_uniform(6) + 1)")
+            img = UIImage(named: "cover1")
         }
     }
 }

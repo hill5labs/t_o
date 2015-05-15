@@ -31,16 +31,27 @@ struct CompleteWordList {
 //        allWords.append(fucksCard)
     }
     
-    mutating func addWord(newWordWord: String, newCategory: String) {
+    mutating func addWord(newWordWord: String, newCategory: String? = nil, categoryList cList: [String]? = nil) {
         
         if let wordMatch = allWords.filter({$0.word == newWordWord}).first {
             //Get index for word match?
-            if find(wordMatch.categoryArray, newCategory) == nil {
-                wordMatch.addToCategory(newCategory)
-            }
+            wordMatch.addToCategory(newCategory!)
+            
+            var word = wordMatch.word
+            var categorys = wordMatch.categoryArray
+            
+            removeWord(wordMatch)
+            addWord(word, categoryList: categorys)
+            
         } else {
-            var createdCategory = [String]()
-            createdCategory.append(newCategory)
+            var createdCategory: [String]
+            
+            if newCategory != nil {
+                createdCategory = [String]()
+                createdCategory.append(newCategory!)
+            } else {
+                createdCategory = cList!
+            }
             
             //TODO: Fetch and create lexical data
             var createdWord = Word(wordWord: newWordWord, info: LexicalData(pos: "Undefined", def: "Undefined"), categories: createdCategory)
@@ -54,7 +65,7 @@ struct CompleteWordList {
         }
     }
     
-    // Adam added these
+    // Adam added this
     func getCategories() -> [WordCategory] {
         var categories = [String]()
         var categoryList = [WordCategory]()
@@ -66,10 +77,11 @@ struct CompleteWordList {
             }
         }
         for item in categories {
-            categoryList.append(WordCategory(categoryTitle: item))
+            categoryList.append(WordCategory(categoryTitle: item, _for: self))
         }
         return categoryList
     }
 }
 
 var wordList = CompleteWordList()
+var definitionList = CompleteWordList()

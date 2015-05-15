@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="2637.5" y="294"/>
         </scene>
-        <!--TextOwl-->
+        <!--Books-->
         <scene sceneID="whB-53-yLq">
             <objects>
                 <collectionViewController id="cbA-QE-kDJ" customClass="BookshelfViewController" customModule="ThePage" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,9 +187,10 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="TextOwl" id="kdF-rA-Hit"/>
+                    <navigationItem key="navigationItem" title="Books" id="kdF-rA-Hit"/>
                     <connections>
                         <outlet property="BFToggle" destination="pSh-Vx-eba" id="pU2-OU-OBB"/>
+                        <outlet property="BSTitle" destination="kdF-rA-Hit" id="caK-IT-8OA"/>
                         <segue destination="yYl-Ao-vUE" kind="custom" identifier="ToFlashCards" id="T1D-21-gjS"/>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="ToPages" id="hdc-zH-kTH"/>
                     </connections>
