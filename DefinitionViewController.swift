@@ -14,7 +14,7 @@ class DefinitionViewController: UITableViewController {
     var storedWordCategory: WordCategory?
     
     override func viewWillAppear(animated: Bool) {
-        currentCategory!.getWords(from: definitionList)
+        currentCategory!.getWords(from: persistantData!.definitionList!)
     }
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
@@ -50,12 +50,12 @@ class DefinitionViewController: UITableViewController {
     func flashCardToggled(mySwitch: UISwitch) {
         let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: mySwitch.tag, inSection: 0)) as! DefintionCell
         if mySwitch.on {
-            wordList.addWord(cell.word.text!, newCategory: storedWordCategory!.title)
-            storedWordCategory!.getWords(from: wordList)
+            persistantData!.wordList!.addWord(newWordWord: cell.word.text!, newCategory: storedWordCategory!.title)
+            storedWordCategory!.getWords(from: persistantData!.wordList!)
         } else {
-            if let wordMatch = wordList.allWords.filter({$0.word == cell.word.text}).first {
+            if let wordMatch = persistantData!.wordList!.allWords.filter({$0.word == cell.word.text}).first {
                 wordMatch.removeFromCategory(storedWordCategory!.title!)
-                storedWordCategory!.getWords(from: wordList)
+                storedWordCategory!.getWords(from: persistantData!.wordList!)
             }
         }
     }
@@ -72,7 +72,7 @@ class DefinitionViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             currentCategory!.wordArray[currentCategory!.wordCount - indexPath.row - 1].removeFromCategory(currentCategory!.title!)
-            currentCategory!.getWords(from: definitionList)
+            currentCategory!.getWords(from: persistantData!.definitionList!)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }

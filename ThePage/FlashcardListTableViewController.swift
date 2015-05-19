@@ -25,7 +25,7 @@ class FlashcardListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = currentCategory!.title
-        currentCategory!.getWords(from: wordList)
+        currentCategory!.getWords(from: persistantData!.wordList!)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -104,7 +104,7 @@ class FlashcardListTableViewController: UITableViewController {
             for path in selectedIndexPaths {
                 currentCategory!.wordArray[path.row].removeFromCategory(currentCategory!.title!)
             }
-            currentCategory!.getWords(from: wordList)
+            currentCategory!.getWords(from: persistantData!.wordList!)
             showTableView()
             toggleEdit()
         }
@@ -120,7 +120,7 @@ class FlashcardListTableViewController: UITableViewController {
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             alertController.addAction(cancelAction)
             
-            for item in wordList.getCategories() {
+            for item in persistantData!.wordList!.getCategories() {
                 if find(allBooks.titleList(), item.title!) == nil {
                     alertController.addAction(UIAlertAction(title: item.title!, style: UIAlertActionStyle.Default) { action -> Void in
                         print(item.title!)

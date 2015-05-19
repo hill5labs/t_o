@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate {
+class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate, NSXMLParserDelegate {
     
     //MARK: Properties
     
@@ -29,6 +29,7 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
     var book: Book?
 
     var debug: NSURL?
+    
     //MARK: View Lifecycle
         
     private let js01 = "var p = document.getElementsByTagName('p');"
@@ -107,6 +108,10 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         return true
     }
     
+
+    
+
+    
     //MARK: EPUB contents
     
     func updateContentForSpineIndex(currentSpineIndex: Int) {
@@ -156,8 +161,8 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         let segueName = segue.identifier
         if segueName == "embedDefinitionController" {
             dvc = segue.destinationViewController as? DefinitionViewController
-            dvc?.currentCategory = WordCategory(categoryTitle: book!.title!, _for: definitionList)
-            dvc?.storedWordCategory = WordCategory(categoryTitle: book!.title!, _for: wordList)
+            dvc?.currentCategory = WordCategory(categoryTitle: book!.title!, _for: persistantData!.definitionList!)
+            dvc?.storedWordCategory = WordCategory(categoryTitle: book!.title!, _for: persistantData!.wordList!)
         }
     }
     
@@ -168,10 +173,14 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         case UIWebViewNavigationType.Other:
             if request.URL?.scheme == "alert" {
                 let message = request.URL?.host
+                
+
+             
                 println("Word clicked: \(message)")
                 let defineWord = message!.lowercaseString
-                definitionList.addWord(defineWord, newCategory: book!.title!)
-                dvc?.currentCategory!.getWords(from: definitionList)
+                persistantData!.definitionList!.addWord(newWordWord: defineWord, newCategory: book!.title!)
+                
+                dvc?.currentCategory!.getWords(from: persistantData!.definitionList!)
                 dvc?.tableView.reloadData()
                 return false
             }

@@ -25,6 +25,7 @@
 		B3A9B8651B00069300E954B2 /* BookshelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9B8641B00069300E954B2 /* BookshelfViewController.swift */; };
 		B3A9B8671B0006A500E954B2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A9B8661B0006A500E954B2 /* BookCell.swift */; };
 		B3A9B8691B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3A9B8681B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg */; };
+		B3C35FF01B0B079B003BC80E /* PersistantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C35FEF1B0B079B003BC80E /* PersistantData.swift */; };
 		B3D68D391B03BED100D5E820 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D68D381B03BED100D5E820 /* BookList.swift */; };
 		B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F59CFD1AE74809001AB26C /* PageViewController.swift */; };
 		B3F59D011AE74885001AB26C /* wp.epub in Resources */ = {isa = PBXBuildFile; fileRef = B3F59D001AE74885001AB26C /* wp.epub */; };
@@ -55,6 +56,7 @@
 		B3A9B8641B00069300E954B2 /* BookshelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookshelfViewController.swift; sourceTree = "<group>"; };
 		B3A9B8661B0006A500E954B2 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		B3A9B8681B0007DE00E954B2 /* @public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "@public@vhost@g@gutenberg@html@files@48836@48836-h@images@i_000.jpg"; sourceTree = "<group>"; };
+		B3C35FEF1B0B079B003BC80E /* PersistantData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistantData.swift; path = ../PersistantData.swift; sourceTree = "<group>"; };
 		B3D68D381B03BED100D5E820 /* BookList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 		B3F59CF71AE74750001AB26C /* ThePage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePage-Bridging-Header.h"; sourceTree = "<group>"; };
 		B3F59CF81AE74750001AB26C /* ThePageTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThePageTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				B31C03C81B02D9DD000DD02A /* WordCategory.swift */,
 				B31C03CD1B031B09000DD02A /* Book.swift */,
 				B3D68D381B03BED100D5E820 /* BookList.swift */,
+				B3C35FEF1B0B079B003BC80E /* PersistantData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				B3A9B8671B0006A500E954B2 /* BookCell.swift in Sources */,
 				B3D68D391B03BED100D5E820 /* BookList.swift in Sources */,
 				B3F59CFE1AE74809001AB26C /* PageViewController.swift in Sources */,
+				B3C35FF01B0B079B003BC80E /* PersistantData.swift in Sources */,
 				B3A9B8651B00069300E954B2 /* BookshelfViewController.swift in Sources */,
 				B31C03C51B02D241000DD02A /* LexicalData.swift in Sources */,
 				B39F3C961B0015A200F4AC25 /* SingleCardViewController.swift in Sources */,

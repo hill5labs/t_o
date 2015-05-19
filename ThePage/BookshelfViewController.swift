@@ -49,13 +49,13 @@ class BookshelfViewController: UICollectionViewController {
         
         super.viewDidLoad()
         myBooks = BookshelfViewController.convertToShelf(allBooks.list, isBooks: true)
-        myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
+        myFlashcards = BookshelfViewController.convertToShelf(persistantData!.wordList!.getCategories(), isBooks: false)
         println(allBooks.list)
         drawCellObjects(self.myBooks!)
     }
     
     override func viewWillAppear(animated: Bool) {
-        myFlashcards = BookshelfViewController.convertToShelf(wordList.getCategories(), isBooks: false)
+        myFlashcards = BookshelfViewController.convertToShelf(persistantData!.wordList!.getCategories(), isBooks: false)
 
         if BFToggle.title == "Books" {
             drawCellObjects(myFlashcards!)

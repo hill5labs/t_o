@@ -8,58 +8,73 @@
 
 import Foundation
 
-struct CompleteWordList {
+class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
     //Will eventually read in from a local file, forming a full, comprehensive list of cards
     var allWords = [Word]()
-    init(){
-        /*Until EOF
-        parse through card in file
-        var word = stuff
-        var definition = stuff
-        var categories = [String]()
-        parse through categories
-        categories.append(stuff)
-        var card = flashcard(cardWord: word, cardDefinition: definition, cardCategories: categories)
-        allFlashcards.append(card)*/
-            
-        //For now, we'll just generate some cards with the same category
- //       var category = [String]()
-   //     category.append("Nicomachean Ethics")
-//        var fucksCard = Word(wordWord: "Zero" , info: LexicalData(pos: "noun", def: "The amount of fucks I give right now"), categories: category)
-   //     var irascible = Word(wordWord: "irascible", info: LexicalData(pos:"adjective", def: "Having or showing a tendency to be easily angered"), categories: category)
-  //      allWords.append(irascible)
-//        allWords.append(fucksCard)
+    
+    private var definition: NSMutableString?
+    private var partOfSpeech: NSMutableString?
+    private var element: String?
+    private var shouldGetDefinition: Bool?
+    private var wordParsing: NSMutableString?
+    private var createdCategory = [String]()
+    var parser: NSXMLParser = NSXMLParser()
+    
+    
+    override init() {
+        super.init()
+//        /*Until EOF
+//        parse through card in file
+//        var word = stuff
+//        var definition = stuff
+//        var categories = [String]()
+//        parse through categories
+//        categories.append(stuff)
+//        var card = flashcard(cardWord: word, cardDefinition: definition, cardCategories: categories)
+//        allFlashcards.append(card)*/
     }
     
-    mutating func addWord(newWordWord: String, newCategory: String? = nil, categoryList cList: [String]? = nil) {
+    //MARK: NSCoding
+    
+    required convenience init(coder decoder: NSCoder) {
+        self.init()
+        self.allWords = decoder.decodeObjectForKey("allWords") as! [Word]
+
+    }
+    
+    func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(allWords, forKey: "allWords")
+
+    }
+    
+    func addWord(newWordWord: String? = nil, newCategory: String? = nil, word duplicateWord: Word? = nil) {
         
+        if duplicateWord != nil {
+            allWords.append(duplicateWord!)
+            return
+        }
+       
         if let wordMatch = allWords.filter({$0.word == newWordWord}).first {
             //Get index for word match?
             wordMatch.addToCategory(newCategory!)
-            
-            var word = wordMatch.word
-            var categorys = wordMatch.categoryArray
-            
+             
             removeWord(wordMatch)
-            addWord(word, categoryList: categorys)
+            addWord(word: wordMatch)
             
         } else {
-            var createdCategory: [String]
-            
-            if newCategory != nil {
-                createdCategory = [String]()
-                createdCategory.append(newCategory!)
-            } else {
-                createdCategory = cList!
-            }
-            
-            //TODO: Fetch and create lexical data
-            var createdWord = Word(wordWord: newWordWord, info: LexicalData(pos: "Undefined", def: "Undefined"), categories: createdCategory)
-            allWords.append(createdWord)
+            createdCategory.append(newCategory!)
+            let encodedWord = newWordWord!.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+            var getDefinitionURLString = "http://www.dictionaryapi.com/api/v1/references/collegiate/xml/\(newWordWord!)?key=f0badceb-3a32-4c12-8f98-09fe6388223e"
+            var url = NSURL(string: getDefinitionURLString)!
+            self.parser = NSXMLParser(contentsOfURL: url)!
+            self.shouldGetDefinition = true
+            self.parser.delegate = self
+            self.parser.parse()
+
         }
     }
     
-    mutating func removeWord(targetWord: Word) {
+    func removeWord(targetWord: Word) {
         if let index = find(allWords,targetWord) {
             allWords.removeAtIndex(index)
         }
@@ -81,7 +96,52 @@ struct CompleteWordList {
         }
         return categoryList
     }
+    
+    //MARK: NSXMLParserDelegate Methods
+
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
+        println("Element begin")
+        
+        element = elementName
+        
+        if element == "entry" {
+            partOfSpeech = ""
+            definition = ""
+            wordParsing = ""
+        }
+    }
+    
+    func parser(parser: NSXMLParser, foundCharacters string: String?) {
+        println("Characters found")
+        
+        if element == "ew" && shouldGetDefinition! {
+            
+            wordParsing!.appendString(string!)
+        }
+        
+        if element == "fl" && shouldGetDefinition! {
+        
+            partOfSpeech!.appendString(string!)
+        } else if element == "dt" && shouldGetDefinition! {
+            
+            definition!.appendString(string!)
+        }
+    }
+    
+    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        println("Element ended")
+        
+        if elementName == "entry" && shouldGetDefinition! {
+            shouldGetDefinition! = false
+            var newWord = wordParsing! as String
+            allWords.append(Word(wordWord: newWord, info: LexicalData(pos: String(self.partOfSpeech!), def: String(self.definition!) ), categories: self.createdCategory))
+        }
+    }
+    
+    func parserDidEndDocument(parser: NSXMLParser) {
+        println("Done parsing")
+    }
 }
 
-var wordList = CompleteWordList()
-var definitionList = CompleteWordList()
+//var wordList = CompleteWordList()
+//var definitionList = CompleteWordList()
