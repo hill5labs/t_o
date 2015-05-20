@@ -63,6 +63,7 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
             addWord(word: wordMatch)
             
         } else {
+               createdCategory.removeAll(keepCapacity: false)
             createdCategory.append(newCategory!)
             let encodedWord = newWordWord!.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
             var getDefinitionURLString = "http://www.dictionaryapi.com/api/v1/references/collegiate/xml/\(newWordWord!)?key=f0badceb-3a32-4c12-8f98-09fe6388223e"
