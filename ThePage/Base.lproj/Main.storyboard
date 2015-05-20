@@ -14,61 +14,92 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" paginationMode="leftToRight" pageLength="25" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-85-ifB">
-                                <rect key="frame" x="16" y="72" width="385" height="476"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="CeE-Cd-gIo" appends="YES" id="RqH-7I-lXK"/>
-                                    <outletCollection property="gestureRecognizers" destination="ry9-py-qLk" appends="YES" id="cO3-Dy-9Qg"/>
-                                </connections>
-                            </webView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f40-q3-kEP">
-                                <rect key="frame" x="409" y="72" width="175" height="476"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f40-q3-kEP">
+                                <rect key="frame" x="593" y="72" width="175" height="944"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="yKB-3I-uJH"/>
+                                    <constraint firstAttribute="width" constant="175" id="N8p-mH-fci"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="CKH-oV-p8c" kind="embed" identifier="embedDefinitionController" id="qaD-v1-8Rd"/>
                                 </connections>
                             </containerView>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" paginationMode="leftToRight" pageLength="25" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-85-ifB">
+                                <rect key="frame" x="16" y="72" width="550" height="944"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="385" id="k9q-4V-c3t"/>
+                                    <constraint firstAttribute="width" constant="550" id="xNg-rw-AYx"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="k9q-4V-c3t"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CeE-Cd-gIo" appends="YES" id="RqH-7I-lXK"/>
+                                    <outletCollection property="gestureRecognizers" destination="ry9-py-qLk" appends="YES" id="cO3-Dy-9Qg"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="f40-q3-kEP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="0ke-H3-yx7"/>
-                            <constraint firstItem="f40-q3-kEP" firstAttribute="leading" secondItem="dGF-85-ifB" secondAttribute="trailing" constant="8" symbolic="YES" id="83E-yV-qsK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dGF-85-ifB" secondAttribute="bottom" constant="8" symbolic="YES" id="VF2-HL-bsI"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f40-q3-kEP" secondAttribute="bottom" constant="8" symbolic="YES" id="l2o-6s-cQe"/>
-                            <constraint firstItem="dGF-85-ifB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="q39-Yk-b9I"/>
-                            <constraint firstItem="dGF-85-ifB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tTC-68-0EB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="f40-q3-kEP" secondAttribute="trailing" id="uzj-k7-uvi"/>
+                            <constraint firstItem="dGF-85-ifB" firstAttribute="top" secondItem="f40-q3-kEP" secondAttribute="top" id="3SB-qC-Ica"/>
+                            <constraint firstItem="dGF-85-ifB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-36" id="6TP-lv-GzY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dGF-85-ifB" secondAttribute="bottom" constant="8" symbolic="YES" id="Aar-z7-iDr"/>
+                            <constraint firstItem="f40-q3-kEP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Ajr-RN-ZXH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f40-q3-kEP" secondAttribute="bottom" constant="8" symbolic="YES" id="DLH-za-GJg"/>
+                            <constraint firstItem="f40-q3-kEP" firstAttribute="leading" secondItem="dGF-85-ifB" secondAttribute="trailing" constant="8" symbolic="YES" id="I31-rb-cbR"/>
+                            <constraint firstItem="f40-q3-kEP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="JUY-vc-r2M"/>
+                            <constraint firstItem="dGF-85-ifB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="Qim-0H-B1g"/>
+                            <constraint firstItem="f40-q3-kEP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="SsK-1W-tOR"/>
+                            <constraint firstItem="dGF-85-ifB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fhf-NZ-zk8"/>
+                            <constraint firstItem="f40-q3-kEP" firstAttribute="height" secondItem="dGF-85-ifB" secondAttribute="height" id="gLi-Kr-Xvr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3SB-qC-Ica"/>
+                                <exclude reference="6TP-lv-GzY"/>
+                                <exclude reference="Qim-0H-B1g"/>
+                                <exclude reference="I31-rb-cbR"/>
+                                <exclude reference="JUY-vc-r2M"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Nicomachean Ethics" id="u1C-kG-6Ig"/>
+                    <navigationItem key="navigationItem" title="Nicomachean Ethics" id="u1C-kG-6Ig">
+                        <barButtonItem key="rightBarButtonItem" title="Sidebar" id="yko-SC-Ywr">
+                            <connections>
+                                <action selector="pressedSidebarButton:" destination="BYZ-38-t0r" id="tRw-Rm-sl8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="leadingSpaceWebViewConstraint" destination="fhf-NZ-zk8" id="J47-rI-MNK"/>
                         <outlet property="leftSwipeRecognizer" destination="ry9-py-qLk" id="EmJ-W9-dj4"/>
                         <outlet property="page" destination="dGF-85-ifB" id="osZ-PP-ZBb"/>
                         <outlet property="pageContainer" destination="8bC-Xf-vdC" id="wir-Zn-9B7"/>
                         <outlet property="rightSwipeRecognizer" destination="CeE-Cd-gIo" id="3L0-fP-RYS"/>
+                        <outlet property="sidebarWidthConstraint" destination="N8p-mH-fci" id="mV4-Hu-a9C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="CeE-Cd-gIo"/>
                 <swipeGestureRecognizer direction="right" id="ry9-py-qLk"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="334"/>
+            <point key="canvasLocation" x="1956" y="1273"/>
         </scene>
         <!--Definition View Controller-->
         <scene sceneID="NGm-QG-5ZN">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="CKH-oV-p8c" customClass="DefinitionViewController" customModule="ThePage" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="148" sectionHeaderHeight="22" sectionFooterHeight="22" id="vAk-Fs-VNK">
-                        <rect key="frame" x="0.0" y="0.0" width="175" height="476"/>
+                        <rect key="frame" x="0.0" y="0.0" width="175" height="944"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="definitionCell" rowHeight="148" id="JSO-Jx-V6I" customClass="DefintionCell" customModule="ThePage">
                                 <rect key="frame" x="0.0" y="0.0" width="185" height="44"/>
@@ -87,7 +118,6 @@
                                         </switch>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-qq-jgf">
                                             <rect key="frame" x="8" y="37" width="159" height="64"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

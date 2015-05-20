@@ -17,8 +17,11 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
     @IBOutlet weak var pageContainer: UIView!
     @IBOutlet var rightSwipeRecognizer: UISwipeGestureRecognizer!
     @IBOutlet var leftSwipeRecognizer: UISwipeGestureRecognizer!
+    @IBOutlet weak var sidebarWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingSpaceWebViewConstraint: NSLayoutConstraint!
     
     var dvc: DefinitionViewController?
+    let sidebarWidth: CGFloat = 175
     
     var epubController: KFEpubController?
     var contentModel: KFEpubContentModel?
@@ -79,7 +82,7 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         //When flicking forward to a page, the current page equals the leaving page
         //When flicking backward to a page, the current page equals the upcoming page
         //So we just add 1 to current page when flicking to the next page
-        var cPage = getCurrentPage() + 1
+        var cPage = getCurrentPage()
         var count = page.pageCount
         println("Current Page = \(cPage)")
         println("Total Pages = \(count)")
@@ -125,7 +128,7 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
     func getCurrentPage() -> Int {
         let width: CGFloat = page.scrollView.frame.size.width
         let currentPage: NSInteger = NSInteger((page.scrollView.contentOffset.x + (0.5 * width)) / width)
-        return currentPage
+        return currentPage + 1
     }
     
     //MARK: Utility and navigation functions
@@ -164,6 +167,23 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
             dvc?.currentCategory = WordCategory(categoryTitle: book!.title!, _for: persistantData!.definitionList!)
             dvc?.storedWordCategory = WordCategory(categoryTitle: book!.title!, _for: persistantData!.wordList!)
         }
+    }
+    
+    func sidebarToggle() {
+        if sidebarWidthConstraint.constant == 0.0 {
+            sidebarWidthConstraint.constant = sidebarWidth
+            leadingSpaceWebViewConstraint.constant = 0.0
+        } else {
+            sidebarWidthConstraint.constant = 0.0
+            leadingSpaceWebViewConstraint.constant = sidebarWidth / 2
+        }
+        //scrollToPage(getCurrentPage(), animated: false)
+    }
+    
+    //MARK: IBActions
+    
+    @IBAction func pressedSidebarButton(sender: UIBarButtonItem) {
+        sidebarToggle()
     }
     
 //    MARK: Javascript alert intercept

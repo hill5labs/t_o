@@ -148,11 +148,6 @@ class FlashcardListTableViewController: UITableViewController {
         }
     }
     
-    func categoryAdder(selectedIndexPaths: [AnyObject], category: String) {
-        
-    }
-    
-    
     func showToolbarButtons(show: Bool){
         if show {
             self.deleteUIBarButtonItem.enabled=true
