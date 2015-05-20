@@ -79,7 +79,6 @@ class SingleCardViewController: UIViewController {
             flashcardWordLabel.text=currentFlashcard!.word
             flashcardWordLabel.sizeToFit()
             flashcardDefinitionLabel.text=currentFlashcard!.information.definition
-            flashcardDefinitionLabel.sizeToFit()
         } else {                                    //Can occur with flashcard deletion
             flashcardWordLabel.text = "No flashcards in this category"
             flashcardDefinitionLabel.text = "No flashcards in this category"

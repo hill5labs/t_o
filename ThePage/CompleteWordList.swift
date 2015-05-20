@@ -12,11 +12,12 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
     //Will eventually read in from a local file, forming a full, comprehensive list of cards
     var allWords = [Word]()
     
-    private var definition: NSMutableString?
-    private var partOfSpeech: NSMutableString?
+    private var definition: NSMutableString = ""
+    private var partOfSpeech: NSMutableString = ""
     private var element: String?
-    private var shouldGetDefinition: Bool?
-    private var wordParsing: NSMutableString?
+    private var shouldGetDefinition: Bool? //XML Flag
+    private var definitionCount: Int = 0  //XML Flag
+    private var wordParsing: NSMutableString = ""
     private var createdCategory = [String]()
     var parser: NSXMLParser = NSXMLParser()
     
@@ -108,6 +109,7 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
             partOfSpeech = ""
             definition = ""
             wordParsing = ""
+            definitionCount = 0
         }
     }
     
@@ -116,25 +118,50 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
         
         if element == "ew" && shouldGetDefinition! {
             
-            wordParsing!.appendString(string!)
+            wordParsing.appendString(string!)
         }
         
-        if element == "fl" && shouldGetDefinition! {
+        else if element == "fl" && shouldGetDefinition! {
         
-            partOfSpeech!.appendString(string!)
-        } else if element == "dt" && shouldGetDefinition! {
+            partOfSpeech.appendString(string!)
+        }
+        
+        else if element == "dt" && shouldGetDefinition! && (definitionCount < 3){     //Only get first three definitions
+            var appendation: String?
+            if definitionCount == 0 {
+                appendation = "1. "
+            } else {
+                appendation = "\n\(definitionCount+1). "
+            }
             
-            definition!.appendString(string!)
+            let fancyDefinition = string!.stringByReplacingOccurrencesOfString(":", withString: "")
+            
+            //If string is whitespace
+                //Decrement definitionCount
+            //else
+            
+            if fancyDefinition.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) == "" {
+                //do nothing
+            } else {
+                definition.appendString(appendation! + fancyDefinition)
+                ++definitionCount
+            }
+        }
+        
+        else if element == "fw" && shouldGetDefinition! && (definitionCount<3){
+            definition.appendString(string!.stringByReplacingOccurrencesOfString(":", withString: ""))
         }
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         println("Element ended")
-        
+
         if elementName == "entry" && shouldGetDefinition! {
+            println("Create word")
             shouldGetDefinition! = false
-            var newWord = wordParsing! as String
-            allWords.append(Word(wordWord: newWord, info: LexicalData(pos: String(self.partOfSpeech!), def: String(self.definition!) ), categories: self.createdCategory))
+            var newWord = wordParsing as String
+            allWords.append(Word(wordWord: newWord, info: LexicalData(pos: String(self.partOfSpeech), def: String(self.definition) ), categories: self.createdCategory))
+            println("Done with word")
         }
     }
     
