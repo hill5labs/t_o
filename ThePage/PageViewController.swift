@@ -111,8 +111,10 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         return true
     }
     
-
-    
+    override func supportedInterfaceOrientations() -> Int {
+     
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
 
     
     //MARK: EPUB contents

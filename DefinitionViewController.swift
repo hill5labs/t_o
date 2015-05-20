@@ -35,6 +35,7 @@ class DefinitionViewController: UITableViewController {
         let curWord = currentCategory!.wordArray[currentCategory!.wordCount - indexPath.row - 1] //Display newer words (near end of array) at top of table
         cell.word.text = curWord.word
         cell.definition.text = curWord.information.definition
+        cell.partOfSpeechLabel.text = curWord.information.partOfSpeech
         cell.isFlashcardSwitch.tag = indexPath.item
         cell.isFlashcardSwitch.addTarget(self, action: "flashCardToggled:", forControlEvents: UIControlEvents.ValueChanged)
         if let wordMatch = storedWordCategory!.wordArray.filter({$0.word == curWord.word}).first {
@@ -50,8 +51,10 @@ class DefinitionViewController: UITableViewController {
     func flashCardToggled(mySwitch: UISwitch) {
         let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forItem: mySwitch.tag, inSection: 0)) as! DefintionCell
         if mySwitch.on {
-            persistantData!.wordList!.addWord(newWordWord: cell.word.text!, newCategory: storedWordCategory!.title)
-            storedWordCategory!.getWords(from: persistantData!.wordList!)
+            if let wordMatch = persistantData!.definitionList!.allWords.filter({$0.word == cell.word.text}).first {
+                persistantData!.wordList!.addWord(word: wordMatch)
+                storedWordCategory!.getWords(from: persistantData!.wordList!)
+            }
         } else {
             if let wordMatch = persistantData!.wordList!.allWords.filter({$0.word == cell.word.text}).first {
                 wordMatch.removeFromCategory(storedWordCategory!.title!)

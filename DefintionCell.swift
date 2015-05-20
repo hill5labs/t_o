@@ -12,5 +12,6 @@ class DefintionCell: UITableViewCell {
     @IBOutlet weak var word: UILabel!
     @IBOutlet weak var definition: UITextView!
     @IBOutlet weak var isFlashcardSwitch: UISwitch!
+    @IBOutlet weak var partOfSpeechLabel: UILabel!
     
 }

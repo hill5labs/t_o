@@ -50,8 +50,21 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
     
     func addWord(newWordWord: String? = nil, newCategory: String? = nil, word duplicateWord: Word? = nil) {
         
+        
         if duplicateWord != nil {
-            allWords.append(duplicateWord!)
+            if let wordMatch = allWords.filter({$0.word == duplicateWord!.word}).first {
+                for item in duplicateWord!.categoryArray {
+                    if (find(wordMatch.categoryArray, item) == nil) {
+                        wordMatch.categoryArray.append(item)
+                    }
+                }
+            } else {
+                let newWord = Word()
+                newWord.word = duplicateWord!.word
+                newWord.information = duplicateWord!.information
+                newWord.categoryArray = duplicateWord!.categoryArray
+                allWords.append(newWord)
+            }
             return
         }
        
@@ -63,7 +76,7 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
             addWord(word: wordMatch)
             
         } else {
-               createdCategory.removeAll(keepCapacity: false)
+            createdCategory.removeAll(keepCapacity: false)
             createdCategory.append(newCategory!)
             let encodedWord = newWordWord!.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
             var getDefinitionURLString = "http://www.dictionaryapi.com/api/v1/references/collegiate/xml/\(newWordWord!)?key=f0badceb-3a32-4c12-8f98-09fe6388223e"
@@ -122,7 +135,7 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
             wordParsing.appendString(string!)
         }
         
-        else if element == "fl" && shouldGetDefinition! {
+        else if element == "fl" && shouldGetDefinition! && partOfSpeech == "" {
         
             partOfSpeech.appendString(string!)
         }
@@ -136,11 +149,7 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
             }
             
             let fancyDefinition = string!.stringByReplacingOccurrencesOfString(":", withString: "")
-            
-            //If string is whitespace
-                //Decrement definitionCount
-            //else
-            
+
             if fancyDefinition.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) == "" {
                 //do nothing
             } else {
@@ -148,8 +157,27 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
                 ++definitionCount
             }
         }
-        
-        else if element == "fw" && shouldGetDefinition! && (definitionCount<3){
+            
+        else if element == "un" && shouldGetDefinition! && (definitionCount < 3) {
+            var appendation: String?
+            if definitionCount == 0 {
+                appendation = "1. "
+            } else {
+                appendation = "\n\(definitionCount+1). "
+            }
+            
+            let fancyDefinition = string!.stringByReplacingOccurrencesOfString(":", withString: "")
+            
+            if fancyDefinition.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) == "" {
+                //do nothing
+            } else {
+                definition.appendString(appendation! + fancyDefinition)
+                ++definitionCount
+            }
+
+        }
+            
+        else if (element == "fw" || element == "d_link") && shouldGetDefinition! && (definitionCount<3){ //miscellaneous elements interspersed in the dt tags
             definition.appendString(string!.stringByReplacingOccurrencesOfString(":", withString: ""))
         }
     }
@@ -161,6 +189,9 @@ class CompleteWordList: NSObject, NSXMLParserDelegate, NSCoding {
             println("Create word")
             shouldGetDefinition! = false
             var newWord = wordParsing as String
+            if partOfSpeech == "" { partOfSpeech="?" }
+            if wordParsing == "" { wordParsing = "Word not found" }
+            if definition == "" { definition = "Definition could not be retrieved" }
             allWords.append(Word(wordWord: newWord, info: LexicalData(pos: String(self.partOfSpeech), def: String(self.definition) ), categories: self.createdCategory))
             println("Done with word")
         }
