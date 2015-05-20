@@ -74,6 +74,9 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         leftSwipeRecognizer.delegate = self
         //leftSwipeRecognizer.requireGestureRecognizerToFail(page.scrollView.panGestureRecognizer)
         self.page.addGestureRecognizer(leftSwipeRecognizer)
+        
+        sidebarToggle()
+        
     }
     
     //MARK: Handle Swipes and GestureRecognizerDelegate
@@ -196,8 +199,10 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
             if request.URL?.scheme == "alert" {
                 let message = request.URL?.host
                 
-
-             
+                if sidebarWidthConstraint.constant == 0.0 {
+                    sidebarToggle()
+                }
+                
                 println("Word clicked: \(message)")
                 let defineWord = message!.lowercaseString
                 persistantData!.definitionList!.addWord(newWordWord: defineWord, newCategory: book!.title!)
