@@ -21,7 +21,7 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
     @IBOutlet weak var leadingSpaceWebViewConstraint: NSLayoutConstraint!
     
     var dvc: DefinitionViewController?
-    let sidebarWidth: CGFloat = 175
+    let sidebarWidth: CGFloat = 179
     
     var epubController: KFEpubController?
     var contentModel: KFEpubContentModel?
