@@ -233,7 +233,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B326AC221AE7467900121308 /* Build configuration list for PBXProject "ThePage" */;
+			buildConfigurationList = B326AC221AE7467900121308 /* Build configuration list for PBXProject "TextOwl" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -435,10 +435,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ThePage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = ThePage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThePage/ThePage-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -450,16 +449,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ThePage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = ThePage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ThePage/ThePage-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B326AC221AE7467900121308 /* Build configuration list for PBXProject "ThePage" */ = {
+		B326AC221AE7467900121308 /* Build configuration list for PBXProject "TextOwl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B326AC441AE7467A00121308 /* Debug */,

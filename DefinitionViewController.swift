@@ -9,7 +9,9 @@
 import UIKit
 
 class DefinitionViewController: UITableViewController {
-    
+    var theSupremeButt: CGFloat = 150
+    var samsButt: CGFloat = 0
+    var supremeButtIndexPath: NSIndexPath?
     var currentCategory: WordCategory?
     var storedWordCategory: WordCategory?
     
@@ -65,7 +67,12 @@ class DefinitionViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath == supremeButtIndexPath {
+            return self.theSupremeButt
+        }
+        
         return 150
+        
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -79,5 +86,24 @@ class DefinitionViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath != supremeButtIndexPath {
+            var cell = self.tableView.cellForRowAtIndexPath(indexPath) as! DefintionCell
+            self.tableView.beginUpdates()
+            let fixedWidth:CGFloat = cell.definition.frame.width
+            let myButt = cell.definition.frame.height
+            let newSize = cell.definition.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat(MAXFLOAT)))
+            var newFrame = cell.definition.frame
+            newFrame.size = CGSize(width: fmax(newSize.width, fixedWidth), height: CGFloat(newSize.height))
+            cell.definition.frame = newFrame
+        
+            samsButt = cell.definition.frame.height
+            theSupremeButt = samsButt - myButt + 150
+            supremeButtIndexPath = indexPath
 
+            self.tableView.endUpdates()
+            cell.definition.frame=newFrame
+        }
+    }
 }

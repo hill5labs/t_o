@@ -33,7 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             for resource in resourceStrings {
                 if resource.rangeOfString("epub") != nil {
                     println(resource)
-                    allBooks.append(Book(recName: resource))
+                    let book = Book(recName: resource)
+                    allBooks.append(book)
+                    if persistantData?.pageDataList!.filter({$0.title == book.title}).first == nil {
+                        
+                        persistantData?.pageDataList?.append(PersistantPage(newTitle: book.title!))
+                    }
                 }
             }
         }
@@ -44,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        ud.setObject(NSKeyedArchiver.archivedDataWithRootObject(persistantData!), forKey: "persistantData")
     }
 
     func applicationDidEnterBackground(application: UIApplication) {

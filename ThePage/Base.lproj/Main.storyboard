@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zTv-m4-3jg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zTv-m4-3jg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f40-q3-kEP">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f40-q3-kEP">
                                 <rect key="frame" x="588" y="64" width="180" height="960"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="N8p-mH-fci"/>
@@ -26,7 +26,7 @@
                                     <segue destination="CKH-oV-p8c" kind="embed" identifier="embedDefinitionController" id="qaD-v1-8Rd"/>
                                 </connections>
                             </containerView>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" paginationMode="leftToRight" pageLength="25" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-85-ifB">
+                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" paginationMode="leftToRight" pageLength="25" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-85-ifB">
                                 <rect key="frame" x="16" y="64" width="550" height="960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -71,6 +71,19 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Previous Chapter" id="3Oc-3s-pjd">
+                            <connections>
+                                <action selector="toPreviousChapter:" destination="BYZ-38-t0r" id="6Z6-Bu-PzE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="SlI-vo-A8f"/>
+                        <barButtonItem title="Next Chapter" id="3S5-ND-AcE">
+                            <connections>
+                                <action selector="toNextChapter:" destination="BYZ-38-t0r" id="5EL-IV-VNu"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Nicomachean Ethics" id="u1C-kG-6Ig">
                         <barButtonItem key="rightBarButtonItem" title="Sidebar" id="yko-SC-Ywr">
                             <connections>
@@ -79,6 +92,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="leadingSpaceWebViewConstraint" destination="fhf-NZ-zk8" id="J47-rI-MNK"/>
@@ -99,7 +113,7 @@
         <scene sceneID="NGm-QG-5ZN">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="CKH-oV-p8c" customClass="DefinitionViewController" customModule="ThePage" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="148" sectionHeaderHeight="22" sectionFooterHeight="22" id="vAk-Fs-VNK">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="148" sectionHeaderHeight="22" sectionFooterHeight="22" id="vAk-Fs-VNK">
                         <rect key="frame" x="0.0" y="0.0" width="180" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,24 +126,24 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JSO-Jx-V6I" id="hKG-iE-69h">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Word Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UHC-hH-Q8s">
-                                            <rect key="frame" x="8" y="8" width="159" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UHC-hH-Q8s">
+                                            <rect key="frame" x="8" y="8" width="102" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufd-Xw-QYU">
-                                            <rect key="frame" x="63" y="109" width="51" height="31"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufd-Xw-QYU">
+                                            <rect key="frame" x="118" y="3" width="51" height="31"/>
                                         </switch>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-qq-jgf">
-                                            <rect key="frame" x="8" y="37" width="159" height="64"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-qq-jgf">
+                                            <rect key="frame" x="8" y="66" width="172" height="82"/>
                                             <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-7h-9W2">
-                                            <rect key="frame" x="131" y="8" width="36" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-7h-9W2">
+                                            <rect key="frame" x="8" y="37" width="159" height="21"/>
                                             <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,20 +151,6 @@
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="top" secondItem="UHC-hH-Q8s" secondAttribute="bottom" constant="8" symbolic="YES" id="7Ho-og-G4g"/>
-                                        <constraint firstItem="eJg-7h-9W2" firstAttribute="top" secondItem="hKG-iE-69h" secondAttribute="topMargin" id="7ZV-cu-wRw"/>
-                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="leading" secondItem="hKG-iE-69h" secondAttribute="leadingMargin" id="Hgg-Ha-qZC"/>
-                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="centerY" secondItem="eJg-7h-9W2" secondAttribute="centerY" id="YzB-Yp-fkZ"/>
-                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="leading" secondItem="hKG-iE-69h" secondAttribute="leadingMargin" id="eZX-Oj-zNy"/>
-                                        <constraint firstAttribute="centerX" secondItem="ufd-Xw-QYU" secondAttribute="centerX" id="gq3-MC-kBz"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ufd-Xw-QYU" secondAttribute="bottom" id="h40-aC-Zu3"/>
-                                        <constraint firstItem="QUs-qq-jgf" firstAttribute="trailing" secondItem="hKG-iE-69h" secondAttribute="trailingMargin" id="hmF-WG-9Dz"/>
-                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="top" secondItem="hKG-iE-69h" secondAttribute="topMargin" id="jZm-w9-Bm2"/>
-                                        <constraint firstItem="eJg-7h-9W2" firstAttribute="trailing" secondItem="hKG-iE-69h" secondAttribute="trailingMargin" id="mT2-ct-4AY"/>
-                                        <constraint firstItem="ufd-Xw-QYU" firstAttribute="top" secondItem="QUs-qq-jgf" secondAttribute="bottom" constant="8" symbolic="YES" id="sgq-qf-46c"/>
-                                        <constraint firstItem="UHC-hH-Q8s" firstAttribute="trailing" secondItem="hKG-iE-69h" secondAttribute="trailingMargin" id="yd7-Yz-ndP"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -166,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLE-yi-WbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633.5" y="967"/>
+            <point key="canvasLocation" x="2633" y="967"/>
         </scene>
         <!--Books-->
         <scene sceneID="whB-53-yLq">

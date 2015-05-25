@@ -15,23 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B326AC261AE7467900121308"
-               BuildableName = "TextOwl.app"
-               BlueprintName = "TextOwl"
-               ReferencedContainer = "container:TextOwl.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B326AC3B1AE7467A00121308"
-               BuildableName = "ThePageTests.xctest"
-               BlueprintName = "ThePageTests"
-               ReferencedContainer = "container:TextOwl.xcodeproj">
+               BuildableName = "ThePage.app"
+               BlueprintName = "ThePage"
+               ReferencedContainer = "container:ThePage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B326AC3B1AE7467A00121308"
-               BuildableName = "ThePageTests.xctest"
-               BlueprintName = "ThePageTests"
-               ReferencedContainer = "container:TextOwl.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B326AC261AE7467900121308"
-            BuildableName = "TextOwl.app"
-            BlueprintName = "TextOwl"
-            ReferencedContainer = "container:TextOwl.xcodeproj">
+            BuildableName = "ThePage.app"
+            BlueprintName = "ThePage"
+            ReferencedContainer = "container:ThePage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B326AC261AE7467900121308"
-            BuildableName = "TextOwl.app"
-            BlueprintName = "TextOwl"
-            ReferencedContainer = "container:TextOwl.xcodeproj">
+            BuildableName = "ThePage.app"
+            BlueprintName = "ThePage"
+            ReferencedContainer = "container:ThePage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B326AC261AE7467900121308"
-            BuildableName = "TextOwl.app"
-            BlueprintName = "TextOwl"
-            ReferencedContainer = "container:TextOwl.xcodeproj">
+            BuildableName = "ThePage.app"
+            BlueprintName = "ThePage"
+            ReferencedContainer = "container:ThePage.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

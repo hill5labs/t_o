@@ -26,7 +26,8 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
     var epubController: KFEpubController?
     var contentModel: KFEpubContentModel?
 
-    var spineIndex: Int = 2
+    var persistantPageForThisBook: PersistantPage?
+    var spineIndex: Int = 0
     var toLastPage = false
     
     var book: Book?
@@ -42,6 +43,11 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillResign", name: UIApplicationWillResignActiveNotification, object: nil)
+        
+        persistantPageForThisBook = persistantData?.pageDataList!.filter({$0.title == self.book!.title}).first
+        
+        
         page.delegate = self
         page.scrollView.pagingEnabled = true
         page.scrollView.bounces = false
@@ -56,7 +62,7 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         
         epubController = book!.epubController
         contentModel = book!.contentModel
-        updateContentForSpineIndex(spineIndex)
+        updateContentForSpineIndex(persistantPageForThisBook!.index)
         
         self.title = book!.title
         
@@ -99,7 +105,7 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
                 toLastPage = true
                 page.scrollView.panGestureRecognizer.enabled = true
             }
-        } else if gestureRecognizer.direction == .Left && cPage < contentModel?.spine.count  {
+        } else if gestureRecognizer.direction == .Left && spineIndex < contentModel!.spine.count - 1 {
             if (cPage == self.page.pageCount) {
                 page.scrollView.panGestureRecognizer.enabled = false
                 spineIndex++
@@ -118,7 +124,18 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
      
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
-
+    
+    override func viewWillDisappear(animated: Bool) {
+        println(getCurrentPage())
+        persistantPageForThisBook!.cPage = getCurrentPage() - 1
+        persistantPageForThisBook!.index = spineIndex
+    }
+    
+    func applicationWillResign() {
+        
+        persistantPageForThisBook!.cPage = getCurrentPage() - 1
+        persistantPageForThisBook!.index = spineIndex
+    }
     
     //MARK: EPUB contents
     
@@ -128,12 +145,33 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         println("content URL: \(contentURL)")
         var request = NSURLRequest(URL: contentURL)
         page.loadRequest(request)
+        persistantPageForThisBook!.index = currentSpineIndex
     }
     
     func getCurrentPage() -> Int {
         let width: CGFloat = page.scrollView.frame.size.width
         let currentPage: NSInteger = NSInteger((page.scrollView.contentOffset.x + (0.5 * width)) / width)
         return currentPage + 1
+    }
+    
+    
+    @IBAction func toNextChapter(sender: UIBarButtonItem) {
+        println("Leaving spine index: \(spineIndex)")
+        println("Spine count: \(contentModel!.spine.count)")
+        
+        if spineIndex < contentModel!.spine.count - 1 {
+            spineIndex++
+            updateContentForSpineIndex(spineIndex)
+        }
+    }
+    
+    @IBAction func toPreviousChapter(sender: UIBarButtonItem) {
+        println("Leaving spine index: \(spineIndex)")
+        println("Spine count: \(contentModel?.spine.count)")
+        if spineIndex > 1 {
+            spineIndex--
+            updateContentForSpineIndex(spineIndex)
+        }
     }
     
     //MARK: Utility and navigation functions
@@ -143,6 +181,7 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
         frame.origin.x = frame.size.width * CGFloat(targetPage)
         frame.origin.y = 0
         page.scrollView.scrollRectToVisible(frame, animated:animated)
+        persistantPageForThisBook!.cPage = targetPage
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
@@ -163,6 +202,9 @@ class PageViewController: UIViewController, UIGestureRecognizerDelegate, UIWebVi
             scrollToPage(page.pageCount-1, animated: false)
             toLastPage = false
         }
+        scrollToPage(persistantPageForThisBook!.cPage, animated: false)
+        persistantPageForThisBook!.cPage = 0
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

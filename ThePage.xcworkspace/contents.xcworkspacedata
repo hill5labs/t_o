@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ThePage.xcodeproj">
+      location = "group:/Users/Naomi/Documents/school/software_engineering/ThePage/TextOwl.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

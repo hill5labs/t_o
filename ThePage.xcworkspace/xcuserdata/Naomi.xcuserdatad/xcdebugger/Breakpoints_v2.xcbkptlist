@@ -25,13 +25,171 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThePage/AppDelegate.swift"
-            timestampString = "453231568.412312"
+            filePath = "ThePage/PageViewController.swift"
+            timestampString = "454206540.547967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThePage/AppDelegate.swift"
+            timestampString = "454206652.123858"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThePage.AppDelegate.window.getter : Swift.Optional&lt;ObjectiveC.UIWindow&gt;"
+                  moduleName = "ThePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Naomi/Documents/school/software_engineering/ThePage/ThePage/AppDelegate.swift"
+                  timestampString = "454207614.512367"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThePage.AppDelegate.window.setter : Swift.Optional&lt;ObjectiveC.UIWindow&gt;"
+                  moduleName = "ThePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Naomi/Documents/school/software_engineering/ThePage/ThePage/AppDelegate.swift"
+                  timestampString = "454207614.512566"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThePage.AppDelegate.window.materializeForSet : Swift.Optional&lt;ObjectiveC.UIWindow&gt;"
+                  moduleName = "ThePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Naomi/Documents/school/software_engineering/ThePage/ThePage/AppDelegate.swift"
+                  timestampString = "454207614.512724"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThePage.AppDelegate.init (ThePage.AppDelegate.Type)() -&gt; ThePage.AppDelegate"
+                  moduleName = "ThePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Naomi/Documents/school/software_engineering/ThePage/ThePage/AppDelegate.swift"
+                  timestampString = "454207614.512879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThePage/AppDelegate.swift"
+            timestampString = "454206809.399983"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "applicationWillEnterForeground(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThePage/AppDelegate.swift"
+            timestampString = "454206686.883011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThePage.AppDelegate.ud.getter : ObjectiveC.NSUserDefaults"
+                  moduleName = "ThePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Naomi/Documents/school/software_engineering/ThePage/ThePage/AppDelegate.swift"
+                  timestampString = "454207614.529911"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ThePage.AppDelegate.init (ThePage.AppDelegate.Type)() -&gt; ThePage.AppDelegate"
+                  moduleName = "ThePage"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Naomi/Documents/school/software_engineering/ThePage/ThePage/AppDelegate.swift"
+                  timestampString = "454207614.530079"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThePage/BookshelfViewController.swift"
+            timestampString = "454208074.173109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
